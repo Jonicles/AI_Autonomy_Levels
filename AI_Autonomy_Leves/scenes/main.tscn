@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwmm2yxtyjm3n"]
+
+[ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/character.tscn" id="1_fio3m"]
+[ext_resource type="PackedScene" uid="uid://qxt6mnviq73f" path="res://scenes/tile.tscn" id="2_jovls"]
+
+[node name="Main" type="Node"]
+
+[node name="Character" parent="." instance=ExtResource("1_fio3m")]
+position = Vector2(375, 200)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Tile" parent="." instance=ExtResource("2_jovls")]
+
+[node name="Tile2" parent="." instance=ExtResource("2_jovls")]
+position = Vector2(128, 0)
+
+[node name="Tile3" parent="." instance=ExtResource("2_jovls")]
+position = Vector2(-128, 0)
+
+[node name="Tile4" parent="." instance=ExtResource("2_jovls")]
+position = Vector2(0, 128)
+
+[node name="Tile5" parent="." instance=ExtResource("2_jovls")]
+position = Vector2(128, 128)
+
+[node name="Tile6" parent="." instance=ExtResource("2_jovls")]
+position = Vector2(-128, 128)
