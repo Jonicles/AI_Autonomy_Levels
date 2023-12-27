@@ -1,13 +1,37 @@
 extends CharacterBody2D
 
-@export var controller: CharacterController
+@onready var controller = $Controller
 
 func _input(event):
-	if event.is_action_pressed("Player_Up"):
-		controller.Move(Vector2.UP)
+	#Handle grab
+	if event.is_action_pressed("Player_Grab"):
+		controller.grab()
+	elif event.is_action_released("Player_Grab"):
+		controller.let_go()
+	
+	#Handle throw
+	if event.is_action_pressed("Player_Throw"):
+		controller.throw()
+	
+	#Handle movement
+	var isActionReleased: bool = (
+			event.is_action_released("Player_Up") or event.is_action_released("Player_Down") 
+			or event.is_action_released("Player_Left") or event.is_action_released("Player_Right") 
+	)
+	
+	var hasInput: bool = (
+		Input.is_action_pressed("Player_Up") or Input.is_action_pressed("Player_Down") 
+		or Input.is_action_pressed("Player_Left") or Input.is_action_pressed("Player_Right")
+	)
+	
+	if isActionReleased and not hasInput:
+		controller.move(Vector2.ZERO)
+	elif event.is_action_pressed("Player_Up"):
+		controller.move(Vector2.UP)
 	elif event.is_action_pressed("Player_Down"):
-		controller.Move(Vector2.DOWN)
+		controller.move(Vector2.DOWN)
 	elif event.is_action_pressed("Player_Right"):
-		controller.Move(Vector2.RIGHT)
+		controller.move(Vector2.RIGHT)
 	elif event.is_action_pressed("Player_Left"):
-		controller.Move(Vector2.LEFT)
+		controller.move(Vector2.LEFT)
+		
