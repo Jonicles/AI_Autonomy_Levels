@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn006ae0wjaen"]
+[gd_scene load_steps=3 format=3 uid="uid://cn006ae0wjaen"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_ppm8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufisv"]
 size = Vector2(32, 32)
 
-[node name="PhysicsBody2D" type="StaticBody2D"]
-collision_layer = 3
-collision_mask = 3
+[node name="Item" type="Area2D"]
+collision_layer = 2
+collision_mask = 128
+script = ExtResource("1_ppm8b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ufisv")

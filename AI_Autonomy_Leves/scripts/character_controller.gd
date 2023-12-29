@@ -6,7 +6,8 @@ extends Node
 @onready var grabRadius: Area2D = %GrabRadius
 
 var currentDirection = Vector2.ZERO
-var heldObject: PhysicsBody2D
+var heldItem: Area2D
+var itemScript: Item
 
 func move(direction: Vector2):
 	if direction == Vector2.UP:
@@ -22,33 +23,43 @@ func move(direction: Vector2):
 
 func _physics_process(delta):
 	body.move_and_collide(currentDirection * delta * speed)
-
-func grab():
-	if heldObject:
+	
+	if not heldItem:
 		return
 	
-	var objects: Array[Node2D] = grabRadius.get_overlapping_bodies()
+	heldItem.position = body.position
+
+func grab():
+	if heldItem:
+		return
+	
+	var objects: Array[Area2D] = grabRadius.get_overlapping_areas()
 	
 	if not objects:
 		return
 	
-	for i in objects:
-		#FIND CLOSEST DISTANCE TO OBJECT HERE
-		pass
+	var closestDistance = INF
+	var object
 	
-	heldObject = objects[0]
-	print("Grabbing " + heldObject.name)
+	for i in objects:
+		var distance = grabRadius.position.distance_to(i.position)
+		
+		if distance < closestDistance:
+			closestDistance = distance
+			object = i 
+	
+	heldItem = object
+	itemScript = heldItem as Item
 
 func let_go():
-	if not heldObject:
-		return
-		
-	print("Letting go of " + heldObject.name)
-	heldObject = null
-
-func throw():
-	if not heldObject:
+	if not heldItem:
 		return
 	
-	print("Throwing " + heldObject.name)
-	heldObject = null
+	itemScript.drop()
+	heldItem = null
+
+func throw():
+	if not heldItem:
+		return
+	
+	heldItem = null
