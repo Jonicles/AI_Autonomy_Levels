@@ -32,14 +32,14 @@ collision_mask = 2
 scale = Vector2(11.3417, 10.8675)
 shape = SubResource("CircleShape2D_31bu7")
 
-[node name="Top Marker" type="Node2D" parent="."]
+[node name="Top Marker" type="Marker2D" parent="."]
 position = Vector2(0, -88)
 
-[node name="Bottom Marker" type="Node2D" parent="."]
+[node name="Bottom Marker" type="Marker2D" parent="."]
 position = Vector2(0, 88)
 
-[node name="Left Marker" type="Node2D" parent="."]
+[node name="Left Marker" type="Marker2D" parent="."]
 position = Vector2(-88, 0)
 
-[node name="Right Marker" type="Node2D" parent="."]
+[node name="Right Marker" type="Marker2D" parent="."]
 position = Vector2(88, 0)

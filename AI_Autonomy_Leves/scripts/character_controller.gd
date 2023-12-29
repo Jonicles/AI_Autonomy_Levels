@@ -3,21 +3,31 @@ extends Node
 
 @export var body: CharacterBody2D
 @export var speed: int
+
 @onready var grabRadius: Area2D = %GrabRadius
+@onready var topMarker = $"../Top Marker"
+@onready var bottomMarker = $"../Bottom Marker"
+@onready var leftMarker = $"../Left Marker"
+@onready var rigthMarker = $"../Right Marker"
+@onready var currentMarker = $"../Bottom Marker"
 
 var currentDirection = Vector2.ZERO
 var heldItem: Area2D
 var itemScript: Item
 
-func move(direction: Vector2):
-	if direction == Vector2.UP:
+func change_direction(newDirection: Vector2):
+	if newDirection == Vector2.UP:
 		currentDirection = Vector2.UP
-	elif direction == Vector2.DOWN:
+		currentMarker = topMarker
+	elif newDirection == Vector2.DOWN:
 		currentDirection = Vector2.DOWN
-	elif direction == Vector2.LEFT:
+		currentMarker = bottomMarker
+	elif newDirection == Vector2.LEFT:
 		currentDirection = Vector2.LEFT
-	elif direction == Vector2.RIGHT:
+		currentMarker = leftMarker
+	elif newDirection == Vector2.RIGHT:
 		currentDirection = Vector2.RIGHT
+		currentMarker = rigthMarker
 	else :
 		currentDirection = Vector2.ZERO
 
@@ -27,7 +37,7 @@ func _physics_process(delta):
 	if not heldItem:
 		return
 	
-	heldItem.position = body.position
+	heldItem.position = body.position + currentMarker.position
 
 func grab():
 	if heldItem:

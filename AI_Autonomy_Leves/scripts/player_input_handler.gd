@@ -25,13 +25,13 @@ func _input(event):
 	)
 	
 	if isActionReleased and not hasInput:
-		controller.move(Vector2.ZERO)
+		controller.change_direction(Vector2.ZERO)
 	elif event.is_action_pressed("Player_Up"):
-		controller.move(Vector2.UP)
+		controller.change_direction(Vector2.UP)
 	elif event.is_action_pressed("Player_Down"):
-		controller.move(Vector2.DOWN)
+		controller.change_direction(Vector2.DOWN)
 	elif event.is_action_pressed("Player_Right"):
-		controller.move(Vector2.RIGHT)
+		controller.change_direction(Vector2.RIGHT)
 	elif event.is_action_pressed("Player_Left"):
-		controller.move(Vector2.LEFT)
+		controller.change_direction(Vector2.LEFT)
 		
