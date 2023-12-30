@@ -8,7 +8,7 @@ func _input(event):
 		controller.grab()
 	elif event.is_action_released("Player_Grab"):
 		controller.let_go()
-	
+		
 	#Handle throw
 	if event.is_action_pressed("Player_Throw"):
 		controller.throw()

@@ -1,5 +1,6 @@
 extends Item
 
+@export var cableColor := GlobalEnums.CableColor.RED
 var itemType := GlobalEnums.ItemType.CABLE
 
 #Overriden Drop func
@@ -9,9 +10,5 @@ func drop():
 	if not areas:
 		return
 	
-	var zone = areas[0] as DropZone
-	if zone.try_collect(itemType):
-		collect()
-
-func collect():
-	queue_free()
+	var zone = areas[0] as DropZoneCable
+	zone.try_drop_off(cableColor)

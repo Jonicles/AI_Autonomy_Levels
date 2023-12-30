@@ -10,8 +10,4 @@ func drop():
 		return
 	
 	var zone = areas[0] as DropZone
-	if zone.try_collect(itemType):
-		collect()
-
-func collect():
-	queue_free()
+	zone.try_drop_off(itemType)

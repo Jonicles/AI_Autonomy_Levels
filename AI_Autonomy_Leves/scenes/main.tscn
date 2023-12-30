@@ -1,38 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwmm2yxtyjm3n"]
+[gd_scene load_steps=4 format=3 uid="uid://cwmm2yxtyjm3n"]
 
 [ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/character.tscn" id="1_fio3m"]
-[ext_resource type="PackedScene" uid="uid://dvc4hnn7tfv3p" path="res://scenes/item_battery.tscn" id="3_0kymw"]
-[ext_resource type="PackedScene" uid="uid://cd33mqjjg5tog" path="res://scenes/drop_zone.tscn" id="4_0v62h"]
 [ext_resource type="PackedScene" uid="uid://rwshx017n0j7" path="res://scenes/item_cable_head.tscn" id="4_wpgso"]
-[ext_resource type="PackedScene" uid="uid://c1i8nxw54e7ls" path="res://scenes/item_money.tscn" id="5_p74tp"]
+[ext_resource type="PackedScene" uid="uid://d4f8sa208hp82" path="res://scenes/truck.tscn" id="6_wpfso"]
 
 [node name="Main" type="Node"]
 
-[node name="Character" parent="." instance=ExtResource("1_fio3m")]
-z_index = 1
-position = Vector2(375, 200)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Drop Zone Money" parent="." instance=ExtResource("4_0v62h")]
-position = Vector2(392, -96)
-acceptedItemType = 1
-
-[node name="Drop Zone Battery" parent="." instance=ExtResource("4_0v62h")]
-position = Vector2(-200, 104)
-
-[node name="Item" parent="." instance=ExtResource("3_0kymw")]
-position = Vector2(112, -40)
-
 [node name="Item2" parent="." instance=ExtResource("4_wpgso")]
-position = Vector2(-136, -80)
+position = Vector2(312, -24)
 
-[node name="Item3" parent="." instance=ExtResource("5_p74tp")]
-position = Vector2(64, 184)
+[node name="Character" parent="." instance=ExtResource("1_fio3m")]
+position = Vector2(336, 192)
 
-[node name="Item4" parent="." instance=ExtResource("5_p74tp")]
-position = Vector2(96, -192)
+[node name="Truck" parent="." instance=ExtResource("6_wpfso")]
+position = Vector2(-96, -216)
 
-[node name="Drop Zone Cable" parent="." instance=ExtResource("4_0v62h")]
-position = Vector2(-304, -96)
-acceptedItemType = 2
+[node name="Item3" parent="." instance=ExtResource("4_wpgso")]
+position = Vector2(176, -24)
+cableColor = 2
+
+[node name="Item4" parent="." instance=ExtResource("4_wpgso")]
+position = Vector2(432, -24)
+cableColor = 1

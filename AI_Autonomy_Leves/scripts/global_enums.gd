@@ -5,3 +5,9 @@ enum ItemType {
 	MONEY,
 	CABLE
 }
+
+enum CableColor {
+	RED,
+	GREEN,
+	BLUE
+}

@@ -5,18 +5,24 @@
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="3_6lnw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw0x0"]
-size = Vector2(128, 128)
+size = Vector2(362.308, 357.386)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_31bu7"]
+radius = 26.6206
 
 [node name="Character" type="CharacterBody2D"]
+scale = Vector2(0.132484, 0.134309)
 script = ExtResource("1_1rxll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.71641e-06, 1.77515e-06)
+scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_xw0x0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
+position = Vector2(1.53482e-06, -2.63027e-06)
+scale = Vector2(2.83053, 2.79208)
 texture = ExtResource("1_sw3v7")
 
 [node name="Controller" type="Node" parent="." node_paths=PackedStringArray("body")]
@@ -31,15 +37,3 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabRadius"]
 scale = Vector2(11.3417, 10.8675)
 shape = SubResource("CircleShape2D_31bu7")
-
-[node name="Top Marker" type="Node2D" parent="."]
-position = Vector2(0, -88)
-
-[node name="Bottom Marker" type="Node2D" parent="."]
-position = Vector2(0, 88)
-
-[node name="Left Marker" type="Node2D" parent="."]
-position = Vector2(-88, 0)
-
-[node name="Right Marker" type="Node2D" parent="."]
-position = Vector2(88, 0)
