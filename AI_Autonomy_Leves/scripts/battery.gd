@@ -1,6 +1,7 @@
 extends Item
 
 var itemType := GlobalEnums.ItemType.BATTERY
+@export var charges = 3
 
 #Overriden Drop func
 func drop():
@@ -9,5 +10,5 @@ func drop():
 	if not areas:
 		return
 	
-	var zone = areas[0] as DropZoneCable
+	var zone = areas[0] as DropZone
 	zone.try_drop_off(itemType)

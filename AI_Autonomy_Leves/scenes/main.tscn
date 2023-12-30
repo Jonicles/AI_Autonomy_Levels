@@ -1,15 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwmm2yxtyjm3n"]
+[gd_scene load_steps=6 format=3 uid="uid://cwmm2yxtyjm3n"]
 
 [ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/character.tscn" id="1_fio3m"]
-[ext_resource type="PackedScene" uid="uid://rwshx017n0j7" path="res://scenes/item_cable_head.tscn" id="4_wpgso"]
+[ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="3_yd3g7"]
+[ext_resource type="PackedScene" uid="uid://bxtt1lsfxoriw" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
+[ext_resource type="PackedScene" uid="uid://dn5mkbeygwo3i" path="res://scenes/battery_pylon_red.tscn" id="5_6u846"]
 [ext_resource type="PackedScene" uid="uid://d4f8sa208hp82" path="res://scenes/truck.tscn" id="6_wpfso"]
 
 [node name="Main" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Item2" parent="." instance=ExtResource("4_wpgso")]
-position = Vector2(312, -24)
 
 [node name="Character" parent="." instance=ExtResource("1_fio3m")]
 position = Vector2(336, 192)
@@ -17,10 +16,11 @@ position = Vector2(336, 192)
 [node name="Truck" parent="." instance=ExtResource("6_wpfso")]
 position = Vector2(-96, -216)
 
-[node name="Item3" parent="." instance=ExtResource("4_wpgso")]
-position = Vector2(176, -24)
-cableColor = 2
+[node name="StaticBody2D" parent="." instance=ExtResource("3_yd3g7")]
+position = Vector2(-432, 8)
 
-[node name="Item4" parent="." instance=ExtResource("4_wpgso")]
-position = Vector2(432, -24)
-cableColor = 1
+[node name="StaticBody2D2" parent="." instance=ExtResource("4_4k1gm")]
+position = Vector2(-80, 40)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("5_6u846")]
+position = Vector2(248, -72)

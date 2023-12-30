@@ -34,7 +34,7 @@ func _physics_process(delta):
 	if not heldItem:
 		return
 	
-	heldItem.position = body.position + itemDirection * Vector2(itemPixelsOffset, itemPixelsOffset)
+	heldItem.global_position = body.global_position + itemDirection * Vector2(itemPixelsOffset, itemPixelsOffset)
 
 func grab():
 	if heldItem:
@@ -49,12 +49,19 @@ func grab():
 	var object
 	
 	for i in objects:
-		var distance = grabRadius.position.distance_to(i.position)
+		var item = i as Item
 		
+		if not item.isGrabable:
+			continue
+		
+		var distance = grabRadius.position.distance_to(i.position)
 		if distance < closestDistance:
 			closestDistance = distance
 			object = i 
 	
+	if not object:
+		return
+		
 	heldItem = object
 	itemScript = heldItem as Item
 

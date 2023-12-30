@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn5mkbeygwo3i"]
+
+[ext_resource type="PackedScene" uid="uid://rwshx017n0j7" path="res://scenes/cable_head.tscn" id="1_gw5f2"]
+[ext_resource type="PackedScene" uid="uid://cd33mqjjg5tog" path="res://scenes/drop_zone.tscn" id="2_6dppa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78aac"]
+size = Vector2(32, 80)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_78aac")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 16.0
+offset_bottom = 40.0
+
+[node name="Item" parent="." instance=ExtResource("1_gw5f2")]
+position = Vector2(32, 0)
+
+[node name="Item2" parent="." instance=ExtResource("1_gw5f2")]
+position = Vector2(-32, 0)
+
+[node name="Drop Zone" parent="." instance=ExtResource("2_6dppa")]
