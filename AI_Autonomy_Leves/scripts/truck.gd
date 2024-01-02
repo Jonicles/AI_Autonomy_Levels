@@ -6,24 +6,23 @@ class_name Truck
 @onready var timer: Timer = $Timer
 
 var cableDictionary: Dictionary = {}
-var connectedCables: Array[Item] = []
+var connectedCables: Array[CableHead] = []
 
 func _ready():
 	randomize_initial_cables()
 
-func try_connect_cable(cableColor, cableHeadNode):
+func try_connect_cable(cableColor, cableHead):
 	if not cableDictionary.has(cableColor):
 		return false
 	
 	if cableDictionary[cableColor] == true:
 		return false
 	
-	connect_cable(cableColor, cableHeadNode)
+	connect_cable(cableColor, cableHead)
 	return true
 	
-func connect_cable(cableColor, cableHeadNode: Area2D):
-	var cableHead = cableHeadNode as Item
-	cableHead.make_ungrabable()
+func connect_cable(cableColor, cableHead: CableHead):
+	cableHead.connect_head()
 	
 	cableDictionary[cableColor] = true
 	connectedCables.append(cableHead)
@@ -41,7 +40,7 @@ func complete_visit():
 
 func disconnect_cables():
 	for i in connectedCables:
-		i.make_grabable()
+		i.disconnect_head()
 	
 	connectedCables.clear()
 

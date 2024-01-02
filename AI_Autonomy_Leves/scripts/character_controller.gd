@@ -9,8 +9,8 @@ extends Node
 
 var currentDirection = Vector2.ZERO
 var itemDirection = Vector2.DOWN
-var heldItem: Area2D
-var itemScript: Item
+var itemNode: Area2D
+var heldItem: Item
 
 func change_direction(newDirection: Vector2):
 	if newDirection == Vector2.UP:
@@ -34,7 +34,7 @@ func _physics_process(delta):
 	if not heldItem:
 		return
 	
-	heldItem.global_position = body.global_position + itemDirection * Vector2(itemPixelsOffset, itemPixelsOffset)
+	itemNode.global_position = body.global_position + itemDirection * Vector2(itemPixelsOffset, itemPixelsOffset)
 
 func grab():
 	if heldItem:
@@ -62,18 +62,21 @@ func grab():
 	if not object:
 		return
 		
-	heldItem = object
-	itemScript = heldItem as Item
+	itemNode = object
+	heldItem = itemNode as Item
+	heldItem.grab()
 
 func let_go():
 	if not heldItem:
 		return
 	
-	itemScript.drop()
+	heldItem.drop()
+	itemNode = null
 	heldItem = null
 
 func throw():
 	if not heldItem:
 		return
 	
+	itemNode = null
 	heldItem = null

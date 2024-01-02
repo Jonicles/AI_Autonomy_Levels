@@ -1,28 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://0683lxoa003i"]
+[gd_scene load_steps=5 format=3 uid="uid://0683lxoa003i"]
 
 [ext_resource type="PackedScene" uid="uid://rwshx017n0j7" path="res://scenes/cable_head.tscn" id="1_oymn1"]
+[ext_resource type="Script" path="res://scripts/battery_pylon.gd" id="1_s0v16"]
 [ext_resource type="PackedScene" uid="uid://cd33mqjjg5tog" path="res://scenes/drop_zone.tscn" id="2_iwhos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78aac"]
 size = Vector2(32, 80)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_s0v16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_78aac")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
 offset_left = -16.0
 offset_top = -40.0
 offset_right = 16.0
 offset_bottom = 40.0
+color = Color(0, 0, 1, 1)
 
-[node name="Item" parent="." instance=ExtResource("1_oymn1")]
-position = Vector2(32, 0)
-cableColor = 2
-
-[node name="Item2" parent="." instance=ExtResource("1_oymn1")]
+[node name="CableLeft" parent="." instance=ExtResource("1_oymn1")]
 position = Vector2(-32, 0)
 cableColor = 2
 
-[node name="Drop Zone" parent="." instance=ExtResource("2_iwhos")]
+[node name="CableRight" parent="." instance=ExtResource("1_oymn1")]
+position = Vector2(32, 0)
+cableColor = 2
+
+[node name="DropZone" parent="." instance=ExtResource("2_iwhos")]
+
+[connection signal="cable_connect" from="CableLeft" to="." method="_on_cable_left_cable_connect"]
+[connection signal="cable_disconnect" from="CableLeft" to="." method="_on_cable_left_cable_disconnect"]
+[connection signal="cable_connect" from="CableRight" to="." method="_on_cable_right_cable_connect"]
+[connection signal="cable_disconnect" from="CableRight" to="." method="_on_cable_right_cable_disconnect"]
+[connection signal="item_dropped" from="DropZone" to="." method="_on_drop_zone_item_dropped"]

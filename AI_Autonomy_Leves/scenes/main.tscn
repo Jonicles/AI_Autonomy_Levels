@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwmm2yxtyjm3n"]
+[gd_scene load_steps=7 format=3 uid="uid://cwmm2yxtyjm3n"]
 
 [ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/character.tscn" id="1_fio3m"]
 [ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="3_yd3g7"]
-[ext_resource type="PackedScene" uid="uid://bxtt1lsfxoriw" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
-[ext_resource type="PackedScene" uid="uid://dn5mkbeygwo3i" path="res://scenes/battery_pylon_red.tscn" id="5_6u846"]
+[ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
+[ext_resource type="PackedScene" uid="uid://dvc4hnn7tfv3p" path="res://scenes/battery.tscn" id="4_xw44x"]
+[ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="5_6u846"]
 [ext_resource type="PackedScene" uid="uid://d4f8sa208hp82" path="res://scenes/truck.tscn" id="6_wpfso"]
 
 [node name="Main" type="Node"]
@@ -17,10 +18,28 @@ position = Vector2(336, 192)
 position = Vector2(-96, -216)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_yd3g7")]
-position = Vector2(-432, 8)
+position = Vector2(-168, 56)
+
+[node name="Battery" parent="." instance=ExtResource("4_xw44x")]
+position = Vector2(120, -72)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_4k1gm")]
-position = Vector2(-80, 40)
+position = Vector2(-416, 0)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("5_6u846")]
-position = Vector2(248, -72)
+position = Vector2(72, 72)
+
+[node name="Truck2" parent="." instance=ExtResource("6_wpfso")]
+position = Vector2(264, -40)
+
+[node name="Battery2" parent="." instance=ExtResource("4_xw44x")]
+position = Vector2(104, -168)
+
+[node name="Battery3" parent="." instance=ExtResource("4_xw44x")]
+position = Vector2(-96, -112)
+
+[node name="Truck3" parent="." instance=ExtResource("6_wpfso")]
+position = Vector2(-368, 208)
+
+[node name="Truck4" parent="." instance=ExtResource("6_wpfso")]
+position = Vector2(-392, -192)

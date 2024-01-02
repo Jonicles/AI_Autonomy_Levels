@@ -20,9 +20,11 @@ offset_bottom = 72.0
 
 [node name="Drop Zone" parent="." instance=ExtResource("2_4l1eq")]
 position = Vector2(64, 0)
+acceptedItemType = 2
 
 [node name="Drop Zone2" parent="." instance=ExtResource("2_4l1eq")]
 position = Vector2(-64, 0)
+acceptedItemType = 2
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

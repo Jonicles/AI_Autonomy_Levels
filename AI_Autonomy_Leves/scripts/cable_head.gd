@@ -1,30 +1,37 @@
-extends Item
+class_name CableHead extends Item
 
 @export var cableColor := GlobalEnums.CableColor.RED
-@onready var cableHeadNode: Area2D = $"."
+@onready var cableHead: Item = $"."
+@onready var resetTimer: Timer = $Timer
 
-var startPosition: Vector2
+signal cable_connect
+signal cable_disconnect
+
 var itemType := GlobalEnums.ItemType.CABLE
-
-func _ready():
-	startPosition = global_position
 
 #Overriden Drop method
 func drop():
 	var areas: Array[Area2D] = get_overlapping_areas()
 	
 	if not areas:
+		resetTimer.start()
 		return
 	
 	var zone = areas[0] as DropZoneCable
-	zone.try_drop_off(cableColor, cableHeadNode)
+	if zone.try_drop_off(itemType, cableHead):
+		if not zone.try_connection(cableColor, cableHead):
+			resetTimer.start()
+	else:
+		resetTimer.start()
 
-func return_to_start():
-	global_position = startPosition
+func _on_timer_timeout():
+	resetTimer.stop()
+	disconnect_head()
 
-func make_ungrabable():
-	isGrabable = false
+func connect_head():
+	make_ungrabable()
+	cable_connect.emit()
 
-func make_grabable():
-	return_to_start()
-	isGrabable = true
+func disconnect_head():
+	make_grabable()
+	cable_disconnect.emit()

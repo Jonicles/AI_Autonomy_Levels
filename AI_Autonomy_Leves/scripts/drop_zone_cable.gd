@@ -1,18 +1,15 @@
-extends Area2D
-
-class_name DropZoneCable
+class_name DropZoneCable extends DropZone
 
 @onready var truck: Truck = $".."
 var charged: bool = false
 
-func try_drop_off(cableColor, cableHeadParentNode: Area2D):
+func try_connection(cableColor, cableHead: CableHead):
 	if charged:
 		return false
 		
-	if not truck.try_connect_cable(cableColor, cableHeadParentNode):
+	if not truck.try_connect_cable(cableColor, cableHead):
 		return false
 	
 	charged = true
-	cableHeadParentNode.global_position = global_position
+	cableHead.global_position = global_position
 	return true
-		

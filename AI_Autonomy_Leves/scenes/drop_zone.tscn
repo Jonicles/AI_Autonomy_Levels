@@ -15,6 +15,7 @@ scale = Vector2(5.8, 5.8)
 shape = SubResource("CircleShape2D_ieil3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -40.0
 offset_top = -40.0
 scale = Vector2(2, 1.99183)
