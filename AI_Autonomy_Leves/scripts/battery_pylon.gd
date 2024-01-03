@@ -39,9 +39,15 @@ func _on_drop_zone_item_dropped(newBattery):
 		
 func _on_cable_left_cable_connect():
 	currentBattery.use_charge()
+	
+	if currentBattery.charges == 0:
+		disable_cables()
 
 func _on_cable_right_cable_connect():
 	currentBattery.use_charge()
+	
+	if currentBattery.charges == 0:
+		disable_cables()
 
 func _on_cable_left_cable_disconnect():
 	if currentBattery and currentBattery.charges == 0:

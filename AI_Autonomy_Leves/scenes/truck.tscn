@@ -29,4 +29,20 @@ acceptedItemType = 2
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
+[node name="ColorRects" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ColorRects"]
+offset_left = -56.0
+offset_top = -56.0
+offset_right = -16.0
+offset_bottom = -16.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRects"]
+offset_left = 16.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = -16.0
+color = Color(0, 1, 0, 1)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

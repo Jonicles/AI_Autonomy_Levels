@@ -11,6 +11,8 @@ var itemType := GlobalEnums.ItemType.CABLE
 
 #Overriden Drop method
 func drop():
+	print("I AM: ")
+	print(cableColor)
 	var areas: Array[Area2D] = get_overlapping_areas()
 	
 	if not areas:

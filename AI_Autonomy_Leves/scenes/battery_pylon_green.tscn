@@ -23,11 +23,11 @@ color = Color(0, 1, 0, 1)
 
 [node name="CableLeft" parent="." instance=ExtResource("1_o3hcj")]
 position = Vector2(-32, 0)
-cableColor = 1
+cableColor = 2
 
 [node name="CableRight" parent="." instance=ExtResource("1_o3hcj")]
 position = Vector2(32, 0)
-cableColor = 1
+cableColor = 2
 
 [node name="DropZone" parent="." instance=ExtResource("2_p5qex")]
 

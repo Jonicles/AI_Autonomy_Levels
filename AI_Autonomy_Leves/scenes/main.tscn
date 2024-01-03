@@ -14,9 +14,6 @@
 [node name="Character" parent="." instance=ExtResource("1_fio3m")]
 position = Vector2(336, 192)
 
-[node name="Truck" parent="." instance=ExtResource("6_wpfso")]
-position = Vector2(-96, -216)
-
 [node name="StaticBody2D" parent="." instance=ExtResource("3_yd3g7")]
 position = Vector2(-168, 56)
 
@@ -29,17 +26,11 @@ position = Vector2(-416, 0)
 [node name="StaticBody2D3" parent="." instance=ExtResource("5_6u846")]
 position = Vector2(72, 72)
 
-[node name="Truck2" parent="." instance=ExtResource("6_wpfso")]
-position = Vector2(264, -40)
-
 [node name="Battery2" parent="." instance=ExtResource("4_xw44x")]
 position = Vector2(104, -168)
 
 [node name="Battery3" parent="." instance=ExtResource("4_xw44x")]
 position = Vector2(-96, -112)
 
-[node name="Truck3" parent="." instance=ExtResource("6_wpfso")]
-position = Vector2(-368, 208)
-
-[node name="Truck4" parent="." instance=ExtResource("6_wpfso")]
-position = Vector2(-392, -192)
+[node name="Truck" parent="." instance=ExtResource("6_wpfso")]
+position = Vector2(-288, -192)

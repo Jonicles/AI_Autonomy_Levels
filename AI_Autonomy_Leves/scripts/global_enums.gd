@@ -8,6 +8,6 @@ enum ItemType {
 
 enum CableColor {
 	RED,
+	BLUE,
 	GREEN,
-	BLUE
 }

@@ -4,11 +4,19 @@ class_name Truck
 
 @export var connectionAmount: int = 2
 @onready var timer: Timer = $Timer
+@onready var colorRectParent = $ColorRects
 
 var cableDictionary: Dictionary = {}
 var connectedCables: Array[CableHead] = []
+var colorRects: Array[Node] = []
+
+const COLOR_RED: Color = Color.RED
+const COLOR_BLUE: Color = Color.BLUE
+const COLOR_GREEN: Color = Color.GREEN
+
 
 func _ready():
+	colorRects = colorRectParent.get_children()
 	randomize_initial_cables()
 
 func try_connect_cable(cableColor, cableHead):
@@ -56,6 +64,40 @@ func randomize_initial_cables():
 		
 		cableDictionary[randomColor] = false
 		connectionsMade += 1
+	print("Dict:")	
+	print(cableDictionary)
+	update_display()
+	
+func update_display():
+	var iterations: int = 0
+	var keys: Array = cableDictionary.keys()
+	
+	print("Keys: " )
+	print(keys)
+	
+	while iterations < connectionAmount:
+		var currentRect = colorRects[iterations] as ColorRect
+		currentRect.color = get_color(keys[iterations])
+		iterations += 1
+
+func get_color(color):
+	print(color)
+	var tempColor
+	
+	# This reason for this implementation is because global enums is not
+	# Really a thing in godot, thats why we use integer values instead
+	
+	match color:
+		0:
+			tempColor = COLOR_RED
+		1:
+			tempColor = COLOR_BLUE
+		2:
+			tempColor = COLOR_GREEN
+		_:
+			tempColor = Color.BLACK
+
+	return tempColor
 
 func _on_timer_timeout():
 	complete_visit()
