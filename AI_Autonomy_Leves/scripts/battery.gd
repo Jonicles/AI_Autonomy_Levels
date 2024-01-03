@@ -5,6 +5,7 @@ class_name Battery extends Item
 @onready var label: Label = $Label
 
 signal grabbed_empty_battery
+signal grabbed_battery
 
 var itemType := GlobalEnums.ItemType.BATTERY
 
@@ -18,6 +19,8 @@ func drop():
 	zone.try_drop_off(itemType, battery)
 
 func grab():
+	grabbed_battery.emit()
+	
 	if charges == 0:
 		grabbed_empty_battery.emit()
 
@@ -26,10 +29,14 @@ func use_charge():
 		return
 		
 	charges -= 1
-	label.text = str(charges)
+	
+	update_display()
 	
 	if charges == 0:
 		empty_battery()
+
+func update_display():
+	label.text = str(charges)
 
 func empty_battery():
 	pass

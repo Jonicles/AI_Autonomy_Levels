@@ -64,16 +64,11 @@ func randomize_initial_cables():
 		
 		cableDictionary[randomColor] = false
 		connectionsMade += 1
-	print("Dict:")	
-	print(cableDictionary)
 	update_display()
 	
 func update_display():
 	var iterations: int = 0
 	var keys: Array = cableDictionary.keys()
-	
-	print("Keys: " )
-	print(keys)
 	
 	while iterations < connectionAmount:
 		var currentRect = colorRects[iterations] as ColorRect
@@ -81,7 +76,6 @@ func update_display():
 		iterations += 1
 
 func get_color(color):
-	print(color)
 	var tempColor
 	
 	# This reason for this implementation is because global enums is not
