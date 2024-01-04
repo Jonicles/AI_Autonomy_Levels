@@ -6,6 +6,7 @@ class_name Battery extends Item
 @onready var explosionTimer: Timer = $Timer
 
 signal grabbed_empty_battery
+signal no_charges_left
 
 var itemType := GlobalEnums.ItemType.BATTERY
 
@@ -42,7 +43,7 @@ func update_display():
 	label.text = str(charges)
 
 func empty_battery():
-	pass
+	no_charges_left.emit()
 
 func explode():
 	queue_free()

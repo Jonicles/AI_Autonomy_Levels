@@ -34,9 +34,7 @@ func _on_timer_timeout():
 
 func connect_head():
 	resetTimer.stop()	
-	make_ungrabable()
 	cable_connect.emit()
 
 func disconnect_head():
-	make_grabable()
 	cable_disconnect.emit()
