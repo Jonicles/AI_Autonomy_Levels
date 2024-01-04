@@ -10,6 +10,6 @@ func try_connection(cableColor, cableHead: CableHead):
 	if not truck.try_connect_cable(cableColor, cableHead):
 		return false
 	
-	charged = true
 	cableHead.global_position = global_position
+	charged = true
 	return true

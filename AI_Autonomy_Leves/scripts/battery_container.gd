@@ -1,11 +1,13 @@
-class_name ItemContainer extends DropZone
-
-var containedItem: Item
+class_name BatteryContainer extends ItemContainer
 
 func try_drop_off(itemType, item):
 	if containedItem or itemType != acceptedItemType:
 		return false
-	
+		
+	var battery = item as Battery
+	if battery.charges == 0:
+		return false
+		
 	containedItem = item
 	item_dropped.emit(item)
 	return true

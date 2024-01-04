@@ -25,6 +25,7 @@ func insert_battery(newBattery: Battery):
 	currentBattery.make_ungrabable()
 	cableHeadLeft.make_grabable()
 	cableHeadRight.make_grabable()
+	
 	currentBattery.grabbed_empty_battery.connect(remove_battery)
 	currentBattery.no_charges_left.connect(_on_empty_battery)
 	

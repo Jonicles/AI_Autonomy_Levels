@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/battery_pylon.gd" id="1_3nnlp"]
 [ext_resource type="PackedScene" uid="uid://rwshx017n0j7" path="res://scenes/cable_head.tscn" id="1_o3hcj"]
 [ext_resource type="PackedScene" uid="uid://cd33mqjjg5tog" path="res://scenes/drop_zone.tscn" id="2_p5qex"]
-[ext_resource type="Script" path="res://scripts/item_container.gd" id="4_xyt0r"]
+[ext_resource type="Script" path="res://scripts/battery_container.gd" id="4_ks1fv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78aac"]
 size = Vector2(32, 80)
@@ -31,7 +31,7 @@ position = Vector2(32, 0)
 cableColor = 2
 
 [node name="DropZone" parent="." instance=ExtResource("2_p5qex")]
-script = ExtResource("4_xyt0r")
+script = ExtResource("4_ks1fv")
 
 [connection signal="cable_connect" from="CableLeft" to="." method="_on_cable_left_cable_connect"]
 [connection signal="cable_disconnect" from="CableLeft" to="." method="_on_cable_left_cable_disconnect"]
