@@ -3,6 +3,7 @@ class_name Battery extends Item
 @export var charges = 3
 @onready var battery: Item = $"."
 @onready var label: Label = $Label
+@onready var explosionTimer: Timer = $Timer
 
 signal grabbed_empty_battery
 signal grabbed_battery
@@ -13,12 +14,15 @@ func drop():
 	var areas: Array[Area2D] = get_overlapping_areas()
 	
 	if not areas:
+		explosionTimer.start()
 		return
 	
 	var zone = areas[0] as DropZone
-	zone.try_drop_off(itemType, battery)
+	if not zone.try_drop_off(itemType, battery):
+		explosionTimer.start()
 
 func grab():
+	explosionTimer.stop()
 	grabbed_battery.emit()
 	
 	if charges == 0:
@@ -40,3 +44,11 @@ func update_display():
 
 func empty_battery():
 	pass
+
+func explode():
+	queue_free()
+
+func _on_timer_timeout():
+	explode()
+	make_ungrabable()
+	explosionTimer.stop()

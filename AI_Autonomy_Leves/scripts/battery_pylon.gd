@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var cableHeadLeft: Item =  $CableLeft
 @onready var cableHeadRight: Item =  $CableRight
+@onready var batteryContainer: ItemContainer = $DropZone
 
 var startPositionLeft
 var startPositionRight
@@ -27,6 +28,7 @@ func insert_battery(newBattery: Battery):
 
 func remove_battery():
 	if currentBattery:
+		batteryContainer.remove_contained_item()
 		currentBattery = null
 
 func disable_cables():

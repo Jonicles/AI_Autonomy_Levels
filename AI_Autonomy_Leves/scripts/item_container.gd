@@ -11,4 +11,4 @@ func try_drop_off(itemType, item):
 		return false
 
 func remove_contained_item():
-	pass
+	containedItem = null

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfx3aprhi0tuj"]
+[gd_scene load_steps=6 format=3 uid="uid://cfx3aprhi0tuj"]
 
 [ext_resource type="PackedScene" uid="uid://rwshx017n0j7" path="res://scenes/cable_head.tscn" id="1_gw5f2"]
 [ext_resource type="Script" path="res://scripts/battery_pylon.gd" id="1_qc5es"]
 [ext_resource type="PackedScene" uid="uid://cd33mqjjg5tog" path="res://scenes/drop_zone.tscn" id="2_6dppa"]
+[ext_resource type="Script" path="res://scripts/item_container.gd" id="4_npr4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78aac"]
 size = Vector2(32, 80)
@@ -28,6 +29,7 @@ position = Vector2(-32, 0)
 position = Vector2(32, 0)
 
 [node name="DropZone" parent="." instance=ExtResource("2_6dppa")]
+script = ExtResource("4_npr4p")
 
 [connection signal="cable_connect" from="CableLeft" to="." method="_on_cable_left_cable_connect"]
 [connection signal="cable_disconnect" from="CableLeft" to="." method="_on_cable_left_cable_disconnect"]
