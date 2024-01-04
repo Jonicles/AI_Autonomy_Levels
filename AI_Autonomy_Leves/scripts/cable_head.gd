@@ -23,12 +23,17 @@ func drop():
 			resetTimer.start()
 	else:
 		resetTimer.start()
+		
+func grab():
+	grabbed_item.emit()
+	resetTimer.stop()
 
 func _on_timer_timeout():
 	resetTimer.stop()
 	disconnect_head()
 
 func connect_head():
+	resetTimer.stop()	
 	make_ungrabable()
 	cable_connect.emit()
 

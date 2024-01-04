@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck6u12ti6ykog"]
+
+[ext_resource type="Script" path="res://scripts/truck.gd" id="1_njx2h"]
+[ext_resource type="PackedScene" uid="uid://d4mfonkgr7rlx" path="res://scenes/drop_zone_cable.tscn" id="2_gu6nw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58sr3"]
+size = Vector2(144, 144)
+
+[node name="Truck" type="StaticBody2D"]
+script = ExtResource("1_njx2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_58sr3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -72.0
+offset_top = -72.0
+offset_right = 72.0
+offset_bottom = 72.0
+
+[node name="Drop Zone" parent="." instance=ExtResource("2_gu6nw")]
+position = Vector2(64, 0)
+acceptedItemType = 2
+
+[node name="Drop Zone2" parent="." instance=ExtResource("2_gu6nw")]
+position = Vector2(0, -64)
+acceptedItemType = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="ColorRects" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ColorRects"]
+offset_left = -56.0
+offset_top = -56.0
+offset_right = -16.0
+offset_bottom = -16.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRects"]
+offset_left = 16.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = -16.0
+color = Color(0, 1, 0, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

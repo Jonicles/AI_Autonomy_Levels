@@ -6,7 +6,6 @@ class_name Battery extends Item
 @onready var explosionTimer: Timer = $Timer
 
 signal grabbed_empty_battery
-signal grabbed_battery
 
 var itemType := GlobalEnums.ItemType.BATTERY
 
@@ -23,7 +22,7 @@ func drop():
 
 func grab():
 	explosionTimer.stop()
-	grabbed_battery.emit()
+	grabbed_item.emit()
 	
 	if charges == 0:
 		grabbed_empty_battery.emit()

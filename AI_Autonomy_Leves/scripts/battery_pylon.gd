@@ -25,9 +25,11 @@ func insert_battery(newBattery: Battery):
 	currentBattery.make_ungrabable()
 	cableHeadLeft.make_grabable()
 	cableHeadRight.make_grabable()
-
+	currentBattery.grabbed_item.connect(remove_battery)
+	
 func remove_battery():
 	if currentBattery:
+		currentBattery.grabbed_item.disconnect(remove_battery)
 		batteryContainer.remove_contained_item()
 		currentBattery = null
 
@@ -54,7 +56,6 @@ func _on_cable_right_cable_connect():
 func _on_cable_left_cable_disconnect():
 	if currentBattery and currentBattery.charges == 0:
 		currentBattery.make_grabable()
-		remove_battery()
 		disable_cables()
 	elif not currentBattery:
 		disable_cables()
@@ -64,7 +65,6 @@ func _on_cable_left_cable_disconnect():
 func _on_cable_right_cable_disconnect():
 	if currentBattery and currentBattery.charges == 0:
 		currentBattery.make_grabable()
-		remove_battery()
 		disable_cables()
 	elif not currentBattery:
 		disable_cables()

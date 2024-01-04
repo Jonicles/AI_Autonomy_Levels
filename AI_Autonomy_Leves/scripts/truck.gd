@@ -6,6 +6,8 @@ class_name Truck
 @onready var timer: Timer = $Timer
 @onready var colorRectParent = $ColorRects
 
+signal charge_complete
+
 var cableDictionary: Dictionary = {}
 var connectedCables: Array[CableHead] = []
 var colorRects: Array[Node] = []
@@ -44,7 +46,7 @@ func check_if_fully_connected():
 
 func complete_visit():
 	disconnect_cables()
-	queue_free()
+	charge_complete.emit()
 
 func disconnect_cables():
 	for i in connectedCables:

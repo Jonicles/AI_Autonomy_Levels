@@ -1,25 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwmm2yxtyjm3n"]
+[gd_scene load_steps=8 format=3 uid="uid://cwmm2yxtyjm3n"]
 
 [ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/character.tscn" id="1_fio3m"]
 [ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="3_yd3g7"]
 [ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
 [ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="5_6u846"]
 [ext_resource type="PackedScene" uid="uid://c1lnltaqpdl35" path="res://scenes/battery_factory.tscn" id="5_6yxt4"]
+[ext_resource type="PackedScene" uid="uid://cpahgnvl0ey4a" path="res://scenes/truck_spawner.tscn" id="6_bap8c"]
+[ext_resource type="PackedScene" uid="uid://84ug5q6mk10k" path="res://scenes/spawn_point.tscn" id="7_i53ye"]
 
 [node name="Main" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
 
 [node name="Character" parent="." instance=ExtResource("1_fio3m")]
-position = Vector2(336, 192)
+position = Vector2(160, 240)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_yd3g7")]
-position = Vector2(320, 0)
+position = Vector2(120, -120)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_4k1gm")]
-position = Vector2(-320, 0)
+position = Vector2(-128, -120)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("5_6u846")]
+position = Vector2(0, 120)
 
 [node name="BatteryFactory" parent="." instance=ExtResource("5_6yxt4")]
 position = Vector2(-384, -184)
+
+[node name="TruckSpawner" parent="." instance=ExtResource("6_bap8c")]
+
+[node name="SpawnPoints" type="Node" parent="TruckSpawner"]
+
+[node name="SpawnPoint2" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+position = Vector2(360, 24)
+
+[node name="SpawnPoint" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+position = Vector2(-416, 56)
+
+[node name="SpawnPoint3" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+position = Vector2(8, -296)
