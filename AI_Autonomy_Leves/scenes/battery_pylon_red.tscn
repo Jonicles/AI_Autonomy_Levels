@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/battery_container.gd" id="4_6fw3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78aac"]
-size = Vector2(32, 80)
+size = Vector2(48, 96)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_qc5es")
@@ -16,17 +16,17 @@ shape = SubResource("RectangleShape2D_78aac")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = -16.0
-offset_top = -40.0
-offset_right = 16.0
-offset_bottom = 40.0
+offset_left = -24.0
+offset_top = -48.0
+offset_right = 24.0
+offset_bottom = 48.0
 color = Color(1, 0, 0, 1)
 
 [node name="CableLeft" parent="." instance=ExtResource("1_gw5f2")]
-position = Vector2(-32, 0)
+position = Vector2(-48, 0)
 
 [node name="CableRight" parent="." instance=ExtResource("1_gw5f2")]
-position = Vector2(32, 0)
+position = Vector2(48, 0)
 
 [node name="DropZone" parent="." instance=ExtResource("2_6dppa")]
 script = ExtResource("4_6fw3v")

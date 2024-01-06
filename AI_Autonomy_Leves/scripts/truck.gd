@@ -15,6 +15,7 @@ var colorRects: Array[Node] = []
 const COLOR_RED: Color = Color.RED
 const COLOR_BLUE: Color = Color.BLUE
 const COLOR_GREEN: Color = Color.GREEN
+const COLOR_PURPLE: Color = Color.PURPLE
 
 
 func _ready():
@@ -90,6 +91,8 @@ func get_color(color):
 			tempColor = COLOR_BLUE
 		2:
 			tempColor = COLOR_GREEN
+		3:
+			tempColor = COLOR_PURPLE
 		_:
 			tempColor = Color.BLACK
 

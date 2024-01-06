@@ -12,35 +12,3390 @@
 [node name="Main" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.7, 0.7)
 
 [node name="Character" parent="." instance=ExtResource("1_fio3m")]
-position = Vector2(160, 240)
+position = Vector2(0, 96)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_yd3g7")]
-position = Vector2(120, -120)
+position = Vector2(216, -168)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_4k1gm")]
-position = Vector2(-128, -120)
+position = Vector2(-216, -168)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("5_6u846")]
-position = Vector2(0, 120)
+position = Vector2(0, 216)
 
 [node name="BatteryFactory" parent="." instance=ExtResource("5_6yxt4")]
-position = Vector2(-384, -184)
+position = Vector2(-576, 0)
 
 [node name="TruckSpawner" parent="." instance=ExtResource("6_bap8c")]
 
 [node name="SpawnPoints" type="Node" parent="TruckSpawner"]
 
 [node name="SpawnPoint2" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
-position = Vector2(360, 24)
-
-[node name="SpawnPoint" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
-position = Vector2(-416, 56)
+position = Vector2(312, 192)
 
 [node name="SpawnPoint3" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
-position = Vector2(8, -296)
+position = Vector2(-312, 192)
+
+[node name="SpawnPoint4" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+position = Vector2(0, -312)
+
+[node name="SpawnPoint5" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+position = Vector2(-504, -192)
+
+[node name="SpawnPoint6" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+position = Vector2(504, -192)
 
 [node name="BatteryDropZone" parent="." instance=ExtResource("8_pll5h")]
-position = Vector2(288, -96)
+position = Vector2(576, 0)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Node"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D2" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(192, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D2"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D3" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-192, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D3"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D4" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(0, -192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D4"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D5" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(192, -192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D5"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D6" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-192, -192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D6"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D7" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(0, 192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D7"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D8" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(192, 192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D8"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D9" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-192, 192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D9"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D10" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(0, 384)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D10"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D10"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D10"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D10"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D10"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D10"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D10"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D10"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D11" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(192, 384)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D11"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D11"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D11"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D11"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D11"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D11"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D11"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D11"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D12" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-192, 384)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D12"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D12"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D12"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D12"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D12"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D12"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D12"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D12"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D13" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(0, -384)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D13"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D13"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D13"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D13"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D13"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D13"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D13"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D13"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D14" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(192, -384)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D14"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D14"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D14"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D14"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D14"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D14"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D14"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D14"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D15" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-192, -384)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D15"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D15"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D15"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D15"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D15"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D15"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D15"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D15"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D16" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(576, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D16"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D18" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(384, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D18"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D19" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(576, -192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D19"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D21" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(384, -192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D21"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D22" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(576, 192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D22"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D24" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(384, 192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D24"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D25" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(576, 384)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D25"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D25"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D25"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D25"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D25"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D25"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D25"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D25"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D27" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(384, 384)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D27"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D27"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D27"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D27"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D27"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D27"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D27"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D27"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D28" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(576, -384)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D28"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D28"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D28"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D28"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D28"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D28"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D28"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D28"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D30" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(384, -384)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D30"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D30"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D30"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D30"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D30"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D30"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D30"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D30"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D31" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-576, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D31"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D32" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-384, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D32"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D34" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-576, -192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D34"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D35" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-384, -192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D35"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D37" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-576, 192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D37"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D38" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-384, 192)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D38"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D40" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-576, 384)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D40"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D40"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D40"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D40"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D40"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D40"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D40"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D40"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D41" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-384, 384)
+
+[node name="ColorRect" type="ColorRect" parent="Node/Node2D41"]
+z_index = -4
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect2" type="ColorRect" parent="Node/Node2D41"]
+z_index = -4
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect3" type="ColorRect" parent="Node/Node2D41"]
+z_index = -4
+offset_left = -48.0
+offset_top = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect4" type="ColorRect" parent="Node/Node2D41"]
+z_index = -4
+offset_left = -48.0
+offset_top = -96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect5" type="ColorRect" parent="Node/Node2D41"]
+z_index = -4
+offset_top = -48.0
+offset_right = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect6" type="ColorRect" parent="Node/Node2D41"]
+z_index = -4
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect7" type="ColorRect" parent="Node/Node2D41"]
+z_index = -4
+offset_left = 48.0
+offset_top = -48.0
+offset_right = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect8" type="ColorRect" parent="Node/Node2D41"]
+z_index = -4
+offset_left = 48.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="Node2D43" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-576, -384)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D43"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D43"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D43"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D43"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D43"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D43"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D43"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D43"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D44" type="Node2D" parent="Node"]
+visible = false
+position = Vector2(-384, -384)
+
+[node name="ColorRect9" type="ColorRect" parent="Node/Node2D44"]
+z_index = -4
+offset_left = -96.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect10" type="ColorRect" parent="Node/Node2D44"]
+z_index = -4
+offset_left = -96.0
+offset_right = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect11" type="ColorRect" parent="Node/Node2D44"]
+z_index = -4
+offset_left = -48.0
+offset_top = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect12" type="ColorRect" parent="Node/Node2D44"]
+z_index = -4
+offset_left = -48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect13" type="ColorRect" parent="Node/Node2D44"]
+z_index = -4
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect14" type="ColorRect" parent="Node/Node2D44"]
+z_index = -4
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect15" type="ColorRect" parent="Node/Node2D44"]
+z_index = -4
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="ColorRect16" type="ColorRect" parent="Node/Node2D44"]
+z_index = -4
+offset_left = 48.0
+offset_right = 96.0
+offset_bottom = 48.0
+color = Color(1, 1, 1, 0.184314)
