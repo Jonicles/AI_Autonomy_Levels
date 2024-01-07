@@ -39,13 +39,13 @@ func try_add_point():
 func add_cable_point(currentPoint, previousPoint):
 	var collisionShape = CollisionShape2D.new()
 	var segment = SegmentShape2D.new()
-	segment.a = previousPoint
-	segment.b = currentPoint
+	segment.a = previousPoint + Vector2(24, 0)
+	segment.b = currentPoint + Vector2(24, 0)
 	collisionShape.shape = segment
 	collisionShape.disabled = true
 	
 	staticBody.add_child(collisionShape)
-	add_point(cableHead.position + cableOffest)
+	add_point(cableHead.position)
 
 func start_electrification():
 	electricityTimer.start()

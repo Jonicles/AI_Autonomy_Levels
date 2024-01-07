@@ -78,5 +78,6 @@ func throw():
 	if not heldItem:
 		return
 	
+	heldItem.throw(itemDirection)
 	itemNode = null
 	heldItem = null

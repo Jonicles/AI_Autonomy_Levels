@@ -13,11 +13,11 @@ var itemType := GlobalEnums.ItemType.BATTERY
 func drop():
 	make_grabable()
 	var areas: Array[Area2D] = get_overlapping_areas()
-	
+
 	if not areas:
 		explosionTimer.start()
 		return
-	
+
 	var zone = areas[0] as DropZone
 	if not zone.try_drop_off(itemType, battery):
 		explosionTimer.start()
