@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwmm2yxtyjm3n"]
+[gd_scene load_steps=10 format=3 uid="uid://cwmm2yxtyjm3n"]
 
-[ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/character.tscn" id="1_fio3m"]
+[ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/player.tscn" id="1_fio3m"]
 [ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="3_yd3g7"]
 [ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
 [ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="5_6u846"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpahgnvl0ey4a" path="res://scenes/truck_spawner.tscn" id="6_bap8c"]
 [ext_resource type="PackedScene" uid="uid://84ug5q6mk10k" path="res://scenes/spawn_point.tscn" id="7_i53ye"]
 [ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="8_pll5h"]
+[ext_resource type="PackedScene" uid="uid://bois5ivk4a1m" path="res://scenes/player2.tscn" id="9_8jqpk"]
 
 [node name="Main" type="Node"]
 
@@ -3399,3 +3400,6 @@ offset_left = 48.0
 offset_right = 96.0
 offset_bottom = 48.0
 color = Color(1, 1, 1, 0.184314)
+
+[node name="Character2" parent="." instance=ExtResource("9_8jqpk")]
+position = Vector2(240, 168)
