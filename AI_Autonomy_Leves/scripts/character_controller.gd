@@ -29,7 +29,7 @@ func change_direction(newDirection: Vector2):
 		currentDirection = Vector2.ZERO
 
 func _physics_process(delta):
-	body.move_and_collide(currentDirection * delta * speed)
+	body.move_and_collide(currentDirection * speed * delta )
 	
 	if not heldItem:
 		return

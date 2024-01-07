@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://wxjmgwnibuki"]
+[gd_scene load_steps=7 format=3 uid="uid://wxjmgwnibuki"]
 
 [ext_resource type="Script" path="res://scripts/battery_pylon.gd" id="1_3nnlp"]
 [ext_resource type="PackedScene" uid="uid://rwshx017n0j7" path="res://scenes/cable_head.tscn" id="1_o3hcj"]
 [ext_resource type="PackedScene" uid="uid://cd33mqjjg5tog" path="res://scenes/drop_zone.tscn" id="2_p5qex"]
 [ext_resource type="Script" path="res://scripts/battery_container.gd" id="4_ks1fv"]
+[ext_resource type="PackedScene" uid="uid://dymn883yuitd8" path="res://scenes/cable_line.tscn" id="5_oplv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78aac"]
 size = Vector2(48, 96)
@@ -22,16 +23,32 @@ offset_right = 24.0
 offset_bottom = 48.0
 color = Color(0, 1, 0, 1)
 
-[node name="CableLeft" parent="." instance=ExtResource("1_o3hcj")]
+[node name="CableLeft" parent="." node_paths=PackedStringArray("cableLine") instance=ExtResource("1_o3hcj")]
 position = Vector2(-48, 0)
 cableColor = 2
+cableLine = NodePath("../CableLineLeft")
 
-[node name="CableRight" parent="." instance=ExtResource("1_o3hcj")]
+[node name="CableRight" parent="." node_paths=PackedStringArray("cableLine") instance=ExtResource("1_o3hcj")]
 position = Vector2(48, 0)
 cableColor = 2
+cableLine = NodePath("../CableLineRight")
 
 [node name="DropZone" parent="." instance=ExtResource("2_p5qex")]
 script = ExtResource("4_ks1fv")
+
+[node name="CableLineLeft" parent="." node_paths=PackedStringArray("cableHead") instance=ExtResource("5_oplv6")]
+position = Vector2(-24, 0)
+default_color = Color(0, 1, 0, 1)
+cableHead = NodePath("../CableLeft")
+cableOffest = Vector2(24, 0)
+color = Color(0, 1, 0, 1)
+
+[node name="CableLineRight" parent="." node_paths=PackedStringArray("cableHead") instance=ExtResource("5_oplv6")]
+position = Vector2(24, 0)
+default_color = Color(0, 1, 0, 1)
+cableHead = NodePath("../CableRight")
+cableOffest = Vector2(-24, 0)
+color = Color(0, 1, 0, 1)
 
 [connection signal="cable_connect" from="CableLeft" to="." method="_on_cable_left_cable_connect"]
 [connection signal="cable_disconnect" from="CableLeft" to="." method="_on_cable_left_cable_disconnect"]

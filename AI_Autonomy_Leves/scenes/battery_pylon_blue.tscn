@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/battery_pylon.gd" id="1_s0v16"]
 [ext_resource type="PackedScene" uid="uid://cd33mqjjg5tog" path="res://scenes/drop_zone.tscn" id="2_iwhos"]
 [ext_resource type="Script" path="res://scripts/battery_container.gd" id="4_cos03"]
-[ext_resource type="Script" path="res://scripts/cable_line.gd" id="5_vvvfd"]
+[ext_resource type="PackedScene" uid="uid://dymn883yuitd8" path="res://scenes/cable_line.tscn" id="5_1ryb4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78aac"]
 size = Vector2(48, 96)
@@ -23,26 +23,33 @@ offset_right = 24.0
 offset_bottom = 48.0
 color = Color(0, 0, 1, 1)
 
-[node name="CableLeft" parent="." instance=ExtResource("1_oymn1")]
+[node name="CableLeft" parent="." node_paths=PackedStringArray("cableLine") instance=ExtResource("1_oymn1")]
 position = Vector2(-48, 0)
 cableColor = 1
+cableLine = NodePath("../CableLineLeft")
 
-[node name="CableRight" parent="." instance=ExtResource("1_oymn1")]
+[node name="CableRight" parent="." node_paths=PackedStringArray("cableLine") instance=ExtResource("1_oymn1")]
 position = Vector2(48, 0)
 cableColor = 1
+cableLine = NodePath("../CableLineRight")
 
 [node name="DropZone" parent="." instance=ExtResource("2_iwhos")]
 script = ExtResource("4_cos03")
 
-[node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("cableHead")]
-z_index = -1
+[node name="CableLineLeft" parent="." node_paths=PackedStringArray("cableHead") instance=ExtResource("5_1ryb4")]
 position = Vector2(-24, 0)
-script = ExtResource("5_vvvfd")
+default_color = Color(0, 0, 1, 1)
 cableHead = NodePath("../CableLeft")
+cableOffest = Vector2(24, 0)
+
+[node name="CableLineRight" parent="." node_paths=PackedStringArray("cableHead") instance=ExtResource("5_1ryb4")]
+position = Vector2(24, 0)
+default_color = Color(0, 0, 1, 1)
+cableHead = NodePath("../CableRight")
+cableOffest = Vector2(-24, 0)
 
 [connection signal="cable_connect" from="CableLeft" to="." method="_on_cable_left_cable_connect"]
 [connection signal="cable_disconnect" from="CableLeft" to="." method="_on_cable_left_cable_disconnect"]
-[connection signal="cable_disconnect" from="CableLeft" to="Line2D" method="_on_cable_left_cable_disconnect"]
 [connection signal="cable_connect" from="CableRight" to="." method="_on_cable_right_cable_connect"]
 [connection signal="cable_disconnect" from="CableRight" to="." method="_on_cable_right_cable_disconnect"]
 [connection signal="item_dropped" from="DropZone" to="." method="_on_drop_zone_item_dropped"]

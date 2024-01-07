@@ -1,6 +1,8 @@
 class_name CableHead extends Item
 
 @export var cableColor := GlobalEnums.CableColor.RED
+@export var cableLine: CableLine
+
 @onready var cableHead: Item = $"."
 @onready var resetTimer: Timer = $Timer
 
@@ -35,6 +37,8 @@ func _on_timer_timeout():
 func connect_head():
 	resetTimer.stop()	
 	cable_connect.emit()
+	cableLine.start_electrification()
 
 func disconnect_head():
+	cableLine.reset_cable()
 	cable_disconnect.emit()
