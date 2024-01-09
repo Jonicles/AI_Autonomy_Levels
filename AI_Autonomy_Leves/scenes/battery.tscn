@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvc4hnn7tfv3p"]
+[gd_scene load_steps=4 format=3 uid="uid://dvc4hnn7tfv3p"]
 
 [ext_resource type="Script" path="res://scripts/battery.gd" id="1_5h5ap"]
+[ext_resource type="Texture2D" uid="uid://bsl0twcmolg2y" path="res://sprites/Battery_3.png" id="2_qpkmt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2rdl1"]
 radius = 40.0
@@ -14,6 +15,7 @@ script = ExtResource("1_5h5ap")
 shape = SubResource("CircleShape2D_2rdl1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -24.0
 offset_top = -24.0
 offset_right = 36.0
@@ -33,5 +35,8 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
 one_shot = true
+
+[node name="Battery3" type="Sprite2D" parent="."]
+texture = ExtResource("2_qpkmt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

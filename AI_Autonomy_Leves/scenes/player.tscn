@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://wf4853ft3vyo"]
 
 [ext_resource type="Script" path="res://scripts/player_input_handler.gd" id="1_1rxll"]
-[ext_resource type="Texture2D" uid="uid://ccoes5w8nabxo" path="res://sprites/icon.svg" id="1_sw3v7"]
+[ext_resource type="Texture2D" uid="uid://ctyg5ew3acejf" path="res://sprites/Player.png" id="2_3r1xw"]
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="3_6lnw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw0x0"]
@@ -19,19 +19,19 @@ position = Vector2(3.71641e-06, 1.77515e-06)
 scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_xw0x0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1.53482e-06, -2.63027e-06)
-scale = Vector2(2.83053, 2.79208)
-texture = ExtResource("1_sw3v7")
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(-4.57764e-05, 0)
+scale = Vector2(7.54808, 7.44552)
+texture = ExtResource("2_3r1xw")
 
 [node name="Controller" type="Node" parent="." node_paths=PackedStringArray("body")]
 script = ExtResource("3_6lnw4")
 body = NodePath("..")
-speed = 450
+speed = 350
 
 [node name="GrabRadius" type="Area2D" parent="."]
 unique_name_in_owner = true
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabRadius"]

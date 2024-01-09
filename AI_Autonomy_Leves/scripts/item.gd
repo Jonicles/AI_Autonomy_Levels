@@ -1,6 +1,6 @@
 class_name Item extends Area2D
 
-const THROWING_DISTANCE: int = 200
+const THROWING_DISTANCE: int = 100
 
 var isGrabable: bool = true
 
@@ -33,7 +33,7 @@ func _physics_process(delta):
 		global_position = currentPosition + (destination - currentPosition) * (elapsedTime / throwingTime)
 	else:
 		inAir = false
-		drop()
+		make_grabable()
 	
 func make_grabable():
 	isGrabable = true
