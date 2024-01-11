@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsl0twcmolg2y"
+uid="uid://d0xiawbkrhnls"
 path="res://.godot/imported/Battery_3.png-e9a4413523f41d79b8c4b62b2dbcc42c.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

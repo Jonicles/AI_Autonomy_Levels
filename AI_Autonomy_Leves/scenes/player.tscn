@@ -31,7 +31,6 @@ speed = 350
 
 [node name="GrabRadius" type="Area2D" parent="."]
 unique_name_in_owner = true
-visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabRadius"]

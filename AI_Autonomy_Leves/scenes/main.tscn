@@ -10,62 +10,80 @@
 [ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="8_pll5h"]
 [ext_resource type="PackedScene" uid="uid://bois5ivk4a1m" path="res://scenes/player2.tscn" id="9_8jqpk"]
 [ext_resource type="PackedScene" uid="uid://dn5a8nebnrdh" path="res://scenes/test_tiles.tscn" id="10_po2wj"]
-[ext_resource type="Texture2D" uid="uid://bsl0twcmolg2y" path="res://sprites/Battery_3.png" id="11_6m0ew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i4k1"]
+size = Vector2(1356, 48)
 
 [node name="Main" type="Node"]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_yd3g7")]
-position = Vector2(1176, 408)
+position = Vector2(936, 48)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_4k1gm")]
-position = Vector2(744, 408)
+position = Vector2(312, 48)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("5_6u846")]
-position = Vector2(960, 792)
+position = Vector2(624, 672)
 
 [node name="BatteryFactory" parent="." instance=ExtResource("5_6yxt4")]
-position = Vector2(384, 576)
+position = Vector2(120, 360)
 
 [node name="TruckSpawner" parent="." instance=ExtResource("6_bap8c")]
-position = Vector2(960, 576)
+position = Vector2(624, 312)
 
 [node name="SpawnPoints" type="Node" parent="TruckSpawner"]
 
 [node name="SpawnPoint2" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
-position = Vector2(1272, 768)
+position = Vector2(936, 456)
 
 [node name="SpawnPoint3" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
-position = Vector2(648, 768)
+position = Vector2(624, 144)
 
 [node name="SpawnPoint4" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
-position = Vector2(960, 264)
-
-[node name="SpawnPoint5" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
-position = Vector2(456, 384)
-
-[node name="SpawnPoint6" parent="TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
-position = Vector2(1464, 384)
+position = Vector2(312, 456)
 
 [node name="BatteryDropZone" parent="." instance=ExtResource("8_pll5h")]
-position = Vector2(1536, 576)
+position = Vector2(1128, 360)
 
 [node name="Character2" parent="." instance=ExtResource("9_8jqpk")]
-position = Vector2(1200, 744)
+position = Vector2(864, 480)
 
 [node name="Character" parent="." instance=ExtResource("1_fio3m")]
-position = Vector2(696, 672)
+position = Vector2(240, 360)
 
 [node name="TestTiles" parent="." instance=ExtResource("10_po2wj")]
-position = Vector2(960, 576)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 72.0
-offset_bottom = 72.0
-
-[node name="Battery3" type="Sprite2D" parent="."]
-position = Vector2(336, 480)
-texture = ExtResource("11_6m0ew")
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(640, 360)
 scale = Vector2(1.2, 1.2)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(648, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_8i4k1")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(648, 744)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_8i4k1")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-24, 360)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_8i4k1")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(1296, 360)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_8i4k1")

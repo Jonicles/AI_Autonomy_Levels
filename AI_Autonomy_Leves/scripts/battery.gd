@@ -2,8 +2,13 @@ class_name Battery extends Item
 
 @export var charges = 3
 @onready var battery: Item = $"."
-@onready var label: Label = $Label
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var explosionTimer: Timer = $Timer
+
+var battery2: Texture = preload("res://sprites/Battery_2.png")
+var battery1: Texture = preload("res://sprites/Battery_1.png")
+var battery0: Texture = preload("res://sprites/Battery_0.png")
+
 
 signal grabbed_empty_battery
 signal no_charges_left
@@ -42,7 +47,13 @@ func use_charge():
 		empty_battery()
 
 func update_display():
-	label.text = str(charges)
+	match charges:
+		2:
+			sprite.texture = battery2
+		1:
+			sprite.texture = battery1
+		0:
+			sprite.texture = battery0
 
 func empty_battery():
 	no_charges_left.emit()

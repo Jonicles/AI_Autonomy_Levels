@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvc4hnn7tfv3p"]
 
 [ext_resource type="Script" path="res://scripts/battery.gd" id="1_5h5ap"]
-[ext_resource type="Texture2D" uid="uid://bsl0twcmolg2y" path="res://sprites/Battery_3.png" id="2_qpkmt"]
+[ext_resource type="Texture2D" uid="uid://d0xiawbkrhnls" path="res://sprites/Battery_3.png" id="2_qpkmt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2rdl1"]
 radius = 40.0
@@ -36,7 +36,7 @@ vertical_alignment = 1
 wait_time = 6.0
 one_shot = true
 
-[node name="Battery3" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qpkmt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
