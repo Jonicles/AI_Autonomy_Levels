@@ -3,14 +3,12 @@
 [ext_resource type="Script" path="res://scripts/cable_line.gd" id="1_6kes8"]
 
 [node name="CableLine" type="Line2D"]
-z_index = -1
+z_index = -2
 texture_mode = 1
 script = ExtResource("1_6kes8")
-cableOffest = Vector2(0, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-24, 0)
 
 [node name="ElectricityTimer" type="Timer" parent="."]
 one_shot = true

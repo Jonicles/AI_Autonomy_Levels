@@ -1,29 +1,28 @@
 [gd_scene load_steps=12 format=3 uid="uid://cwmm2yxtyjm3n"]
 
 [ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/player.tscn" id="1_fio3m"]
-[ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="3_yd3g7"]
 [ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
-[ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="5_6u846"]
 [ext_resource type="PackedScene" uid="uid://c1lnltaqpdl35" path="res://scenes/battery_factory.tscn" id="5_6yxt4"]
 [ext_resource type="PackedScene" uid="uid://cpahgnvl0ey4a" path="res://scenes/truck_spawner.tscn" id="6_bap8c"]
 [ext_resource type="PackedScene" uid="uid://84ug5q6mk10k" path="res://scenes/spawn_point.tscn" id="7_i53ye"]
+[ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="8_072dv"]
 [ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="8_pll5h"]
 [ext_resource type="PackedScene" uid="uid://bois5ivk4a1m" path="res://scenes/player2.tscn" id="9_8jqpk"]
-[ext_resource type="PackedScene" uid="uid://dn5a8nebnrdh" path="res://scenes/test_tiles.tscn" id="10_po2wj"]
+[ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="9_pn3yd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8i4k1"]
 size = Vector2(1356, 48)
 
-[node name="Main" type="Node"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_f8tl4"]
+vertices = PackedVector2Array(1262, 710, 10, 710, 10, 10, 1262, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1272, 0, 1272, 720, 0, 720)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_yd3g7")]
-position = Vector2(936, 48)
+[node name="Main" type="Node"]
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_4k1gm")]
 position = Vector2(312, 48)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("5_6u846")]
-position = Vector2(624, 672)
 
 [node name="BatteryFactory" parent="." instance=ExtResource("5_6yxt4")]
 position = Vector2(120, 360)
@@ -51,39 +50,47 @@ position = Vector2(864, 480)
 [node name="Character" parent="." instance=ExtResource("1_fio3m")]
 position = Vector2(240, 360)
 
-[node name="TestTiles" parent="." instance=ExtResource("10_po2wj")]
-visible = false
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
 scale = Vector2(1.2, 1.2)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" parent="." instance=ExtResource("8_072dv")]
+position = Vector2(960, 48)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("9_pn3yd")]
+position = Vector2(624, 672)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
 position = Vector2(648, -24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8i4k1")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+[node name="StaticBody2D6" type="StaticBody2D" parent="Walls"]
 position = Vector2(648, 744)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D6"]
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8i4k1")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+[node name="StaticBody2D5" type="StaticBody2D" parent="Walls"]
 position = Vector2(-24, 360)
 rotation = -1.57079
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5"]
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8i4k1")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+[node name="StaticBody2D7" type="StaticBody2D" parent="Walls"]
 position = Vector2(1296, 360)
 rotation = -1.57079
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D7"]
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8i4k1")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_f8tl4")

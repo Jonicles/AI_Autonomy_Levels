@@ -11,6 +11,7 @@ size = Vector2(362.308, 357.386)
 radius = 26.6206
 
 [node name="Character" type="CharacterBody2D"]
+z_index = -3
 scale = Vector2(0.132484, 0.134309)
 script = ExtResource("1_1rxll")
 

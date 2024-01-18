@@ -40,13 +40,11 @@ script = ExtResource("4_cos03")
 position = Vector2(-24, 0)
 default_color = Color(0, 0, 1, 1)
 cableHead = NodePath("../CableLeft")
-cableOffest = Vector2(24, 0)
 
 [node name="CableLineRight" parent="." node_paths=PackedStringArray("cableHead") instance=ExtResource("5_1ryb4")]
 position = Vector2(24, 0)
 default_color = Color(0, 0, 1, 1)
 cableHead = NodePath("../CableRight")
-cableOffest = Vector2(-24, 0)
 
 [connection signal="cable_connect" from="CableLeft" to="." method="_on_cable_left_cable_connect"]
 [connection signal="cable_disconnect" from="CableLeft" to="." method="_on_cable_left_cable_disconnect"]

@@ -1,10 +1,10 @@
 class_name CableLine extends Line2D
 
 @export var cableHead: Node2D
-@export var cableOffest = Vector2(24,0)
 @export var color = Color.BLUE
 @onready var staticBody: StaticBody2D = %StaticBody2D
 @onready var electricityTimer: Timer = $ElectricityTimer
+
 
 var maxCableDistance = 128
 
@@ -20,27 +20,28 @@ func reset_cable():
 			staticBody.remove_child(childNode)
 			childNode.queue_free()
 	
-	var startPostion = position + cableOffest
-	add_point(startPostion)
-	add_point(startPostion)
+	add_point(to_local(global_position))
+	add_point(to_local(global_position))
 	default_color = color
 
 func _process(_delta):
+	
 	try_add_point()
-	points[points.size() - 1] = cableHead.position + cableOffest
+	points[points.size() - 1] = to_local(cableHead.global_position)
+
 
 func try_add_point():
 	var currentPoint = points[points.size() - 1] 
 	var previousPoint = points[points.size() - 2] 
-	
+
 	if currentPoint.distance_to(previousPoint) > maxCableDistance:
 		add_cable_point(currentPoint, previousPoint)
 
 func add_cable_point(currentPoint, previousPoint):
 	var collisionShape = CollisionShape2D.new()
 	var segment = SegmentShape2D.new()
-	segment.a = previousPoint + Vector2(24, 0)
-	segment.b = currentPoint + Vector2(24, 0)
+	segment.a = previousPoint
+	segment.b = currentPoint
 	collisionShape.shape = segment
 	collisionShape.disabled = true
 	
