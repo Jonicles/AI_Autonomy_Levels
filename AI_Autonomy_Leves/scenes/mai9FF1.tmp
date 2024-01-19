@@ -15,7 +15,7 @@
 size = Vector2(1356, 48)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f8tl4"]
-vertices = PackedVector2Array(346, 107, 346, 10, 926, 10, 926, 106, 658, 614, 590, 614, 994, 106, 994, 10, 1262, 10, 1262, 710, 658, 710, 590, 710, 10, 710, 278, 107, 10, 10, 278, 10)
+vertices = PackedVector2Array(346, 106, 346, 10, 926, 10, 926, 106, 658, 614, 590, 614, 994, 106, 994, 10, 1262, 10, 1262, 710, 658, 710, 590, 710, 10, 710, 278, 106, 10, 10, 278, 10)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 4, 3), PackedInt32Array(0, 5, 11, 12, 13), PackedInt32Array(13, 12, 14, 15)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1272, 0, 1272, 720, 0, 720)])
 source_geometry_group_name = &"navigation_polygon_source_group"
@@ -75,7 +75,7 @@ navigation_polygon = SubResource("NavigationPolygon_f8tl4")
 script = ExtResource("5_kms16")
 
 [node name="Timer" type="Timer" parent="NavigationRegion2D"]
-wait_time = 0.1
+wait_time = 0.2
 one_shot = true
 
 [node name="BatteryPylonGreen" parent="NavigationRegion2D" instance=ExtResource("4_4k1gm")]
@@ -101,6 +101,5 @@ position = Vector2(624, 144)
 [node name="SpawnPoint4" parent="NavigationRegion2D/TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
 position = Vector2(312, 456)
 
-[connection signal="bake_finished" from="NavigationRegion2D" to="NavigationRegion2D" method="_on_bake_finished"]
 [connection signal="timeout" from="NavigationRegion2D/Timer" to="NavigationRegion2D" method="_on_timer_timeout"]
 [connection signal="truck_spawned" from="NavigationRegion2D/TruckSpawner" to="NavigationRegion2D" method="_on_truck_spawner_truck_spawned"]
