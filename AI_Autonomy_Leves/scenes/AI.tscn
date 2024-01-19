@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://gyjttkdbgf3p"]
+
+[ext_resource type="Script" path="res://scripts/AI.gd" id="1_c7hys"]
+[ext_resource type="Texture2D" uid="uid://facj60wx5dx5" path="res://sprites/AI_Player.png" id="2_htdl2"]
+[ext_resource type="Script" path="res://scripts/character_controller.gd" id="3_qvkx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw0x0"]
+size = Vector2(362.308, 357.386)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_31bu7"]
+radius = 26.6206
+
+[node name="Character" type="CharacterBody2D"]
+z_index = -2
+scale = Vector2(0.132484, 0.134309)
+collision_layer = 0
+collision_mask = 0
+safe_margin = 40.0
+script = ExtResource("1_c7hys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.71641e-06, 1.77515e-06)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_xw0x0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-2.28882e-05, -2.67029e-05)
+scale = Vector2(7.54808, 7.44552)
+texture = ExtResource("2_htdl2")
+
+[node name="Controller" type="Node" parent="." node_paths=PackedStringArray("body")]
+script = ExtResource("3_qvkx5")
+body = NodePath("..")
+speed = 350
+
+[node name="GrabRadius" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabRadius"]
+scale = Vector2(11.3417, 10.8675)
+shape = SubResource("CircleShape2D_31bu7")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 48.0
+path_postprocessing = 1
+radius = 1.0
+debug_enabled = true

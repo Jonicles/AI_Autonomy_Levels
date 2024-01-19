@@ -2,6 +2,23 @@ extends CharacterBody2D
 
 @onready var controller = $Controller
 
+func _process(delta):
+	var inputDirection: Vector2 = Vector2(0,0)
+	
+	if Input.is_action_pressed("Player2_Up"):
+		inputDirection += Vector2.UP
+	
+	if Input.is_action_pressed("Player2_Down"):
+		inputDirection += Vector2.DOWN
+	
+	if Input.is_action_pressed("Player2_Right"):
+		inputDirection += Vector2.RIGHT
+		
+	if Input.is_action_pressed("Player2_Left"):
+		inputDirection += Vector2.LEFT
+		
+	controller.change_direction(inputDirection.normalized())
+
 func _input(event):
 	# Handle grab
 	if event.is_action_pressed("Player2_Grab"):
@@ -12,26 +29,3 @@ func _input(event):
 	# Handle throw
 	if event.is_action_pressed("Player2_Throw"):
 		controller.throw()
-	
-	# Handle movement
-	var isActionReleased: bool = (
-			event.is_action_released("Player2_Up") or event.is_action_released("Player2_Down") 
-			or event.is_action_released("Player2_Left") or event.is_action_released("Player2_Right") 
-	)
-	
-	var hasInput: bool = (
-		Input.is_action_pressed("Player2_Up") or Input.is_action_pressed("Player2_Down") 
-		or Input.is_action_pressed("Player2_Left") or Input.is_action_pressed("Player2_Right")
-	)
-	
-	if isActionReleased and not hasInput:
-		controller.change_direction(Vector2.ZERO)
-	elif event.is_action_pressed("Player2_Up"):
-		controller.change_direction(Vector2.UP)
-	elif event.is_action_pressed("Player2_Down"):
-		controller.change_direction(Vector2.DOWN)
-	elif event.is_action_pressed("Player2_Right"):
-		controller.change_direction(Vector2.RIGHT)
-	elif event.is_action_pressed("Player2_Left"):
-		controller.change_direction(Vector2.LEFT)
-		

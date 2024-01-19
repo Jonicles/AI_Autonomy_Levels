@@ -46,10 +46,10 @@ func try_add_point():
 func add_cable_point(currentPoint, previousPoint):
 	var collisionPolygon: CollisionPolygon2D = CollisionPolygon2D.new()
 	var vectorArray: Array[Vector2]
-	vectorArray.append(currentPoint - Vector2(8, 0))
-	vectorArray.append(previousPoint - Vector2(8, 0))
-	vectorArray.append(previousPoint + Vector2(8, 0))
-	vectorArray.append(currentPoint + Vector2(8, 0))	
+	vectorArray.append(currentPoint - Vector2(8, 8))
+	vectorArray.append(previousPoint - Vector2(8, 8))
+	vectorArray.append(previousPoint + Vector2(8, 8))
+	vectorArray.append(currentPoint + Vector2(8, 8))	
 	
 	collisionPolygon.polygon = vectorArray
 	collisionPolygon.disabled = true
