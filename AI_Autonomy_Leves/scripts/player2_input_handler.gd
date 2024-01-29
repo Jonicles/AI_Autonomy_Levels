@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var controller = $Controller
 
-func _process(delta):
+func _process(_delta):
 	var inputDirection: Vector2 = Vector2(0,0)
 	
 	if Input.is_action_pressed("Player2_Up"):

@@ -21,16 +21,18 @@ func drop():
 
 	if not areas:
 		explosionTimer.start()
+		dropped_item.emit(self)
 		return
 
 	var zone = areas[0] as DropZone
 	if not zone.try_drop_off(itemType, battery):
+		dropped_item.emit(self)
 		explosionTimer.start()
 
 func grab():
 	make_ungrabable()
 	explosionTimer.stop()
-	grabbed_item.emit()
+	grabbed_item.emit(self)
 	
 	if charges == 0:
 		grabbed_empty_battery.emit()
@@ -56,7 +58,7 @@ func update_display():
 			sprite.texture = battery0
 
 func empty_battery():
-	no_charges_left.emit()
+	no_charges_left.emit(self)
 
 func explode():
 	queue_free()

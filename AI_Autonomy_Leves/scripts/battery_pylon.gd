@@ -1,8 +1,11 @@
-extends StaticBody2D
+class_name BatteryPylon extends StaticBody2D
 
 @onready var cableHeadLeft: Item =  $CableLeft
 @onready var cableHeadRight: Item =  $CableRight
 @onready var batteryContainer: ItemContainer = $DropZone
+
+signal battery_insert
+signal battery_removal
 
 var startPositionLeft
 var startPositionRight
@@ -28,8 +31,9 @@ func insert_battery(newBattery: Battery):
 	
 	currentBattery.grabbed_empty_battery.connect(remove_battery)
 	currentBattery.no_charges_left.connect(_on_empty_battery)
+	battery_insert.emit(self)
 	
-func _on_empty_battery():
+func _on_empty_battery(_battery):
 	disable_cables()
 	currentBattery.make_grabable()
 	currentBattery.no_charges_left.disconnect(_on_empty_battery)
@@ -40,6 +44,7 @@ func remove_battery():
 		currentBattery.grabbed_empty_battery.disconnect(remove_battery)
 		batteryContainer.remove_contained_item()
 		currentBattery = null
+		battery_removal.emit(self)
 
 func disable_cables():
 	cableHeadLeft.make_ungrabable()

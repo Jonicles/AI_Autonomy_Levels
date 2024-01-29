@@ -9,6 +9,9 @@ class_name CableHead extends Item
 signal cable_connect
 signal cable_disconnect
 
+signal grabable
+signal ungrabable
+
 var itemType := GlobalEnums.ItemType.CABLE
 
 #Overriden Drop method
@@ -44,3 +47,11 @@ func connect_head():
 func disconnect_head():
 	cableLine.reset_cable()
 	cable_disconnect.emit()
+
+func make_grabable():
+	isGrabable = true
+	grabable.emit(self)
+
+func make_ungrabable():
+	isGrabable = false
+	ungrabable.emit(self)

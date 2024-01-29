@@ -11,6 +11,7 @@ var elapsedTime
 var throwingTime = 0.3
 
 signal grabbed_item
+signal dropped_item
 
 func drop():
 	pass

@@ -57,7 +57,7 @@ func spawn():
 	spawnPoint.add_child(instance)
 	spawnPoint.occupy(instance)
 	instance.global_position = spawnPoint.global_position
-	truck_spawned.emit()
+	truck_spawned.emit(instance as Truck)
 
 func _on_timer_timeout():
 	spawn()

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/player.tscn" id="1_fio3m"]
 [ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
-[ext_resource type="PackedScene" uid="uid://c1lnltaqpdl35" path="res://scenes/battery_factory.tscn" id="5_6yxt4"]
+[ext_resource type="PackedScene" uid="uid://c1lnltaqpdl35" path="res://scenes/battery_spawner.tscn" id="5_6yxt4"]
 [ext_resource type="Script" path="res://scripts/nav_region.gd" id="5_kms16"]
 [ext_resource type="PackedScene" uid="uid://cpahgnvl0ey4a" path="res://scenes/truck_spawner.tscn" id="6_bap8c"]
 [ext_resource type="PackedScene" uid="uid://84ug5q6mk10k" path="res://scenes/spawn_point.tscn" id="7_i53ye"]
@@ -24,7 +24,7 @@ agent_radius = 30.0
 
 [node name="Main" type="Node"]
 
-[node name="BatteryFactory" parent="." instance=ExtResource("5_6yxt4")]
+[node name="BatterySpawner" parent="." instance=ExtResource("5_6yxt4")]
 position = Vector2(120, 360)
 
 [node name="BatteryDropZone" parent="." instance=ExtResource("8_pll5h")]
@@ -106,6 +106,14 @@ position = Vector2(312, 456)
 [node name="Character3" parent="." instance=ExtResource("11_wea8s")]
 position = Vector2(744, 288)
 
+[connection signal="battery_spawned" from="BatterySpawner" to="Character3" method="add_battery"]
 [connection signal="bake_finished" from="NavigationRegion2D" to="NavigationRegion2D" method="_on_bake_finished"]
 [connection signal="timeout" from="NavigationRegion2D/Timer" to="NavigationRegion2D" method="_on_timer_timeout"]
+[connection signal="battery_insert" from="NavigationRegion2D/BatteryPylonGreen" to="Character3" method="remove_pylon"]
+[connection signal="battery_removal" from="NavigationRegion2D/BatteryPylonGreen" to="Character3" method="add_pylon"]
+[connection signal="battery_insert" from="NavigationRegion2D/BatteryPylonBlue" to="Character3" method="remove_pylon"]
+[connection signal="battery_removal" from="NavigationRegion2D/BatteryPylonBlue" to="Character3" method="add_pylon"]
+[connection signal="battery_insert" from="NavigationRegion2D/BatteryPylonRed" to="Character3" method="remove_pylon"]
+[connection signal="battery_removal" from="NavigationRegion2D/BatteryPylonRed" to="Character3" method="add_pylon"]
 [connection signal="truck_spawned" from="NavigationRegion2D/TruckSpawner" to="NavigationRegion2D" method="_on_truck_spawner_truck_spawned"]
+[connection signal="truck_spawned" from="NavigationRegion2D/TruckSpawner" to="Character3" method="addConnectionPoint"]

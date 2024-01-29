@@ -7,6 +7,7 @@ class_name Truck
 @onready var colorRectParent = $ColorRects
 
 signal charge_complete
+signal cable_connected
 
 var cableDictionary: Dictionary = {}
 var connectedCables: Array[CableHead] = []
@@ -37,6 +38,7 @@ func connect_cable(cableColor, cableHead: CableHead):
 	
 	cableDictionary[cableColor] = true
 	connectedCables.append(cableHead)
+	cable_connected.emit(self)
 	check_if_fully_connected()
 
 func check_if_fully_connected():

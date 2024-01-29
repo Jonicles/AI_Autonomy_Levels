@@ -10,7 +10,7 @@ func rebake_nav_polygon():
 	isBaking = true
 	bake_navigation_polygon()
 
-func _on_truck_spawner_truck_spawned():
+func _on_truck_spawner_truck_spawned(_truck):
 	rebake_nav_polygon()
 	
 func _on_truck_despawned():
