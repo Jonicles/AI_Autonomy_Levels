@@ -167,19 +167,19 @@ func addConnectionPoint(truck: Truck):
 				points.append(child)
 	
 	for point in points:
+		if point.charged == true:
+			continue
+			
 		if truck.cableDictionary.has(GlobalEnums.CableColor.RED) and truck.cableDictionary[GlobalEnums.CableColor.RED] == false:
 			if not connectionPointRed.has(point):
-				print("Adding red point!")
 				connectionPointRed[point] = true
 	
 		if truck.cableDictionary.has(GlobalEnums.CableColor.BLUE) and truck.cableDictionary[GlobalEnums.CableColor.BLUE] == false:
 			if not connectionPointBlue.has(point):
-				print("Adding blue point!")
 				connectionPointBlue[point] = true
 	
 		if truck.cableDictionary.has(GlobalEnums.CableColor.GREEN) and truck.cableDictionary[GlobalEnums.CableColor.GREEN] == false:
 			if not connectionPointGreen.has(point):
-				print("Adding green point!")
 				connectionPointGreen[point] = true
 	
 func removeConnectionPoint(truck: Truck):
@@ -192,6 +192,6 @@ func removeConnectionPoint(truck: Truck):
 	for point in points:
 		connectionPointRed.erase(point)
 		connectionPointBlue.erase(point)
-		connectionPointGreen.erase(point)		
+		connectionPointGreen.erase(point)
 	
 	addConnectionPoint(truck)

@@ -23,14 +23,13 @@ func _ready():
 	colorRects = colorRectParent.get_children()
 	randomize_initial_cables()
 
-func try_connect_cable(cableColor, cableHead):
+func try_connect_cable(cableColor):
 	if not cableDictionary.has(cableColor):
 		return false
 	
 	if cableDictionary[cableColor] == true:
 		return false
 	
-	connect_cable(cableColor, cableHead)
 	return true
 	
 func connect_cable(cableColor, cableHead: CableHead):

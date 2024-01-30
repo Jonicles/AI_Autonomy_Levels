@@ -7,9 +7,10 @@ func try_connection(cableColor, cableHead: CableHead):
 	if charged:
 		return false
 		
-	if not truck.try_connect_cable(cableColor, cableHead):
+	if not truck.try_connect_cable(cableColor):
 		return false
 	
-	cableHead.global_position = global_position
 	charged = true
+	truck.connect_cable(cableColor, cableHead)
+	cableHead.global_position = global_position
 	return true
