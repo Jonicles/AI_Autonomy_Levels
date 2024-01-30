@@ -16,11 +16,11 @@
 size = Vector2(1356, 48)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f8tl4"]
-vertices = PackedVector2Array(366, 127, 366, 30, 906, 30, 906, 126, 678, 594, 570, 594, 1014, 126, 1014, 30, 1242, 30, 1242, 690, 678, 690, 570, 690, 30, 690, 258, 127, 30, 30, 258, 30)
+vertices = PackedVector2Array(356, 117, 356, 20, 916, 20, 916, 116, 668, 604, 580, 604, 1004, 116, 1004, 20, 1252, 20, 1252, 700, 668, 700, 580, 700, 20, 700, 268, 117, 20, 20, 268, 20)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 4, 3), PackedInt32Array(0, 5, 11, 12, 13), PackedInt32Array(13, 12, 14, 15)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1272, 0, 1272, 720, 0, 720)])
 source_geometry_group_name = &"navigation_polygon_source_group"
-agent_radius = 30.0
+agent_radius = 20.0
 
 [node name="Main" type="Node"]
 
@@ -105,7 +105,7 @@ position = Vector2(312, 456)
 
 [node name="Character3" parent="." instance=ExtResource("11_wea8s")]
 position = Vector2(744, 288)
-desiredDistance = 24.0
+desiredDistance = 60.0
 
 [connection signal="battery_spawned" from="BatterySpawner" to="Character3" method="add_battery"]
 [connection signal="bake_finished" from="NavigationRegion2D" to="NavigationRegion2D" method="_on_bake_finished"]

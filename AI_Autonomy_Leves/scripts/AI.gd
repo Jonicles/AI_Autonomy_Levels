@@ -62,10 +62,8 @@ func _ready():
 	
 	add_pylon(bluePylon)
 	
-	batterySnippet = BatteryPlaceSnippet.new()
-	batterySnippet.evaluate_utiliy(self)
-	currentSnippet = batterySnippet
-
+	try_get_next_task()
+	
 func reset():
 	controller.change_direction(Vector2.ZERO)
 	currentSnippet = null
