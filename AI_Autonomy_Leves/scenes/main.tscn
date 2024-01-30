@@ -105,6 +105,7 @@ position = Vector2(312, 456)
 
 [node name="Character3" parent="." instance=ExtResource("11_wea8s")]
 position = Vector2(744, 288)
+desiredDistance = 24.0
 
 [connection signal="battery_spawned" from="BatterySpawner" to="Character3" method="add_battery"]
 [connection signal="bake_finished" from="NavigationRegion2D" to="NavigationRegion2D" method="_on_bake_finished"]

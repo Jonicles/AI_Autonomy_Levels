@@ -1,11 +1,16 @@
-extends CharacterBody2D
+class_name ArtificalIntelligence extends CharacterBody2D
+
+@export var desiredDistance: float
 
 @onready var controller = $Controller
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
+var currentSnippet: BehaviorSnippet
+var batterySnippet: BehaviorSnippet
+
 var grabableBatteries: Array[Battery]
 var grabableEmptyBatteries: Array[Battery]
-var emptyPylons: Array
+var emptyPylons: Array[Node2D]
 var grabableRedCables: Array[CableHead]
 var grabableGreenCables: Array[CableHead]
 var grabableBlueCables: Array[CableHead]
@@ -17,6 +22,7 @@ var connectionPointBlue = {}
 @onready var recyclePoint = $"../BatteryDropZone"
 
 func _ready():
+	navigation_agent.target_desired_distance = desiredDistance
 	# Green Pylon
 	var greenPylon = $"../NavigationRegion2D/BatteryPylonGreen" as BatteryPylon
 	
@@ -55,23 +61,43 @@ func _ready():
 	cableRightBlue.ungrabable.connect(remove_grabableCable)
 	
 	add_pylon(bluePylon)
+	
+	batterySnippet = BatteryPlaceSnippet.new()
+	batterySnippet.evaluate_utiliy(self)
+	currentSnippet = batterySnippet
+
+func reset():
+	controller.change_direction(Vector2.ZERO)
+	currentSnippet = null
+	
+func try_get_next_task():
+	batterySnippet = BatteryPlaceSnippet.new()
+	var utility = batterySnippet.evaluate_utiliy(self)
+	
+	if utility > 0:
+		currentSnippet = batterySnippet
 
 func _process(_delta):
-	gather_information()
-	move()
+	if currentSnippet == null:
+		try_get_next_task()
+		return
+	
+	currentSnippet.run_behavior(self)
+	
+func grab():
+	controller.grab()
+	
+func drop():
+	controller.let_go()
 
-func gather_information():
-	pass
-	
 func move():
-	navigation_agent.target_position = get_global_mouse_position()
-	
 	var direction: Vector2 = Vector2(0,0)
-	
 	direction = navigation_agent.get_next_path_position() - global_position
 	direction = direction.normalized()
 	
 	controller.change_direction(direction)
+
+########################### DATA COLLECTING ##################################
 
 func add_battery(battery: Battery):
 	grabableBatteries.append(battery)
