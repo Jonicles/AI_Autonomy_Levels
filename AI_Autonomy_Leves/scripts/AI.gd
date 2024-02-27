@@ -19,7 +19,7 @@ var connectionPointRed = {}
 var connectionPointGreen = {}
 var connectionPointBlue = {}
 
-@onready var recyclePoint = $"../BatteryDropZone"
+@onready var recyclePoint: Node2D = $"../BatteryDropZone"
 
 func _ready():
 	navigation_agent.target_desired_distance = desiredDistance
@@ -69,7 +69,7 @@ func reset():
 	currentSnippet = null
 	
 func try_get_next_task():
-	batterySnippet = BatteryPlaceSnippet.new()
+	batterySnippet = CableConnectSnippet.new()
 	var utility = batterySnippet.evaluate_utiliy(self)
 	
 	if utility > 0:

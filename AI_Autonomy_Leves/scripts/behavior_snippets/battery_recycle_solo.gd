@@ -1,18 +1,15 @@
-class_name BatteryPlaceSnippet extends BehaviorSnippet
+class_name BatteryRecycleSnippet extends BehaviorSnippet
 
 var points: int = 5
 
 func evaluate_utiliy(ai: ArtificalIntelligence):
-	if ai.grabableBatteries.size() == 0:
+	if ai.grabableEmptyBatteries.size() == 0:
 		return 0
 		
-	if ai.emptyPylons.size() == 0:
-		return 0
-	
 	var currentBattery: Battery
 	var shortestDistance: float = INF
 	
-	for battery in ai.grabableBatteries:
+	for battery in ai.grabableEmptyBatteries:
 		ai.navigation_agent.target_position = battery.global_position
 		
 		if not ai.navigation_agent.is_target_reachable():
@@ -22,28 +19,10 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 			currentBattery = battery
 	
 	if currentBattery == null:
-		ai.navigation_agent.target_position = ai.global_position
-		return 0
-	
-	var currentPylon: BatteryPylon
-	shortestDistance = INF
-	
-	for pylon in ai.emptyPylons:
-		ai.navigation_agent.target_position = pylon.global_position
-		
-		if not ai.navigation_agent.is_target_reachable():
-			print("not reachable")
-			continue
-		
-		if pylon.global_position.distance_to(ai.global_position) < shortestDistance:
-			currentPylon = pylon
-	
-	if currentPylon == null:
-		ai.navigation_agent.target_position = ai.global_position
 		return 0
 	
 	itemTarget = currentBattery.global_position
-	destination = currentPylon.global_position
+	destination = ai.recyclePoint.global_position
 	return points
 	
 func run_behavior(ai: ArtificalIntelligence):
@@ -55,7 +34,7 @@ func run_behavior(ai: ArtificalIntelligence):
 			if not ai.navigation_agent.is_navigation_finished():
 				ai.move()
 				return
-				
+			
 			ai.grab()
 			step += 1
 		3:
@@ -65,7 +44,7 @@ func run_behavior(ai: ArtificalIntelligence):
 			if not ai.navigation_agent.is_navigation_finished():
 				ai.move()
 				return
-				
+			
 			ai.drop()
 			step += 1
 		_:

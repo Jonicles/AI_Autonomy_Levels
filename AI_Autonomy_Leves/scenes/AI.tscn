@@ -8,7 +8,7 @@
 size = Vector2(362.308, 357.386)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_31bu7"]
-radius = 26.6206
+radius = 37.2689
 
 [node name="Character" type="CharacterBody2D"]
 z_index = -2
