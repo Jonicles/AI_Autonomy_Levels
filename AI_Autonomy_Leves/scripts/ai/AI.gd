@@ -65,6 +65,7 @@ func _ready():
 	try_get_next_task()
 	
 func reset():
+	drop()
 	controller.change_direction(Vector2.ZERO)
 	currentSnippet = null
 	

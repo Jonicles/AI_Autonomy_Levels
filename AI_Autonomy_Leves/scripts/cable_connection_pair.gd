@@ -1,14 +1,10 @@
 class_name CableConnectionPair extends Node
 
+var distance: float
 var cableHead: Node2D
 var connectionPoint: Node2D
 
-func _init(head, point):
+func _init(head, point, totalDistance):
+	distance = totalDistance
 	cableHead = head
 	connectionPoint = point
-
-func calculate_total_distance(position: Vector2):
-	var distance = 0
-	distance += position.distance_to(cableHead.global_position)
-	distance += cableHead.position.distance_to(connectionPoint.global_position)
-	return distance

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwmm2yxtyjm3n"]
+[gd_scene load_steps=13 format=3 uid="uid://cwmm2yxtyjm3n"]
 
 [ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/player.tscn" id="1_fio3m"]
 [ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://84ug5q6mk10k" path="res://scenes/spawn_point.tscn" id="7_i53ye"]
 [ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="8_072dv"]
 [ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="8_pll5h"]
-[ext_resource type="PackedScene" uid="uid://bois5ivk4a1m" path="res://scenes/player2.tscn" id="9_8jqpk"]
 [ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="9_pn3yd"]
 [ext_resource type="PackedScene" uid="uid://gyjttkdbgf3p" path="res://scenes/AI.tscn" id="11_wea8s"]
 
@@ -29,9 +28,6 @@ position = Vector2(120, 360)
 
 [node name="BatteryDropZone" parent="." instance=ExtResource("8_pll5h")]
 position = Vector2(1128, 360)
-
-[node name="Character2" parent="." instance=ExtResource("9_8jqpk")]
-position = Vector2(864, 480)
 
 [node name="Character" parent="." instance=ExtResource("1_fio3m")]
 position = Vector2(240, 360)
