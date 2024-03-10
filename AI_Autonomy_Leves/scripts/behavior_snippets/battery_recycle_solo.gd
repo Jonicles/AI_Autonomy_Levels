@@ -3,6 +3,7 @@ class_name BatteryRecycleSnippet extends BehaviorSnippet
 var points: int = 5
 
 func evaluate_utiliy(ai: ArtificalIntelligence):
+	step = 1
 	if ai.grabableEmptyBatteries.size() == 0:
 		return 0
 		
@@ -15,8 +16,10 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		if not ai.navigation_agent.is_target_reachable():
 			continue
 		
-		if battery.global_position.distance_to(ai.global_position) < shortestDistance:
+		var currentDistance: float = battery.global_position.distance_to(ai.global_position) 
+		if  currentDistance < shortestDistance:
 			currentBattery = battery
+			shortestDistance = currentDistance
 	
 	if currentBattery == null:
 		return 0

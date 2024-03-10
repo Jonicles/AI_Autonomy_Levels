@@ -3,6 +3,7 @@ class_name BatteryPlaceSnippet extends BehaviorSnippet
 var points: int = 5
 
 func evaluate_utiliy(ai: ArtificalIntelligence):
+	step = 1
 	if ai.grabableBatteries.size() == 0:
 		return 0
 		
@@ -16,10 +17,13 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		ai.navigation_agent.target_position = battery.global_position
 		
 		if not ai.navigation_agent.is_target_reachable():
+			print("Cannot reach battery")
 			continue
 		
-		if battery.global_position.distance_to(ai.global_position) < shortestDistance:
+		var distanceToTarget: float  = ai.navigation_agent.distance_to_target()
+		if  distanceToTarget < shortestDistance:
 			currentBattery = battery
+			shortestDistance = distanceToTarget
 	
 	if currentBattery == null:
 		ai.navigation_agent.target_position = ai.global_position
@@ -32,18 +36,23 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		ai.navigation_agent.target_position = pylon.global_position
 		
 		if not ai.navigation_agent.is_target_reachable():
-			print("not reachable")
+			print("Cannot reach pylon")
 			continue
-		
-		if pylon.global_position.distance_to(ai.global_position) < shortestDistance:
+			
+		var currentDistance: float = pylon.global_position.distance_to(currentBattery.global_position) 
+		if  currentDistance < shortestDistance:
 			currentPylon = pylon
+			shortestDistance = currentDistance
 	
 	if currentPylon == null:
 		ai.navigation_agent.target_position = ai.global_position
 		return 0
 	
+	print(currentPylon)
 	itemTarget = currentBattery.global_position
 	destination = currentPylon.global_position
+	print("Succesful evaluation! returning points")
+	print(points)
 	return points
 	
 func run_behavior(ai: ArtificalIntelligence):

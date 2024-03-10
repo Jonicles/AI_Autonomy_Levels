@@ -103,6 +103,9 @@ position = Vector2(312, 456)
 position = Vector2(744, 288)
 desiredDistance = 60.0
 
+[node name="CenterPoint" type="Node2D" parent="."]
+position = Vector2(624, 312)
+
 [connection signal="battery_spawned" from="BatterySpawner" to="Character3" method="add_battery"]
 [connection signal="bake_finished" from="NavigationRegion2D" to="NavigationRegion2D" method="_on_bake_finished"]
 [connection signal="timeout" from="NavigationRegion2D/Timer" to="NavigationRegion2D" method="_on_timer_timeout"]

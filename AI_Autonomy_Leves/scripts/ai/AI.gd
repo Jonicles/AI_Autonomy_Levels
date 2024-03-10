@@ -4,9 +4,11 @@ class_name ArtificalIntelligence extends CharacterBody2D
 
 @onready var controller = $Controller
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var recyclePoint: Node2D = $"../BatteryDropZone"
+@onready var centerPoint: Node2D = $"../CenterPoint"
 
 var currentSnippet: BehaviorSnippet
-var batterySnippet: BehaviorSnippet
+var utility: int = 0
 
 var grabableBatteries: Array[Battery]
 var grabableEmptyBatteries: Array[Battery]
@@ -19,7 +21,6 @@ var connectionPointRed = {}
 var connectionPointGreen = {}
 var connectionPointBlue = {}
 
-@onready var recyclePoint: Node2D = $"../BatteryDropZone"
 
 func _ready():
 	navigation_agent.target_desired_distance = desiredDistance
@@ -62,25 +63,44 @@ func _ready():
 	
 	add_pylon(bluePylon)
 	
-	try_get_next_task()
-	
 func reset():
+	utility = 0
 	drop()
 	controller.change_direction(Vector2.ZERO)
-	currentSnippet = null
 	
 func try_get_next_task():
-	batterySnippet = CableConnectSnippet.new()
-	var utility = batterySnippet.evaluate_utiliy(self)
+	if currentSnippet == null: 
+		return
+		
+	utility = currentSnippet.evaluate_utiliy(self)
 	
-	if utility > 0:
-		currentSnippet = batterySnippet
+	if utility == 0:
+		navigation_agent.target_position = centerPoint.global_position
+		move()
+
+func _input(event):
+	if event.is_action_pressed("Player_1"):
+		reset()
+		currentSnippet = BatteryPlaceSnippet.new()
+		print("Place Snippet")
+		
+	if event.is_action_pressed("Player_2"):
+		reset()
+		currentSnippet = BatteryRecycleSnippet.new()
+		print("Recycle Snippet")
+		
+	if event.is_action_pressed("Player_3"):
+		reset()
+		currentSnippet = CableConnectSnippet.new()
+		print("Connect Snippet")
 
 func _process(_delta):
 	if currentSnippet == null:
+		return
+		
+	if utility == 0:
 		try_get_next_task()
 		return
-	
 	currentSnippet.run_behavior(self)
 	
 func grab():
@@ -90,6 +110,10 @@ func drop():
 	controller.let_go()
 
 func move():
+	if navigation_agent.is_navigation_finished():
+		controller.change_direction(Vector2.ZERO)
+		return
+		
 	var direction: Vector2 = Vector2(0,0)
 	direction = navigation_agent.get_next_path_position() - global_position
 	direction = direction.normalized()

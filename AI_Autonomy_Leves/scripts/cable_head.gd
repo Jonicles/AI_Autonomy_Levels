@@ -40,7 +40,8 @@ func _on_timer_timeout():
 	disconnect_head()
 
 func connect_head():
-	resetTimer.stop()	
+	make_ungrabable()
+	resetTimer.stop()
 	cable_connect.emit()
 	cableLine.start_electrification()
 

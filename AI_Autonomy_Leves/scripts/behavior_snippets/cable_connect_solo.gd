@@ -3,6 +3,7 @@ class_name CableConnectSnippet extends BehaviorSnippet
 var points: int = 5
 
 func evaluate_utiliy(ai: ArtificalIntelligence):
+	step = 1
 	var cablePointPairs: Array[CableConnectionPair]
 	
 	for greenCableHead in ai.grabableGreenCables:
@@ -10,29 +11,23 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		var distanceToHead = ai.navigation_agent.distance_to_target()
 		
 		for connectionPoint in ai.connectionPointGreen.keys() as Array[Node2D]:
-			ai.navigation_agent.target_position = connectionPoint.global_position
-			var distanceToPoint = ai.navigation_agent.distance_to_target()
-			
+			var distanceToPoint = greenCableHead.global_position.distance_to(connectionPoint.global_position)
 			cablePointPairs.append(CableConnectionPair.new(greenCableHead, connectionPoint, distanceToHead + distanceToPoint))
-			
+	
 	for blueCableHead in ai.grabableBlueCables:
 		ai.navigation_agent.target_position = blueCableHead.global_position
 		var distanceToHead = ai.navigation_agent.distance_to_target()
 		
 		for connectionPoint in ai.connectionPointBlue.keys() as Array[Node2D]:
-			ai.navigation_agent.target_position = connectionPoint.global_position
-			var distanceToPoint = ai.navigation_agent.distance_to_target()
-			
+			var distanceToPoint = blueCableHead.global_position.distance_to(connectionPoint.global_position)
 			cablePointPairs.append(CableConnectionPair.new(blueCableHead, connectionPoint, distanceToHead + distanceToPoint))
-			
+	
 	for redCableHead in ai.grabableRedCables:
 		ai.navigation_agent.target_position = redCableHead.global_position
 		var distanceToHead = ai.navigation_agent.distance_to_target()
 		
 		for connectionPoint in ai.connectionPointRed.keys() as Array[Node2D]:
-			ai.navigation_agent.target_position = connectionPoint.global_position
-			var distanceToPoint = ai.navigation_agent.distance_to_target()
-			
+			var distanceToPoint = redCableHead.global_position.distance_to(connectionPoint.global_position)
 			cablePointPairs.append(CableConnectionPair.new(redCableHead, connectionPoint, distanceToHead + distanceToPoint))
 
 	if cablePointPairs.size() == 0:
@@ -55,6 +50,7 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		
 		if pair.distance < shortestDistance:
 			bestPair = pair
+			shortestDistance = pair.distance
 	
 	if bestPair == null:
 		ai.navigation_agent.target_position = ai.global_position
