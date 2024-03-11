@@ -5,6 +5,7 @@ class_name Truck
 @export var connectionAmount: int = 2
 @onready var timer: Timer = $Timer
 @onready var colorRectParent = $ColorRects
+@onready var dropZoneParent = $DropZones
 
 signal charge_complete
 signal cable_connected
@@ -12,6 +13,7 @@ signal cable_connected
 var cableDictionary: Dictionary = {}
 var connectedCables: Array[CableHead] = []
 var colorRects: Array[Node] = []
+var connectionPoints: Array[Node]
 
 const COLOR_RED: Color = Color.RED
 const COLOR_BLUE: Color = Color.BLUE
@@ -21,6 +23,8 @@ const COLOR_PURPLE: Color = Color.PURPLE
 
 func _ready():
 	colorRects = colorRectParent.get_children()
+	connectionPoints = dropZoneParent.get_children()
+	
 	randomize_initial_cables()
 
 func try_connect_cable(cableColor):
@@ -38,8 +42,14 @@ func connect_cable(cableColor, cableHead: CableHead):
 	cableDictionary[cableColor] = true
 	connectedCables.append(cableHead)
 	cable_connected.emit(self)
+	update_connectionpoint_priority()
 	check_if_fully_connected()
 
+func update_connectionpoint_priority():
+	for point in connectionPoints as Array[DropZoneCable]:
+		if not point.charged:
+			point.update_priority()
+	
 func check_if_fully_connected():
 	for item in cableDictionary:
 		if cableDictionary[item] == false:

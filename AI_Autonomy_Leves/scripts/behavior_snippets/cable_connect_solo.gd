@@ -6,6 +6,10 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 	step = 1
 	var cablePointPairs: Array[CableConnectionPair]
 	
+	var blueOutlets = ai.connectionPointBlue.keys() as Array[DropZoneCable]
+	var redOutlets = ai.connectionPointRed.keys() as Array[DropZoneCable]
+	var greenOutlets = ai.connectionPointGreen.keys() as Array[DropZoneCable]
+	
 	for greenCableHead in ai.grabableGreenCables:
 		ai.navigation_agent.target_position = greenCableHead.global_position
 		var distanceToHead = ai.navigation_agent.distance_to_target()

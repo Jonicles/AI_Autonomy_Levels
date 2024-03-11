@@ -19,18 +19,6 @@ offset_top = -72.0
 offset_right = 72.0
 offset_bottom = 72.0
 
-[node name="Drop Zone" parent="." instance=ExtResource("2_o61vn")]
-position = Vector2(-64, 0)
-acceptedItemType = 2
-
-[node name="Drop Zone2" parent="." instance=ExtResource("2_o61vn")]
-position = Vector2(0, -64)
-acceptedItemType = 2
-
-[node name="Drop Zone3" parent="." instance=ExtResource("2_o61vn")]
-position = Vector2(64, 0)
-acceptedItemType = 2
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
 
@@ -56,5 +44,19 @@ offset_top = -56.0
 offset_right = 20.0
 offset_bottom = -16.0
 color = Color(0, 0, 1, 1)
+
+[node name="DropZones" type="Node2D" parent="."]
+
+[node name="Drop Zone" parent="DropZones" instance=ExtResource("2_o61vn")]
+position = Vector2(-64, 0)
+acceptedItemType = 2
+
+[node name="Drop Zone2" parent="DropZones" instance=ExtResource("2_o61vn")]
+position = Vector2(0, -64)
+acceptedItemType = 2
+
+[node name="Drop Zone3" parent="DropZones" instance=ExtResource("2_o61vn")]
+position = Vector2(64, 0)
+acceptedItemType = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

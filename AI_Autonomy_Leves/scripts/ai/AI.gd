@@ -208,12 +208,9 @@ func addConnectionPoint(truck: Truck):
 	
 	var points: Array[DropZoneCable]
 	
-	for child in truck.get_children():
-		if child is DropZoneCable:
-			var connectionPoint = child as DropZoneCable
-			
-			if not connectionPoint.charged:
-				points.append(child)
+	for point in truck.connectionPoints as Array[DropZoneCable]:
+		if not point.charged:
+			points.append(point)
 	
 	for point in points:
 		if point.charged == true:
@@ -234,9 +231,8 @@ func addConnectionPoint(truck: Truck):
 func removeConnectionPoint(truck: Truck):
 	var points: Array[DropZoneCable]
 	
-	for child in truck.get_children():
-		if child is DropZoneCable:
-			points.append(child)
+	for point in truck.connectionPoints as Array[DropZoneCable]:
+		points.append(point)
 	
 	for point in points:
 		connectionPointRed.erase(point)
