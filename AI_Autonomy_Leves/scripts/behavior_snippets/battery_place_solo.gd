@@ -17,7 +17,6 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		ai.navigation_agent.target_position = battery.global_position
 		
 		if not ai.navigation_agent.is_target_reachable():
-			print("Cannot reach battery")
 			continue
 		
 		var distanceToTarget: float  = ai.navigation_agent.distance_to_target()
@@ -36,7 +35,6 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		ai.navigation_agent.target_position = pylon.global_position
 		
 		if not ai.navigation_agent.is_target_reachable():
-			print("Cannot reach pylon")
 			continue
 			
 		var currentDistance: float = pylon.global_position.distance_to(currentBattery.global_position) 
@@ -48,11 +46,8 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		ai.navigation_agent.target_position = ai.global_position
 		return 0
 	
-	print(currentPylon)
 	itemTarget = currentBattery.global_position
 	destination = currentPylon.global_position
-	print("Succesful evaluation! returning points")
-	print(points)
 	return points
 	
 func run_behavior(ai: ArtificalIntelligence):

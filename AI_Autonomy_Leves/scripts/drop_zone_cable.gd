@@ -21,6 +21,3 @@ func try_connection(cableColor, cableHead: CableHead):
 
 func update_priority():
 	connectionPriority += 1
-	print("priority updated for:")
-	print(self)
-	print(connectionPriority)

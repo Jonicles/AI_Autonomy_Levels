@@ -25,7 +25,6 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 	blueConnectionpoints = evaluate_connection_priority(blueConnectionpoints)
 	greenConnectionpoints = evaluate_connection_priority(greenConnectionpoints)
 	
-	# ---------------------SOMEHOW IT IS NOT PRIORITISING HIGH PRIORITY CABLES?
 	cablePointPairs = find_shortest_distance(ai, redConnectionpoints, blueConnectionpoints, greenConnectionpoints)
 
 	if cablePointPairs.size() == 0:
@@ -116,7 +115,6 @@ func remove_unreachable_connections(ai: ArtificalIntelligence, cableHeads: Array
 
 func evaluate_connection_priority(connectionPoints: Array[DropZoneCable]):
 	var highestPriorityPoints: Array[DropZoneCable]
-	print("New evaluation")
 	var currentHighestPriority: int = -INF
 	
 	for point in connectionPoints:
@@ -124,14 +122,10 @@ func evaluate_connection_priority(connectionPoints: Array[DropZoneCable]):
 		
 		if priority == currentHighestPriority:
 			highestPriorityPoints.append(point)
-			print("Adding new point to currentPriority")
-			print(currentHighestPriority)
 		elif priority > currentHighestPriority:
-			print("Higher priority found! Clearing and adding point")
 			highestPriorityPoints.clear()
 			highestPriorityPoints.append(point)
 			currentHighestPriority = priority
-			print(currentHighestPriority)
 	
 	# The points within the list will always have the same amount of priority
 	return highestPriorityPoints

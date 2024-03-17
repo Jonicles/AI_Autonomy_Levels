@@ -11,6 +11,9 @@ var startPositionLeft
 var startPositionRight
 var currentBattery: Battery
 
+var isLeftHeadConnected: bool = false
+var isRightHeadConnected: bool = false
+
 func _ready():
 	startPositionLeft = cableHeadLeft.global_position
 	startPositionRight = cableHeadRight.global_position
@@ -26,8 +29,11 @@ func insert_battery(newBattery: Battery):
 	newBattery.global_position = global_position
 	
 	currentBattery.make_ungrabable()
-	cableHeadLeft.make_grabable()
-	cableHeadRight.make_grabable()
+	
+	if not isLeftHeadConnected:
+		cableHeadLeft.make_grabable()
+	if not isRightHeadConnected:
+		cableHeadRight.make_grabable()
 	
 	currentBattery.grabbed_empty_battery.connect(remove_battery)
 	currentBattery.no_charges_left.connect(_on_empty_battery)
@@ -56,19 +62,23 @@ func _on_drop_zone_item_dropped(newBattery):
 		
 func _on_cable_left_cable_connect():
 	currentBattery.use_charge()
+	isLeftHeadConnected = true
 	cableHeadLeft.make_ungrabable()
 
 func _on_cable_right_cable_connect():
 	currentBattery.use_charge()
+	isRightHeadConnected = true	
 	cableHeadRight.make_ungrabable()
 
 func _on_cable_left_cable_disconnect():
 	cableHeadLeft.global_position = startPositionLeft
+	isLeftHeadConnected = false
 	if currentBattery and currentBattery.charges != 0:
 		cableHeadLeft.make_grabable()
 
 func _on_cable_right_cable_disconnect():
 	cableHeadRight.global_position = startPositionRight
+	isRightHeadConnected = false
 	if currentBattery and currentBattery.charges != 0:
 		cableHeadRight.make_grabable()
 	
