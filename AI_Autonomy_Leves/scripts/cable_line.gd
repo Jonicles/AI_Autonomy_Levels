@@ -9,6 +9,7 @@ signal cable_electrified
 signal cable_reset
 
 var maxCableDistance = 128
+var lineThickness = 8
 
 func _ready():
 	var navRegion = get_node("/root/Main/NavigationRegion2D") as NavRegion
@@ -35,7 +36,6 @@ func _process(_delta):
 	try_add_point()
 	points[points.size() - 1] = to_local(cableHead.global_position)
 
-
 func try_add_point():
 	var currentPoint = points[points.size() - 1] 
 	var previousPoint = points[points.size() - 2] 
@@ -43,13 +43,26 @@ func try_add_point():
 	if currentPoint.distance_to(previousPoint) > maxCableDistance:
 		add_cable_point(currentPoint, previousPoint)
 
-func add_cable_point(currentPoint, previousPoint):
+func add_cable_point(currentPoint: Vector2, previousPoint: Vector2):
 	var collisionPolygon: CollisionPolygon2D = CollisionPolygon2D.new()
 	var vectorArray: Array[Vector2]
-	vectorArray.append(currentPoint - Vector2(8, 8))
-	vectorArray.append(previousPoint - Vector2(8, 8))
-	vectorArray.append(previousPoint + Vector2(8, 8))
-	vectorArray.append(currentPoint + Vector2(8, 8))	
+	
+	var xDifference = abs(previousPoint.x - currentPoint.x)
+	var yDifference = abs(previousPoint.y - currentPoint.y)
+	
+	var xPercentage = xDifference / maxCableDistance
+	var yPercentage = yDifference / maxCableDistance
+	
+	# Safeguard to make sure ai cannot cross thin cable lines
+	if abs(xDifference - yDifference) < 0.2 and ((currentPoint.x < previousPoint.x && currentPoint.y < previousPoint.y) or (currentPoint.x > previousPoint.x && currentPoint.y > previousPoint.y)):
+		yPercentage = -yPercentage	 
+	
+	var offset: Vector2 = Vector2(lineThickness * yPercentage, lineThickness * xPercentage)
+	
+	vectorArray.append(currentPoint + offset)	
+	vectorArray.append(currentPoint - offset)
+	vectorArray.append(previousPoint - offset)
+	vectorArray.append(previousPoint + offset)
 	
 	collisionPolygon.polygon = vectorArray
 	collisionPolygon.disabled = true

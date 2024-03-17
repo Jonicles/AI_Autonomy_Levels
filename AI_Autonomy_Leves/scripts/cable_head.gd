@@ -50,13 +50,9 @@ func disconnect_head():
 	cable_disconnect.emit()
 
 func make_grabable():
-	print("GRABABLE!!")	
-	print(self)
 	isGrabable = true
 	grabable.emit(self)
 
 func make_ungrabable():
-	print("UNGRABABLE!")	
-	print(self)
 	isGrabable = false
 	ungrabable.emit(self)
