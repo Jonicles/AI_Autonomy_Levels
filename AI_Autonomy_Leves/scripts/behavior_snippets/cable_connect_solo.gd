@@ -1,8 +1,12 @@
 class_name CableConnectSnippet extends BehaviorSnippet
 
 var points: int = 5
+var currentCableHead: CableHead
+var currentConnectionPoint: DropZoneCable
 
 func evaluate_utiliy(ai: ArtificalIntelligence):
+	currentCableHead = null
+	
 	step = 1
 	var cablePointPairs: Array[CableConnectionPair]
 	
@@ -16,6 +20,8 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		blueConnectionpoints.append(key as DropZoneCable)
 	for key in ai.connectionPointGreen.keys():
 		greenConnectionpoints.append(key as DropZoneCable)
+		
+	
 		
 	redConnectionpoints = remove_unreachable_connections(ai, ai.grabableRedCables, redConnectionpoints)
 	blueConnectionpoints = remove_unreachable_connections(ai, ai.grabableBlueCables, blueConnectionpoints)
@@ -53,6 +59,13 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		ai.navigation_agent.target_position = ai.global_position
 		return 0
 	
+	currentCableHead = bestPair.cableHead as CableHead
+	currentCableHead.grabbed_item.connect(cancel_behavior)
+	
+	currentConnectionPoint = bestPair.connectionPoint as DropZoneCable
+	if not currentConnectionPoint.point_connected.is_connected(cancel_behavior):
+		currentConnectionPoint.point_connected.connect(cancel_behavior)
+	
 	itemTarget = bestPair.cableHead.global_position
 	destination = bestPair.connectionPoint.global_position
 	return points
@@ -67,10 +80,11 @@ func run_behavior(ai: ArtificalIntelligence):
 				if not ai.navigation_agent.is_target_reachable():
 					ai.reset()
 					return
-					
+				
 				ai.move()
 				return
 				
+			currentCableHead.grabbed_item.disconnect(cancel_behavior)
 			ai.grab()
 			step += 1
 		3:
@@ -84,14 +98,19 @@ func run_behavior(ai: ArtificalIntelligence):
 					
 				ai.move()
 				return
-				
+			
+			currentConnectionPoint.point_connected.disconnect(cancel_behavior)
 			ai.drop()
 			step += 1
 		_:
 			print("Task Complete!")
 			ai.reset()
 
-func cancel_behavior():
+func cancel_behavior(_node):
+	if currentCableHead != null && currentCableHead.grabbed_item.is_connected(cancel_behavior):
+		currentCableHead.grabbed_item.disconnect(cancel_behavior)
+	if currentConnectionPoint != null && currentConnectionPoint.point_connected.is_connected(cancel_behavior):
+		currentConnectionPoint.point_connected.disconnect(cancel_behavior)
 	step = 5
 
 func remove_unreachable_connections(ai: ArtificalIntelligence, cableHeads: Array[CableHead], connectionPoints: Array[DropZoneCable]):
@@ -106,7 +125,10 @@ func remove_unreachable_connections(ai: ArtificalIntelligence, cableHeads: Array
 			ai.navigation_agent.target_position = point.global_position
 			if not ai.navigation_agent.is_target_reachable():
 				continue
-			
+			# Ai will not try to go to the same connection point as player
+			if point == currentConnectionPoint:
+				continue
+				
 			availableConnectionPoints.append(point)
 		
 		break

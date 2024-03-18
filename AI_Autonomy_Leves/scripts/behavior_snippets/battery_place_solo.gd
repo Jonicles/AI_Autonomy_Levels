@@ -1,18 +1,22 @@
 class_name BatteryPlaceSnippet extends BehaviorSnippet
 
 var points: int = 5
+var currentBattery: Battery
+var currentPylon: BatteryPylon
 
 func evaluate_utiliy(ai: ArtificalIntelligence):
+	currentBattery = null
+	currentPylon = null
 	step = 1
+	
 	if ai.grabableBatteries.size() == 0:
 		return 0
 		
 	if ai.emptyPylons.size() == 0:
 		return 0
 	
-	var currentBattery: Battery
-	var shortestDistance: float = INF
 	
+	var shortestDistance: float = INF
 	for battery in ai.grabableBatteries:
 		ai.navigation_agent.target_position = battery.global_position
 		
@@ -28,9 +32,8 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		ai.navigation_agent.target_position = ai.global_position
 		return 0
 	
-	var currentPylon: BatteryPylon
-	shortestDistance = INF
 	
+	shortestDistance = INF
 	for pylon in ai.emptyPylons:
 		ai.navigation_agent.target_position = pylon.global_position
 		
@@ -45,6 +48,9 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 	if currentPylon == null:
 		ai.navigation_agent.target_position = ai.global_position
 		return 0
+	
+	currentBattery.grabbed_item.connect(cancel_behavior)
+	currentPylon.battery_insert.connect(cancel_behavior)
 	
 	itemTarget = currentBattery.global_position
 	destination = currentPylon.global_position
@@ -63,7 +69,8 @@ func run_behavior(ai: ArtificalIntelligence):
 					
 				ai.move()
 				return
-				
+			
+			currentBattery.grabbed_item.disconnect(cancel_behavior)
 			ai.grab()
 			step += 1
 		3:
@@ -77,12 +84,17 @@ func run_behavior(ai: ArtificalIntelligence):
 					
 				ai.move()
 				return
-				
+			
+			currentPylon.battery_insert.disconnect(cancel_behavior)
 			ai.drop()
 			step += 1
 		_:
 			print("Task Complete!")
 			ai.reset()
 
-func cancel_behavior():
+func cancel_behavior(_node):
+	if currentBattery != null && currentBattery.grabbed_item.is_connected(cancel_behavior):
+		currentBattery.grabbed_item.disconnect(cancel_behavior)
+	if currentPylon != null && currentPylon.battery_insert.is_connected(cancel_behavior):
+		currentPylon.battery_insert.disconnect(cancel_behavior)
 	step = 5

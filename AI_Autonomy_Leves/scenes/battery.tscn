@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0xiawbkrhnls" path="res://sprites/Battery_3.png" id="2_qpkmt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2rdl1"]
-radius = 48.0
+radius = 56.0
 
 [node name="Battery" type="Area2D"]
 collision_layer = 2

@@ -32,7 +32,7 @@ func drop():
 		
 func grab():
 	make_ungrabable()
-	grabbed_item.emit()
+	grabbed_item.emit(self)
 	resetTimer.stop()
 
 func _on_timer_timeout():

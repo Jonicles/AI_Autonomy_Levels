@@ -1,15 +1,15 @@
 class_name BatteryRecycleSnippet extends BehaviorSnippet
 
 var points: int = 5
+var currentBattery: Battery
 
 func evaluate_utiliy(ai: ArtificalIntelligence):
+	currentBattery = null
 	step = 1
 	if ai.grabableEmptyBatteries.size() == 0:
 		return 0
 		
-	var currentBattery: Battery
 	var shortestDistance: float = INF
-	
 	for battery in ai.grabableEmptyBatteries:
 		ai.navigation_agent.target_position = battery.global_position
 		
@@ -23,6 +23,12 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 	
 	if currentBattery == null:
 		return 0
+		
+	ai.navigation_agent.target_position = ai.recyclePoint.global_position
+	if not ai.navigation_agent.is_target_reachable():
+		return 0
+	
+	currentBattery.grabbed_item.connect(cancel_behavior)
 	
 	itemTarget = currentBattery.global_position
 	destination = ai.recyclePoint.global_position
@@ -41,7 +47,8 @@ func run_behavior(ai: ArtificalIntelligence):
 						
 				ai.move()
 				return
-			
+				
+			currentBattery.grabbed_item.disconnect(cancel_behavior)
 			ai.grab()
 			step += 1
 		3:
@@ -62,5 +69,7 @@ func run_behavior(ai: ArtificalIntelligence):
 			print("Task Complete!")
 			ai.reset()
 
-func cancel_behavior():
+func cancel_behavior(_node):
+	if currentBattery != null && currentBattery.grabbed_item.is_connected(cancel_behavior):
+		currentBattery.grabbed_item.disconnect(cancel_behavior)
 	step = 5
