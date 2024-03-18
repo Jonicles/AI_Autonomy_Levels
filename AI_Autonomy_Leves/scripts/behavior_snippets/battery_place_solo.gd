@@ -57,6 +57,10 @@ func run_behavior(ai: ArtificalIntelligence):
 			step += 1
 		2:
 			if not ai.navigation_agent.is_navigation_finished():
+				if not ai.navigation_agent.is_target_reachable():
+					ai.reset()
+					return
+					
 				ai.move()
 				return
 				
@@ -67,6 +71,10 @@ func run_behavior(ai: ArtificalIntelligence):
 			step += 1
 		4:
 			if not ai.navigation_agent.is_navigation_finished():
+				if not ai.navigation_agent.is_target_reachable():
+					ai.reset()
+					return
+					
 				ai.move()
 				return
 				
