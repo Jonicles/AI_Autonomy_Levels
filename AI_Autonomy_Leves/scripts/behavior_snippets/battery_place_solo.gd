@@ -49,8 +49,11 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		ai.navigation_agent.target_position = ai.global_position
 		return 0
 	
-	currentBattery.grabbed_item.connect(cancel_behavior)
-	currentPylon.battery_insert.connect(cancel_behavior)
+	if not currentBattery.grabbed_item.is_connected(cancel_behavior):
+		currentBattery.grabbed_item.connect(cancel_behavior)
+		
+	if not currentPylon.battery_insert.is_connected(cancel_behavior):
+		currentPylon.battery_insert.connect(cancel_behavior)
 	
 	itemTarget = currentBattery.global_position
 	destination = currentPylon.global_position

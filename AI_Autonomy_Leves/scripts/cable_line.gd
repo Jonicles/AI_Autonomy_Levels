@@ -9,7 +9,7 @@ signal cable_electrified
 signal cable_reset
 
 var maxCableDistance = 128
-var lineThickness = 8
+var lineThickness = 10
 
 func _ready():
 	var navRegion = get_node("/root/Main/NavigationRegion2D") as NavRegion
@@ -54,7 +54,7 @@ func add_cable_point(currentPoint: Vector2, previousPoint: Vector2):
 	var yPercentage = yDifference / maxCableDistance
 	
 	# Safeguard to make sure ai cannot cross thin cable lines
-	if abs(xDifference - yDifference) < 0.2 and ((currentPoint.x < previousPoint.x && currentPoint.y < previousPoint.y) or (currentPoint.x > previousPoint.x && currentPoint.y > previousPoint.y)):
+	if abs(xDifference - yDifference) < 0.5 and ((currentPoint.x < previousPoint.x && currentPoint.y < previousPoint.y) or (currentPoint.x > previousPoint.x && currentPoint.y > previousPoint.y)):
 		yPercentage = -yPercentage	 
 	
 	var offset: Vector2 = Vector2(lineThickness * yPercentage, lineThickness * xPercentage)
