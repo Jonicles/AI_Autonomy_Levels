@@ -4,6 +4,7 @@ class_name CableLine extends Line2D
 @export var color = Color.BLUE
 @onready var staticBody: StaticBody2D = %StaticBody2D
 @onready var electricityTimer: Timer = $ElectricityTimer
+@onready var deelectrificationTimer: Timer = $DeelectrificationTimer
 
 signal cable_electrified
 signal cable_reset
@@ -71,6 +72,7 @@ func add_cable_point(currentPoint: Vector2, previousPoint: Vector2):
 
 func start_electrification():
 	electricityTimer.start()
+	deelectrificationTimer.start()
 
 func activate_collision():
 	# Add a point to make sure that collision is all the way
@@ -82,6 +84,15 @@ func activate_collision():
 		var collisionShape = child as CollisionPolygon2D
 		collisionShape.disabled = false
 
+func deactivate_collision():
+	if staticBody.get_child_count() > 0: 
+		for child in staticBody.get_children():
+			var childNode: Node = child
+			staticBody.remove_child(childNode)
+			childNode.queue_free()
+	
+	default_color = color
+
 func _on_electricity_timer_timeout():
 	activate_collision()
 	blink()
@@ -89,3 +100,9 @@ func _on_electricity_timer_timeout():
 
 func blink():
 	default_color = Color.YELLOW
+
+func _on_deelectrification_timer_timeout():
+	deactivate_collision()
+	var navRegion = get_node("/root/Main/NavigationRegion2D") as NavRegion
+	navRegion.rebake_nav_polygon()
+	
