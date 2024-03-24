@@ -13,8 +13,8 @@ var itemNode: Area2D
 var heldItem: Item
 
 func change_direction(newDirection: Vector2):
-	currentDirection = newDirection
 	itemDirection = currentDirection
+	currentDirection = newDirection
 
 func _physics_process(delta):
 	body.move_and_collide(currentDirection * speed * delta )
