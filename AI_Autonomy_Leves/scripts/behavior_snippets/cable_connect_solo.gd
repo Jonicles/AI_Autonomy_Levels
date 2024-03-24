@@ -1,4 +1,4 @@
-class_name CableConnectSnippet extends BehaviorSnippet
+class_name CableConnectSolo extends BehaviorSnippet
 
 var points: int = 5
 var currentCableHead: CableHead
@@ -60,7 +60,8 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		return 0
 	
 	currentCableHead = bestPair.cableHead as CableHead
-	currentCableHead.grabbed_item.connect(cancel_behavior)
+	if not currentCableHead.grabbed_item.is_connected(cancel_behavior):
+		currentCableHead.grabbed_item.connect(cancel_behavior)
 	
 	currentConnectionPoint = bestPair.connectionPoint as DropZoneCable
 	if not currentConnectionPoint.point_connected.is_connected(cancel_behavior):

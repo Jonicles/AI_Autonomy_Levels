@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="8_072dv"]
 [ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="8_pll5h"]
 [ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="9_pn3yd"]
-[ext_resource type="PackedScene" uid="uid://gyjttkdbgf3p" path="res://scenes/AI.tscn" id="11_wea8s"]
+[ext_resource type="PackedScene" uid="uid://bqax6b8vmkkre" path="res://scenes/ai_low_autonomy.tscn" id="10_35smw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8i4k1"]
 size = Vector2(1356, 48)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f8tl4"]
-vertices = PackedVector2Array(346, 107, 346, 10, 926, 10, 926, 106, 658, 614, 590, 614, 994, 106, 994, 10, 1262, 10, 1262, 710, 658, 710, 590, 710, 10, 710, 278, 107, 10, 10, 278, 10)
+vertices = PackedVector2Array(346, 83, 346, 10, 926, 10, 926, 82, 658, 638, 590, 638, 994, 82, 994, 10, 1262, 10, 1262, 710, 658, 710, 590, 710, 10, 710, 278, 83, 10, 10, 278, 10)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 4, 3), PackedInt32Array(0, 5, 11, 12, 13), PackedInt32Array(13, 12, 14, 15)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1272, 0, 1272, 720, 0, 720)])
 source_geometry_group_name = &"navigation_polygon_source_group"
@@ -98,9 +98,8 @@ position = Vector2(624, 168)
 [node name="SpawnPoint4" parent="NavigationRegion2D/TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
 position = Vector2(312, 456)
 
-[node name="Character3" parent="." instance=ExtResource("11_wea8s")]
-position = Vector2(744, 288)
-desiredDistance = 60.0
-
 [node name="CenterPoint" type="Node2D" parent="."]
 position = Vector2(624, 312)
+
+[node name="Low_Autonomy_AI" parent="." instance=ExtResource("10_35smw")]
+position = Vector2(792, 360)

@@ -10,7 +10,7 @@ size = Vector2(362.308, 357.386)
 [sub_resource type="CircleShape2D" id="CircleShape2D_31bu7"]
 radius = 37.2689
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Low_Autonomy_AI" type="CharacterBody2D"]
 z_index = -2
 scale = Vector2(0.132484, 0.134309)
 collision_layer = 0

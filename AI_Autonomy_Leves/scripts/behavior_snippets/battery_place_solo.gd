@@ -1,4 +1,4 @@
-class_name BatteryPlaceSnippet extends BehaviorSnippet
+class_name BatteryPlaceSolo extends BehaviorSnippet
 
 var points: int = 5
 var currentBattery: Battery

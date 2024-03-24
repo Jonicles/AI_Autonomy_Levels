@@ -1,15 +1,28 @@
 class_name LowAutonomyAI extends ArtificalIntelligence
 
+var batteryPlaceSolo = BatteryPlaceSolo.new()
+var batteryRecycleSolo = BatteryRecycleSolo.new()
+var cableConnectSolo = CableConnectSolo.new()
+var batteryPlaceAssist = BatteryPlaceAssist.new()
+
+
 func _input(event):
 	if event.is_action_pressed("Player_1"):
-		currentSnippet = BatteryPlaceSnippet.new()
+		reset()
+		currentSnippet = batteryPlaceSolo
 		print("Place Snippet")
 		
 	if event.is_action_pressed("Player_2"):
-		currentSnippet = BatteryRecycleSnippet.new()
+		reset()
+		currentSnippet = batteryRecycleSolo
 		print("Recycle Snippet")
 		
-	
 	if event.is_action_pressed("Player_3"):
-		currentSnippet = CableConnectSnippet.new()
+		reset()
+		currentSnippet = cableConnectSolo
 		print("Connect Snippet")
+	if event.is_action_pressed("Player_4"):
+		reset()
+		currentSnippet = batteryPlaceAssist
+		print("Connect Snippet")
+	
