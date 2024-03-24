@@ -1,4 +1,4 @@
-extends Node
+class_name TruckSpawner extends Node
 
 @onready var pointsParent = $SpawnPoints
 @onready var timer: Timer = $Timer

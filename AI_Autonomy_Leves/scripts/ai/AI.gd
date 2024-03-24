@@ -2,10 +2,11 @@ class_name ArtificalIntelligence extends CharacterBody2D
 
 @export var desiredDistance: float
 
-@onready var controller = $Controller
+@onready var controller: CharacterController = $Controller
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var recyclePoint: Node2D = $"../BatteryDropZone"
 @onready var centerPoint: Node2D = $"../CenterPoint"
+@onready var player: Node2D = $"../Player"
 
 var currentSnippet: BehaviorSnippet
 var utility: int = 0
@@ -26,6 +27,9 @@ func _ready():
 	# Green Pylon
 	var greenPylon = $"../NavigationRegion2D/BatteryPylonGreen" as BatteryPylon
 	
+	greenPylon.battery_insert.connect(remove_pylon)
+	greenPylon.battery_removal.connect(add_pylon)
+	
 	var cableLeftGreen = greenPylon.cableHeadLeft as CableHead
 	cableLeftGreen.grabable.connect(add_grabableCable)
 	cableLeftGreen.ungrabable.connect(remove_grabableCable)
@@ -38,6 +42,9 @@ func _ready():
 	
 	# Red pylon
 	var redPylon = $"../NavigationRegion2D/BatteryPylonRed" as BatteryPylon
+	
+	redPylon.battery_insert.connect(remove_pylon)
+	redPylon.battery_removal.connect(add_pylon)
 	
 	var cableLeftRed = redPylon.cableHeadLeft as CableHead
 	cableLeftRed.grabable.connect(add_grabableCable)
@@ -52,6 +59,9 @@ func _ready():
 	# Blue pylon
 	var bluePylon = $"../NavigationRegion2D/BatteryPylonBlue" as BatteryPylon
 	
+	bluePylon.battery_insert.connect(remove_pylon)
+	bluePylon.battery_removal.connect(add_pylon)
+	
 	var cableLeftBlue = bluePylon.cableHeadLeft as CableHead
 	cableLeftBlue.grabable.connect(add_grabableCable)
 	cableLeftBlue.ungrabable.connect(remove_grabableCable)
@@ -61,6 +71,14 @@ func _ready():
 	cableRightBlue.ungrabable.connect(remove_grabableCable)
 	
 	add_pylon(bluePylon)
+	
+	# Battery Spawner
+	var batterySpawner = $"../BatterySpawner" as BatterySpawner
+	batterySpawner.battery_spawned.connect(add_battery)
+	
+	# Truck Spawner
+	var truckSpawner = $"../NavigationRegion2D/TruckSpawner" as TruckSpawner
+	truckSpawner.truck_spawned.connect(addConnectionPoint)
 	
 func reset():
 	utility = 0
@@ -107,6 +125,9 @@ func grab():
 	
 func drop():
 	controller.let_go()
+	
+func throw():
+	controller.throw()
 
 func move():
 	if navigation_agent.is_navigation_finished():

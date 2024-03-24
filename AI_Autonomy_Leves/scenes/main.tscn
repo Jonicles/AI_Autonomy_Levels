@@ -28,7 +28,7 @@ position = Vector2(120, 360)
 [node name="BatteryDropZone" parent="." instance=ExtResource("8_pll5h")]
 position = Vector2(1128, 360)
 
-[node name="Character" parent="." instance=ExtResource("1_fio3m")]
+[node name="Player" parent="." instance=ExtResource("1_fio3m")]
 position = Vector2(240, 360)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -104,15 +104,3 @@ desiredDistance = 60.0
 
 [node name="CenterPoint" type="Node2D" parent="."]
 position = Vector2(624, 312)
-
-[connection signal="battery_spawned" from="BatterySpawner" to="Character3" method="add_battery"]
-[connection signal="bake_finished" from="NavigationRegion2D" to="NavigationRegion2D" method="_on_bake_finished"]
-[connection signal="timeout" from="NavigationRegion2D/Timer" to="NavigationRegion2D" method="_on_timer_timeout"]
-[connection signal="battery_insert" from="NavigationRegion2D/BatteryPylonGreen" to="Character3" method="remove_pylon"]
-[connection signal="battery_removal" from="NavigationRegion2D/BatteryPylonGreen" to="Character3" method="add_pylon"]
-[connection signal="battery_insert" from="NavigationRegion2D/BatteryPylonBlue" to="Character3" method="remove_pylon"]
-[connection signal="battery_removal" from="NavigationRegion2D/BatteryPylonBlue" to="Character3" method="add_pylon"]
-[connection signal="battery_insert" from="NavigationRegion2D/BatteryPylonRed" to="Character3" method="remove_pylon"]
-[connection signal="battery_removal" from="NavigationRegion2D/BatteryPylonRed" to="Character3" method="add_pylon"]
-[connection signal="truck_spawned" from="NavigationRegion2D/TruckSpawner" to="NavigationRegion2D" method="_on_truck_spawner_truck_spawned"]
-[connection signal="truck_spawned" from="NavigationRegion2D/TruckSpawner" to="Character3" method="addConnectionPoint"]

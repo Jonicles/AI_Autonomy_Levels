@@ -1,4 +1,4 @@
-extends Node
+class_name BatterySpawner extends Node
 
 @onready var respawnTimer: Timer = $Timer
 
@@ -8,7 +8,7 @@ var batteryNode = load("res://scenes/battery.tscn")
 var currentBattery: Battery
 
 func _ready():
-	spawn_battery()
+	respawnTimer.start()
 
 func spawn_battery():
 	currentBattery = batteryNode.instantiate()
