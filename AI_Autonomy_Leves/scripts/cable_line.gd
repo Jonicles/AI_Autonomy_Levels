@@ -21,12 +21,7 @@ func _ready():
 	
 func reset_cable():
 	clear_points()
-	 
-	if staticBody.get_child_count() > 0: 
-		for child in staticBody.get_children():
-			var childNode: Node = child
-			staticBody.remove_child(childNode)
-			childNode.queue_free()
+	deactivate_collision()
 	
 	add_point(to_local(global_position))
 	add_point(to_local(global_position))
@@ -85,6 +80,7 @@ func activate_collision():
 		collisionShape.disabled = false
 
 func deactivate_collision():
+	deelectrificationTimer.stop()
 	if staticBody.get_child_count() > 0: 
 		for child in staticBody.get_children():
 			var childNode: Node = child
@@ -92,6 +88,8 @@ func deactivate_collision():
 			childNode.queue_free()
 	
 	default_color = color
+	var navRegion = get_node("/root/Main/NavigationRegion2D") as NavRegion
+	navRegion.rebake_nav_polygon()
 
 func _on_electricity_timer_timeout():
 	activate_collision()
@@ -103,6 +101,3 @@ func blink():
 
 func _on_deelectrification_timer_timeout():
 	deactivate_collision()
-	var navRegion = get_node("/root/Main/NavigationRegion2D") as NavRegion
-	navRegion.rebake_nav_polygon()
-	

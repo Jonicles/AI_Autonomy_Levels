@@ -16,5 +16,9 @@ one_shot = true
 [node name="DeelectrificationTimer" type="Timer" parent="."]
 wait_time = 25.0
 
+[node name="DeelectrificationTimer2" type="Timer" parent="."]
+wait_time = 25.0
+
 [connection signal="timeout" from="ElectricityTimer" to="." method="_on_electricity_timer_timeout"]
 [connection signal="timeout" from="DeelectrificationTimer" to="." method="_on_deelectrification_timer_timeout"]
+[connection signal="timeout" from="DeelectrificationTimer2" to="." method="_on_deelectrification_timer_timeout"]
