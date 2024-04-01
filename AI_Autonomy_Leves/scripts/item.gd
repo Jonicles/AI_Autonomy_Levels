@@ -1,6 +1,6 @@
 class_name Item extends Area2D
 
-const THROWING_DISTANCE: int = 150
+const THROWING_DISTANCE: int = 100
 
 var isGrabable: bool = true
 

@@ -33,7 +33,7 @@ texture = ExtResource("2_t3w34")
 [node name="Controller" type="Node" parent="." node_paths=PackedStringArray("body")]
 script = ExtResource("3_awob5")
 body = NodePath("..")
-speed = 350
+speed = 250
 
 [node name="GrabRadius" type="Area2D" parent="."]
 unique_name_in_owner = true

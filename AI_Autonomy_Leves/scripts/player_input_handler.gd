@@ -1,7 +1,7 @@
 class_name PlayerInput extends CharacterBody2D
 
-@onready var controller = $Controller
-@onready var navigationAgent = $NavigationAgent2D
+@onready var controller: CharacterController = $Controller
+@onready var navigationAgent: NavigationAgent2D = $NavigationAgent2D
 
 func _process(_delta):
 	var inputDirection: Vector2 = Vector2(0,0)

@@ -1,59 +1,45 @@
-class_name BatteryPlaceAssist extends BehaviorSnippet
+class_name BatteryRecycleAssist extends BehaviorSnippet
 
 var points: int = 5
 var currentBattery: Battery
 
 func evaluate_utiliy(ai: ArtificalIntelligence):
+	currentBattery = null
 	step = 1
 	
-	if ai.grabableBatteries.size() == 0:
+	if ai.grabableEmptyBatteries.size() == 0:
 		return 0
 		
-	if ai.emptyPylons.size() == 0:
-		return 0
-	
 	ai.navigation_agent.target_position = ai.player.global_position
 	if ai.navigation_agent.is_target_reachable():
 		return 0
 		
-	for battery in ai.grabableBatteries:
-		ai.player.navigationAgent.target_position = battery.global_position
-		if ai.player.navigationAgent.is_target_reachable():
-			return 0
-	
-	if ai.player.controller.heldItem != null and ai.player.controller.heldItem == currentBattery:
+	ai.navigation_agent.target_position = ai.recyclePoint.global_position
+	if ai.navigation_agent.is_target_reachable():
 		return 0
-	
-	currentBattery = null
+		
 	var shortestDistance: float = INF
-	for battery in ai.grabableBatteries:
+	for battery in ai.grabableEmptyBatteries:
 		ai.navigation_agent.target_position = battery.global_position
 		
 		if not ai.navigation_agent.is_target_reachable():
 			continue
 		
-		var distanceToTarget: float  = ai.navigation_agent.distance_to_target()
-		if  distanceToTarget < shortestDistance:
+		var currentDistance: float = battery.global_position.distance_to(ai.global_position) 
+		if  currentDistance < shortestDistance:
 			currentBattery = battery
-			shortestDistance = distanceToTarget
+			shortestDistance = currentDistance
 	
 	if currentBattery == null:
-		ai.navigation_agent.target_position = ai.global_position
 		return 0
-	
-	
+		
 	if not currentBattery.grabbed_item.is_connected(cancel_behavior):
 		currentBattery.grabbed_item.connect(cancel_behavior)
 	
-	ai.navigation_agent.target_position = ai.global_position
 	itemTarget = currentBattery.global_position
 	return points
 	
 func run_behavior(ai: ArtificalIntelligence):
-	if ai.emptyPylons.size() == 0:
-		cancel_behavior(self)
-		ai.reset()
-			
 	match step:
 		1:
 			ai.navigation_agent.target_position = itemTarget
@@ -63,10 +49,10 @@ func run_behavior(ai: ArtificalIntelligence):
 				if not ai.navigation_agent.is_target_reachable():
 					ai.reset()
 					return
-					
+						
 				ai.move()
 				return
-			
+				
 			currentBattery.grabbed_item.disconnect(cancel_behavior)
 			ai.grab()
 			step += 1
@@ -93,3 +79,4 @@ func run_behavior(ai: ArtificalIntelligence):
 func cancel_behavior(_node):
 	if currentBattery != null && currentBattery.grabbed_item.is_connected(cancel_behavior):
 		currentBattery.grabbed_item.disconnect(cancel_behavior)
+	step = 5
