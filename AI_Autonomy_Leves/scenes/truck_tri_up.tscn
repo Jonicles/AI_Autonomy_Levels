@@ -48,15 +48,15 @@ color = Color(0, 0, 1, 1)
 [node name="DropZones" type="Node2D" parent="."]
 
 [node name="Drop Zone" parent="DropZones" instance=ExtResource("2_o61vn")]
-position = Vector2(-64, 0)
+position = Vector2(-72, 0)
 acceptedItemType = 2
 
 [node name="Drop Zone2" parent="DropZones" instance=ExtResource("2_o61vn")]
-position = Vector2(0, -64)
+position = Vector2(0, -72)
 acceptedItemType = 2
 
 [node name="Drop Zone3" parent="DropZones" instance=ExtResource("2_o61vn")]
-position = Vector2(64, 0)
+position = Vector2(72, 0)
 acceptedItemType = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

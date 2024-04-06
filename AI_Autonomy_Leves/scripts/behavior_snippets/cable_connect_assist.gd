@@ -1,4 +1,4 @@
-class_name CableConnectSolo extends BehaviorSnippet
+class_name CableConnectAssist extends BehaviorSnippet
 
 var points: int = 5
 var currentCableHead: CableHead
@@ -20,12 +20,29 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		blueConnectionpoints.append(key as DropZoneCable)
 	for key in ai.connectionPointGreen.keys():
 		greenConnectionpoints.append(key as DropZoneCable)
-		
 	
+	# If player is reachable there is not reason to assist
+	ai.navigation_agent.target_position = ai.player.global_position
+	if ai.navigation_agent.is_target_reachable():
+		print("Player is reachable, cancelling behaviour")
+		return 0
 		
 	redConnectionpoints = remove_unreachable_connections(ai, ai.grabableRedCables, redConnectionpoints)
+	print("Red Points")
+	print(redConnectionpoints.size())
+	
 	blueConnectionpoints = remove_unreachable_connections(ai, ai.grabableBlueCables, blueConnectionpoints)
-	greenConnectionpoints = remove_unreachable_connections(ai, ai.grabableGreenCables, greenConnectionpoints)
+	print("Blue Points")
+	print(blueConnectionpoints.size())
+	
+	greenConnectionpoints = remove_unreachable_connections(ai, ai.grabableGreenCables, greenConnectionpoints)	
+	print("Green Points")
+	print(greenConnectionpoints.size())
+	
+	
+	redConnectionpoints = remove_player_reachable_colors(ai, ai.grabableRedCables, redConnectionpoints)
+	blueConnectionpoints = remove_player_reachable_colors(ai, ai.grabableBlueCables, blueConnectionpoints)
+	greenConnectionpoints = remove_player_reachable_colors(ai, ai.grabableGreenCables, greenConnectionpoints)
 	
 	redConnectionpoints = evaluate_connection_priority(redConnectionpoints)
 	blueConnectionpoints = evaluate_connection_priority(blueConnectionpoints)
@@ -46,9 +63,9 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		if not ai.navigation_agent.is_target_reachable():
 			continue
 			
-		ai.navigation_agent.target_position = pair.connectionPoint.global_position
+		ai.player.navigationAgent.target_position = pair.connectionPoint.global_position
 			
-		if not ai.navigation_agent.is_target_reachable():
+		if not ai.player.navigationAgent.is_target_reachable():
 			continue
 		
 		if pair.distance < shortestDistance:
@@ -68,10 +85,13 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 		currentConnectionPoint.point_connected.connect(cancel_behavior)
 	
 	itemTarget = bestPair.cableHead.global_position
-	destination = bestPair.connectionPoint.global_position
 	return points
 	
 func run_behavior(ai: ArtificalIntelligence):
+	ai.player.navigationAgent.target_position = ai.global_position
+	if ai.player.navigationAgent.is_target_reachable():
+		cancel_behavior(self)
+	
 	match step:
 		1:
 			ai.navigation_agent.target_position = itemTarget
@@ -89,19 +109,20 @@ func run_behavior(ai: ArtificalIntelligence):
 			ai.grab()
 			step += 1
 		3:
-			ai.navigation_agent.target_position = destination
-			step += 1
-		4:
+			ai.navigation_agent.target_position = ai.player.global_position
+			
 			if not ai.navigation_agent.is_navigation_finished():
-				if not ai.navigation_agent.is_target_reachable():
-					ai.reset()
-					return
-					
 				ai.move()
 				return
 			
-			currentConnectionPoint.point_connected.disconnect(cancel_behavior)
-			ai.drop()
+			ai.navigation_agent.target_position = ai.global_position
+			
+			step += 1
+		4:
+			var direction = ai.player.global_position - ai.global_position
+			ai.controller.change_direction(direction.normalized())
+			ai.throw()
+			ai.controller.change_direction(Vector2.ZERO)
 			step += 1
 		_:
 			print("Task Complete!")
@@ -123,18 +144,31 @@ func remove_unreachable_connections(ai: ArtificalIntelligence, cableHeads: Array
 			continue
 			
 		for point in connectionPoints:
-			ai.navigation_agent.target_position = point.global_position
-			if not ai.navigation_agent.is_target_reachable():
+			ai.player.navigationAgent.target_position = point.global_position
+			if not ai.player.navigationAgent.is_target_reachable():
+				print("Target is not reachable for player")
 				continue
-			# Ai will not try to go to the same connection point as player
+				
+			# Ai will not try to go to the same connection point as player (Might need to remove for assist
 			if point == currentConnectionPoint:
 				continue
 				
 			availableConnectionPoints.append(point)
 		# There is no need to evaluate more the connection point again if we have a connection
 		break
-		
+	
 	return availableConnectionPoints
+
+func remove_player_reachable_colors(ai: ArtificalIntelligence, cableHeads: Array[CableHead], connectionPoints: Array[DropZoneCable]):
+	#for cableHead in cableHeads:
+		#ai.player.navigationAgent.target_position = cableHead.global_position
+		#
+		#if ai.navigation_agent.is_target_reachable():
+			#connectionPoints.clear()
+			#print("Cleared connection poings")
+			#break
+	
+	return connectionPoints
 
 func evaluate_connection_priority(connectionPoints: Array[DropZoneCable]):
 	var highestPriorityPoints: Array[DropZoneCable]

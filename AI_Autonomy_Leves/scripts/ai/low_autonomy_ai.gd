@@ -5,6 +5,8 @@ var batteryRecycleSolo = BatteryRecycleSolo.new()
 var cableConnectSolo = CableConnectSolo.new()
 var batteryPlaceAssist = BatteryPlaceAssist.new()
 var batteryRecycleAssist = BatteryRecycleAssist.new()
+var cableConnectAssist = CableConnectAssist.new()
+
 
 
 
@@ -31,8 +33,8 @@ func _input(event):
 		reset()
 		currentSnippet = batteryRecycleAssist
 		print("Recycle Assist Snippet")
-	#if event.is_action_pressed("Player_6"):
-		#reset()
-		#currentSnippet = batteryPlaceAssist
-		#print("Connect Snippet")
+	if event.is_action_pressed("Player_6"):
+		reset()
+		currentSnippet = cableConnectAssist
+		print("Connect Assist Snippet")
 	

@@ -44,6 +44,6 @@ scale = Vector2(11.3417, 10.8675)
 shape = SubResource("CircleShape2D_31bu7")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 48.0
-radius = 1.0
+path_desired_distance = 70.0
+target_desired_distance = 74.0
 debug_enabled = true

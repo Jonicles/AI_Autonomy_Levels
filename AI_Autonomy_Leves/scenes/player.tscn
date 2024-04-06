@@ -16,6 +16,9 @@ scale = Vector2(0.132484, 0.134309)
 script = ExtResource("1_1rxll")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 68.1
+target_desired_distance = 50.0
+radius = 0.01
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.71641e-06, 1.77515e-06)

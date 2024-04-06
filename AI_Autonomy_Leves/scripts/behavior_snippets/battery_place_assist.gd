@@ -53,7 +53,11 @@ func run_behavior(ai: ArtificalIntelligence):
 	if ai.emptyPylons.size() == 0:
 		cancel_behavior(self)
 		ai.reset()
-			
+	
+	ai.player.navigationAgent.target_position = ai.global_position
+	if ai.player.navigationAgent.is_target_reachable():
+		cancel_behavior(self)
+	
 	match step:
 		1:
 			ai.navigation_agent.target_position = itemTarget
