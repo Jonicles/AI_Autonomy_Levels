@@ -89,8 +89,7 @@ func try_get_next_task():
 	if currentSnippet == null: 
 		return
 		
-	utility = currentSnippet.evaluate_utiliy(self)
-	
+	utility = currentSnippet.evaluate_utility(self)
 	if utility == 0:
 		navigation_agent.target_position = centerPoint.global_position
 		move()

@@ -3,7 +3,7 @@ class_name BatteryPlaceAssist extends BehaviorSnippet
 var points: int = 5
 var currentBattery: Battery
 
-func evaluate_utiliy(ai: ArtificalIntelligence):
+func evaluate_utility(ai: ArtificalIntelligence):
 	step = 1
 	
 	if ai.grabableBatteries.size() == 0:
@@ -60,6 +60,7 @@ func run_behavior(ai: ArtificalIntelligence):
 	
 	match step:
 		1:
+			print("Runnint Battery Place Assist")
 			ai.navigation_agent.target_position = itemTarget
 			step += 1
 		2:
@@ -97,3 +98,4 @@ func run_behavior(ai: ArtificalIntelligence):
 func cancel_behavior(_node):
 	if currentBattery != null && currentBattery.grabbed_item.is_connected(cancel_behavior):
 		currentBattery.grabbed_item.disconnect(cancel_behavior)
+	step = 5

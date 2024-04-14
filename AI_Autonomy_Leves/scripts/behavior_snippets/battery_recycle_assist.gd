@@ -1,9 +1,9 @@
 class_name BatteryRecycleAssist extends BehaviorSnippet
 
-var points: int = 5
+var points: int = 6
 var currentBattery: Battery
 
-func evaluate_utiliy(ai: ArtificalIntelligence):
+func evaluate_utility(ai: ArtificalIntelligence):
 	currentBattery = null
 	step = 1
 	
@@ -46,6 +46,7 @@ func run_behavior(ai: ArtificalIntelligence):
 		
 	match step:
 		1:
+			print("Runnint Battery Recycle Assist")
 			ai.navigation_agent.target_position = itemTarget
 			step += 1
 		2:

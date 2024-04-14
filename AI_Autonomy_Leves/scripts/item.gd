@@ -35,7 +35,6 @@ func _physics_process(delta):
 	else:
 		inAir = false
 		make_grabable()
-		drop()
 	
 func make_grabable():
 	isGrabable = true

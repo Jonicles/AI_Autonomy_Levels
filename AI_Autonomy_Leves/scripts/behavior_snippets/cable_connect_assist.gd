@@ -1,10 +1,10 @@
 class_name CableConnectAssist extends BehaviorSnippet
 
-var points: int = 5
+var points: int = 4
 var currentCableHead: CableHead
 var currentConnectionPoint: DropZoneCable
 
-func evaluate_utiliy(ai: ArtificalIntelligence):
+func evaluate_utility(ai: ArtificalIntelligence):
 	currentCableHead = null
 	
 	step = 1
@@ -24,20 +24,11 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 	# If player is reachable there is not reason to assist
 	ai.navigation_agent.target_position = ai.player.global_position
 	if ai.navigation_agent.is_target_reachable():
-		print("Player is reachable, cancelling behaviour")
 		return 0
 		
 	redConnectionpoints = remove_unreachable_connections(ai, ai.grabableRedCables, redConnectionpoints)
-	print("Red Points")
-	print(redConnectionpoints.size())
-	
 	blueConnectionpoints = remove_unreachable_connections(ai, ai.grabableBlueCables, blueConnectionpoints)
-	print("Blue Points")
-	print(blueConnectionpoints.size())
-	
 	greenConnectionpoints = remove_unreachable_connections(ai, ai.grabableGreenCables, greenConnectionpoints)	
-	print("Green Points")
-	print(greenConnectionpoints.size())
 	
 	
 	redConnectionpoints = remove_player_reachable_colors(ai, ai.grabableRedCables, redConnectionpoints)
@@ -94,6 +85,7 @@ func run_behavior(ai: ArtificalIntelligence):
 	
 	match step:
 		1:
+			print("Runnint Cable Assist")
 			ai.navigation_agent.target_position = itemTarget
 			step += 1
 		2:

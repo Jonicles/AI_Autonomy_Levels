@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="8_072dv"]
 [ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="8_pll5h"]
 [ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="9_pn3yd"]
-[ext_resource type="PackedScene" uid="uid://bqax6b8vmkkre" path="res://scenes/ai_low_autonomy.tscn" id="10_35smw"]
+[ext_resource type="PackedScene" uid="uid://cjkuukf64m30u" path="res://scenes/ai_medium_autonomy.tscn" id="10_fadyk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8i4k1"]
 size = Vector2(1356, 48)
@@ -101,5 +101,5 @@ position = Vector2(312, 456)
 [node name="CenterPoint" type="Node2D" parent="."]
 position = Vector2(624, 312)
 
-[node name="Low_Autonomy_AI" parent="." instance=ExtResource("10_35smw")]
-position = Vector2(792, 360)
+[node name="Medium_Autonomy_AI" parent="." instance=ExtResource("10_fadyk")]
+position = Vector2(576, 336)

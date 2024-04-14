@@ -1,10 +1,10 @@
 class_name BatteryPlaceSolo extends BehaviorSnippet
 
-var points: int = 5
+var points: int = 2
 var currentBattery: Battery
 var currentPylon: BatteryPylon
 
-func evaluate_utiliy(ai: ArtificalIntelligence):
+func evaluate_utility(ai: ArtificalIntelligence):
 	currentBattery = null
 	currentPylon = null
 	step = 1
@@ -62,6 +62,7 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 func run_behavior(ai: ArtificalIntelligence):
 	match step:
 		1:
+			print("Runnint Battery Place Solo")
 			ai.navigation_agent.target_position = itemTarget
 			step += 1
 		2:

@@ -1,10 +1,10 @@
 class_name CableConnectSolo extends BehaviorSnippet
 
-var points: int = 5
+var points: int = 1
 var currentCableHead: CableHead
 var currentConnectionPoint: DropZoneCable
 
-func evaluate_utiliy(ai: ArtificalIntelligence):
+func evaluate_utility(ai: ArtificalIntelligence):
 	currentCableHead = null
 	
 	step = 1
@@ -74,6 +74,7 @@ func evaluate_utiliy(ai: ArtificalIntelligence):
 func run_behavior(ai: ArtificalIntelligence):
 	match step:
 		1:
+			print("Runnint Cable Solo")
 			ai.navigation_agent.target_position = itemTarget
 			step += 1
 		2:

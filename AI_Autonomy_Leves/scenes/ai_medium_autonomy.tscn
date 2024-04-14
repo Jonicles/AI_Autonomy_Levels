@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqax6b8vmkkre"]
+[gd_scene load_steps=6 format=3 uid="uid://cjkuukf64m30u"]
 
-[ext_resource type="Script" path="res://scripts/ai/low_autonomy_ai.gd" id="1_24wf8"]
-[ext_resource type="Texture2D" uid="uid://facj60wx5dx5" path="res://sprites/AI_Player.png" id="2_t3w34"]
-[ext_resource type="Script" path="res://scripts/character_controller.gd" id="3_awob5"]
+[ext_resource type="Script" path="res://scripts/ai/medium_autonomy_ai.gd" id="1_pej4g"]
+[ext_resource type="Texture2D" uid="uid://facj60wx5dx5" path="res://sprites/AI_Player.png" id="2_qxpfp"]
+[ext_resource type="Script" path="res://scripts/character_controller.gd" id="3_oi3ah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw0x0"]
 size = Vector2(362.308, 357.386)
@@ -10,13 +10,13 @@ size = Vector2(362.308, 357.386)
 [sub_resource type="CircleShape2D" id="CircleShape2D_31bu7"]
 radius = 37.2689
 
-[node name="Low_Autonomy_AI" type="CharacterBody2D"]
+[node name="Medium_Autonomy_AI" type="CharacterBody2D"]
 z_index = -2
 scale = Vector2(0.132484, 0.134309)
 collision_layer = 0
 collision_mask = 0
 safe_margin = 40.0
-script = ExtResource("1_24wf8")
+script = ExtResource("1_pej4g")
 desiredDistance = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -28,10 +28,10 @@ shape = SubResource("RectangleShape2D_xw0x0")
 z_index = -1
 position = Vector2(-2.28882e-05, -2.67029e-05)
 scale = Vector2(7.54808, 7.44552)
-texture = ExtResource("2_t3w34")
+texture = ExtResource("2_qxpfp")
 
 [node name="Controller" type="Node" parent="." node_paths=PackedStringArray("body")]
-script = ExtResource("3_awob5")
+script = ExtResource("3_oi3ah")
 body = NodePath("..")
 speed = 250
 
