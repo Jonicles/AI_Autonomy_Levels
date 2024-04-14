@@ -29,7 +29,12 @@ func drop():
 			resetTimer.start()
 	else:
 		resetTimer.start()
-		
+
+func immediate_drop():
+	resetTimer.start()
+	drop_immediately.emit()
+	make_ungrabable()
+
 func grab():
 	make_ungrabable()
 	grabbed_item.emit(self)
@@ -48,7 +53,7 @@ func connect_head():
 func disconnect_head():
 	cableLine.reset_cable()
 	cable_disconnect.emit()
-
+	
 func make_grabable():
 	isGrabable = true
 	grabable.emit(self)

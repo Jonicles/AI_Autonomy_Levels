@@ -209,7 +209,7 @@ func addConnectionPoint(truck: Truck):
 	if not truck.cable_connected.is_connected(removeConnectionPoint):
 		truck.cable_connected.connect(removeConnectionPoint)
 	
-	var points: Array[DropZoneCable]
+	var points: Array[DropZoneCable] = []
 	
 	for point in truck.connectionPoints as Array[DropZoneCable]:
 		if not point.charged:
@@ -232,7 +232,7 @@ func addConnectionPoint(truck: Truck):
 				connectionPointGreen[point] = true
 	
 func removeConnectionPoint(truck: Truck):
-	var points: Array[DropZoneCable]
+	var points: Array[DropZoneCable] = []
 	
 	for point in truck.connectionPoints as Array[DropZoneCable]:
 		points.append(point)

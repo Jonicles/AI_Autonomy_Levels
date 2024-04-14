@@ -13,6 +13,8 @@ var throwingTime = 0.3
 signal grabbed_item
 signal dropped_item
 
+signal drop_immediately
+
 func drop():
 	pass
 
@@ -36,7 +38,11 @@ func _physics_process(delta):
 		inAir = false
 		make_grabable()
 		drop()
-	
+
+func immediate_drop():
+	drop_immediately.emit()
+	make_ungrabable()
+
 func make_grabable():
 	isGrabable = true
 

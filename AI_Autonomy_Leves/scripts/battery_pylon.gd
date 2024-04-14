@@ -53,8 +53,8 @@ func remove_battery():
 		battery_removal.emit(self)
 
 func disable_cables():
-	cableHeadLeft.make_ungrabable()
-	cableHeadRight.make_ungrabable()
+	cableHeadLeft.immediate_drop()
+	cableHeadRight.immediate_drop()
 
 func _on_drop_zone_item_dropped(newBattery):
 	if not currentBattery:
