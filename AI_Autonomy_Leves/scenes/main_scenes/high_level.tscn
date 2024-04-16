@@ -1,16 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwmm2yxtyjm3n"]
+[gd_scene load_steps=14 format=3 uid="uid://db6hl18fe5lbk"]
 
-[ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/player.tscn" id="1_fio3m"]
-[ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
-[ext_resource type="PackedScene" uid="uid://c1lnltaqpdl35" path="res://scenes/battery_spawner.tscn" id="5_6yxt4"]
-[ext_resource type="Script" path="res://scripts/nav_region.gd" id="5_kms16"]
-[ext_resource type="PackedScene" uid="uid://cpahgnvl0ey4a" path="res://scenes/truck_spawner.tscn" id="6_bap8c"]
-[ext_resource type="PackedScene" uid="uid://84ug5q6mk10k" path="res://scenes/spawn_point.tscn" id="7_i53ye"]
-[ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="8_072dv"]
-[ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="8_pll5h"]
-[ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="9_pn3yd"]
-[ext_resource type="PackedScene" uid="uid://bqax6b8vmkkre" path="res://scenes/ai_low_autonomy.tscn" id="10_uv7g6"]
-[ext_resource type="PackedScene" uid="uid://cknaj6mqb27vh" path="res://scenes/count_down_timer.tscn" id="11_6cmih"]
+[ext_resource type="PackedScene" uid="uid://c1lnltaqpdl35" path="res://scenes/battery_spawner.tscn" id="1_q08qd"]
+[ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="2_nsvtp"]
+[ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/player.tscn" id="3_20eyd"]
+[ext_resource type="Script" path="res://scripts/nav_region.gd" id="4_ypfij"]
+[ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="5_is6km"]
+[ext_resource type="PackedScene" uid="uid://0683lxoa003i" path="res://scenes/battery_pylon_blue.tscn" id="6_2hhrv"]
+[ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="7_yp0a6"]
+[ext_resource type="PackedScene" uid="uid://cpahgnvl0ey4a" path="res://scenes/truck_spawner.tscn" id="8_11t8v"]
+[ext_resource type="PackedScene" uid="uid://84ug5q6mk10k" path="res://scenes/spawn_point.tscn" id="9_jk14m"]
+[ext_resource type="PackedScene" uid="uid://40rfe7hmshri" path="res://scenes/ai_high_autonomy.tscn" id="10_umy5i"]
+[ext_resource type="PackedScene" uid="uid://cknaj6mqb27vh" path="res://scenes/count_down_timer.tscn" id="11_fvxhq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8i4k1"]
 size = Vector2(1356, 48)
@@ -23,13 +23,13 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Main" type="Node"]
 
-[node name="BatterySpawner" parent="." instance=ExtResource("5_6yxt4")]
+[node name="BatterySpawner" parent="." instance=ExtResource("1_q08qd")]
 position = Vector2(120, 360)
 
-[node name="BatteryDropZone" parent="." instance=ExtResource("8_pll5h")]
+[node name="BatteryDropZone" parent="." instance=ExtResource("2_nsvtp")]
 position = Vector2(1128, 360)
 
-[node name="Player" parent="." instance=ExtResource("1_fio3m")]
+[node name="Player" parent="." instance=ExtResource("3_20eyd")]
 position = Vector2(240, 360)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -70,45 +70,45 @@ shape = SubResource("RectangleShape2D_8i4k1")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_f8tl4")
-script = ExtResource("5_kms16")
+script = ExtResource("4_ypfij")
 
 [node name="Timer" type="Timer" parent="NavigationRegion2D"]
 wait_time = 0.1
 one_shot = true
 
-[node name="BatteryPylonGreen" parent="NavigationRegion2D" instance=ExtResource("4_4k1gm")]
+[node name="BatteryPylonGreen" parent="NavigationRegion2D" instance=ExtResource("5_is6km")]
 position = Vector2(312, 49)
 
-[node name="BatteryPylonBlue" parent="NavigationRegion2D" instance=ExtResource("8_072dv")]
+[node name="BatteryPylonBlue" parent="NavigationRegion2D" instance=ExtResource("6_2hhrv")]
 position = Vector2(960, 48)
 
-[node name="BatteryPylonRed" parent="NavigationRegion2D" instance=ExtResource("9_pn3yd")]
+[node name="BatteryPylonRed" parent="NavigationRegion2D" instance=ExtResource("7_yp0a6")]
 position = Vector2(624, 672)
 
-[node name="TruckSpawner" parent="NavigationRegion2D" instance=ExtResource("6_bap8c")]
+[node name="TruckSpawner" parent="NavigationRegion2D" instance=ExtResource("8_11t8v")]
 position = Vector2(624, 312)
 
 [node name="SpawnPoints" type="Node" parent="NavigationRegion2D/TruckSpawner"]
 
-[node name="SpawnPoint2" parent="NavigationRegion2D/TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+[node name="SpawnPoint2" parent="NavigationRegion2D/TruckSpawner/SpawnPoints" instance=ExtResource("9_jk14m")]
 position = Vector2(960, 456)
 
-[node name="SpawnPoint3" parent="NavigationRegion2D/TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+[node name="SpawnPoint3" parent="NavigationRegion2D/TruckSpawner/SpawnPoints" instance=ExtResource("9_jk14m")]
 position = Vector2(624, 168)
 
-[node name="SpawnPoint4" parent="NavigationRegion2D/TruckSpawner/SpawnPoints" instance=ExtResource("7_i53ye")]
+[node name="SpawnPoint4" parent="NavigationRegion2D/TruckSpawner/SpawnPoints" instance=ExtResource("9_jk14m")]
 position = Vector2(312, 456)
 
 [node name="CenterPoint" type="Node2D" parent="."]
 position = Vector2(624, 312)
 
-[node name="Low_Autonomy_AI" parent="." instance=ExtResource("10_uv7g6")]
+[node name="High_Autonomy_AI" parent="." instance=ExtResource("10_umy5i")]
 position = Vector2(624, 312)
 
-[node name="CountDownTimer" parent="." instance=ExtResource("11_6cmih")]
+[node name="CountDownTimer" parent="." instance=ExtResource("11_fvxhq")]
 position = Vector2(624, 168)
 
 [connection signal="count_down_finished" from="CountDownTimer" to="Player" method="activate"]
-[connection signal="count_down_finished" from="CountDownTimer" to="Low_Autonomy_AI" method="activate"]
+[connection signal="count_down_finished" from="CountDownTimer" to="High_Autonomy_AI" method="activate"]
 [connection signal="time_limit_reached" from="CountDownTimer" to="Player" method="deactivate"]
-[connection signal="time_limit_reached" from="CountDownTimer" to="Low_Autonomy_AI" method="deactivate"]
+[connection signal="time_limit_reached" from="CountDownTimer" to="High_Autonomy_AI" method="deactivate"]

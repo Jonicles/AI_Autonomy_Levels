@@ -41,6 +41,9 @@ func _input(event):
 			print("Connect Solo Snippet")
 		
 	if event.is_action_pressed("Player_4"):
+		if currentSnippet == null:
+			return
+			
 		reset()
 		var previousBehaviour = currentSnippet as BehaviorSnippet
 		var newBehaviour: BehaviorSnippet

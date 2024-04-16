@@ -2,6 +2,7 @@ extends Node
 
 @export var countDownTime: int = 3
 @export var timeLimit: int = 150
+@export var sceneToLoad: String
 
 @onready var timer: Timer = $Timer
 @onready var label: Label = $Label
@@ -48,4 +49,4 @@ func _on_count_down_finished():
 	
 func _on_time_limit_reached():
 	timer.stop()
-	#get_tree().change_scene_to_file()
+	get_tree().change_scene_to_file(sceneToLoad)
