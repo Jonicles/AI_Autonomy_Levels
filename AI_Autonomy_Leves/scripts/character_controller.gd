@@ -52,31 +52,23 @@ func grab():
 		
 	itemNode = object
 	heldItem = itemNode as Item
-	heldItem.grab()
+	heldItem.grab(self)
 	
-	if not heldItem.drop_immediately.is_connected(let_go_without_drop):
-		heldItem.drop_immediately.connect(let_go_without_drop)
-
 func let_go():
 	if not heldItem:
 		return
-	
-	if heldItem.drop_immediately.is_connected(let_go_without_drop):
-		heldItem.drop_immediately.disconnect(let_go_without_drop)
 	
 	heldItem.drop()
 	itemNode = null
 	heldItem = null
 
-func let_go_without_drop():
+func remove_item():
 	if not heldItem:
 		return
 	
-	if heldItem.drop_immediately.is_connected(let_go_without_drop):
-		heldItem.drop_immediately.disconnect(let_go_without_drop)
-	
 	itemNode = null	
 	heldItem = null
+	
 func throw():
 	if not heldItem:
 		return

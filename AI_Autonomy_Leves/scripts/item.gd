@@ -2,6 +2,8 @@ class_name Item extends Area2D
 
 const THROWING_DISTANCE: int = 100
 
+var currentHolder: CharacterController
+
 var isGrabable: bool = true
 
 var currentPosition: Vector2
@@ -13,12 +15,11 @@ var throwingTime = 0.3
 signal grabbed_item
 signal dropped_item
 
-signal drop_immediately
-
 func drop():
-	pass
+	currentHolder = null
 
-func grab():
+func grab(character: CharacterController):
+	currentHolder = character
 	grabbed_item.emit()
 
 func throw(direction: Vector2):
@@ -40,8 +41,10 @@ func _physics_process(delta):
 		drop()
 
 func immediate_drop():
-	drop_immediately.emit()
-	make_ungrabable()
+	if not currentHolder:
+		return
+		
+	currentHolder.remove_item()
 
 func make_grabable():
 	isGrabable = true

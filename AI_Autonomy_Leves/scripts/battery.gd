@@ -17,6 +17,7 @@ var itemType := GlobalEnums.ItemType.BATTERY
 
 func drop():
 	make_grabable()
+	currentHolder = null
 	var areas: Array[Area2D] = get_overlapping_areas()
 
 	if not areas:
@@ -29,7 +30,8 @@ func drop():
 		dropped_item.emit(self)
 		#explosionTimer.start()
 
-func grab():
+func grab(character: CharacterController):
+	currentHolder = character
 	make_ungrabable()
 	#explosionTimer.stop()
 	grabbed_item.emit(self)

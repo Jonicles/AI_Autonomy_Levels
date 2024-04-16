@@ -17,6 +17,7 @@ var itemType := GlobalEnums.ItemType.CABLE
 #Overriden Drop method
 func drop():
 	make_grabable()
+	currentHolder = null
 	var areas: Array[Area2D] = get_overlapping_areas()
 	
 	if not areas:
@@ -30,15 +31,18 @@ func drop():
 	else:
 		resetTimer.start()
 
-func immediate_drop():
-	resetTimer.start()
-	drop_immediately.emit()
-	make_ungrabable()
-
-func grab():
+func grab(character: CharacterController):
+	currentHolder = character
 	make_ungrabable()
 	grabbed_item.emit(self)
 	resetTimer.stop()
+
+func immediate_drop():
+	if not currentHolder:
+		return
+		
+	currentHolder.remove_item()
+	disconnect_head()
 
 func _on_timer_timeout():
 	resetTimer.stop()
