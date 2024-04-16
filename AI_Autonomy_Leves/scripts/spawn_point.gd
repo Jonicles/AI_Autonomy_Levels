@@ -16,5 +16,5 @@ func leave():
 	occupied = false
 	truck_despawned.emit()
 	
-func _on_charge_complete():
+func _on_charge_complete(_node):
 	leave()

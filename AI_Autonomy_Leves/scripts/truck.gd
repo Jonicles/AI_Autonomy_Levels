@@ -58,7 +58,7 @@ func check_if_fully_connected():
 
 func complete_visit():
 	disconnect_cables()
-	charge_complete.emit()
+	charge_complete.emit(self)
 
 func disconnect_cables():
 	for i in connectedCables:
