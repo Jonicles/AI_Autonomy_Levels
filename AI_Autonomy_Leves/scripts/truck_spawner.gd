@@ -17,27 +17,25 @@ var truckTriDown = preload("res://scenes/truck_tri_down.tscn")
 var truckTriLeft = preload("res://scenes/truck_tri_left.tscn")
 var truckTriRight = preload("res://scenes/truck_tri_right.tscn")
 
-var allTrucks: Array = []
+#var allTrucks: Array = []
 var dualTrucks: Array = []
 var triTrucks: Array = []
 
-
 var spawnPoints: Array[SpawnPoint]
-
 var numberOfTriTrucks: int = 0
 const maxNumberOfTriTrucks = 2
 
 func _ready():
-	allTrucks.append(truckDownLeft)
-	allTrucks.append(truckDownRight)
-	allTrucks.append(truckUpLeft)
-	allTrucks.append(truckUpRight)
-	allTrucks.append(truckLeftRight)
-	allTrucks.append(truckUpDown)
-	allTrucks.append(truckTriUp)
-	allTrucks.append(truckTriDown)
-	allTrucks.append(truckTriLeft)
-	allTrucks.append(truckTriRight)
+	#allTrucks.append(truckDownLeft)
+	#allTrucks.append(truckDownRight)
+	#allTrucks.append(truckUpLeft)
+	#allTrucks.append(truckUpRight)
+	#allTrucks.append(truckLeftRight)
+	#allTrucks.append(truckUpDown)
+	#allTrucks.append(truckTriUp)
+	#allTrucks.append(truckTriDown)
+	#allTrucks.append(truckTriLeft)
+	#allTrucks.append(truckTriRight)
 	
 	dualTrucks.append(truckDownLeft)
 	dualTrucks.append(truckDownRight)
@@ -45,6 +43,11 @@ func _ready():
 	dualTrucks.append(truckUpRight)
 	dualTrucks.append(truckLeftRight)
 	dualTrucks.append(truckUpDown)
+	
+	triTrucks.append(truckTriUp)
+	triTrucks.append(truckTriDown)
+	triTrucks.append(truckTriLeft)
+	triTrucks.append(truckTriRight)
 	
 	var spawnNodes = pointsParent.get_children() 
 	var navRegion: NavRegion = get_node("/root/Main/NavigationRegion2D")
@@ -70,7 +73,7 @@ func spawn():
 	if numberOfTriTrucks >= maxNumberOfTriTrucks:
 		truck = dualTrucks.pick_random()
 	else:
-		truck = allTrucks.pick_random()
+		truck = triTrucks.pick_random()
 		
 	var instance: Truck = truck.instantiate()
 	spawnPoint.add_child(instance)
