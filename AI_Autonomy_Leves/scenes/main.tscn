@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwmm2yxtyjm3n"]
+[gd_scene load_steps=14 format=3 uid="uid://cwmm2yxtyjm3n"]
 
 [ext_resource type="PackedScene" uid="uid://wf4853ft3vyo" path="res://scenes/player.tscn" id="1_fio3m"]
 [ext_resource type="PackedScene" uid="uid://wxjmgwnibuki" path="res://scenes/battery_pylon_green.tscn" id="4_4k1gm"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ec0tpwx0s4c" path="res://scenes/drop_zone_battery.tscn" id="8_pll5h"]
 [ext_resource type="PackedScene" uid="uid://cfx3aprhi0tuj" path="res://scenes/battery_pylon_red.tscn" id="9_pn3yd"]
 [ext_resource type="PackedScene" uid="uid://bqax6b8vmkkre" path="res://scenes/ai_low_autonomy.tscn" id="10_uv7g6"]
+[ext_resource type="PackedScene" uid="uid://cknaj6mqb27vh" path="res://scenes/count_down_timer.tscn" id="11_6cmih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8i4k1"]
 size = Vector2(1356, 48)
@@ -103,3 +104,11 @@ position = Vector2(624, 312)
 
 [node name="Low_Autonomy_AI" parent="." instance=ExtResource("10_uv7g6")]
 position = Vector2(624, 312)
+
+[node name="CountDownTimer" parent="." instance=ExtResource("11_6cmih")]
+position = Vector2(624, 168)
+
+[connection signal="count_down_finished" from="CountDownTimer" to="Player" method="activate"]
+[connection signal="count_down_finished" from="CountDownTimer" to="Low_Autonomy_AI" method="activate"]
+[connection signal="time_limit_reached" from="CountDownTimer" to="Player" method="deactivate"]
+[connection signal="time_limit_reached" from="CountDownTimer" to="Low_Autonomy_AI" method="deactivate"]

@@ -46,7 +46,6 @@ func _on_empty_battery(_battery):
 	
 func remove_battery():
 	if currentBattery:
-		disable_cables()
 		currentBattery.grabbed_empty_battery.disconnect(remove_battery)
 		batteryContainer.remove_contained_item()
 		currentBattery = null

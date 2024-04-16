@@ -13,7 +13,7 @@ var maxCableDistance = 128
 var lineThickness = 10
 
 func _ready():
-	var navRegion = get_node("/root/Main/NavigationRegion2D") as NavRegion
+	var navRegion = get_tree().root.get_child(0).get_node("NavigationRegion2D") as NavRegion
 	cable_electrified.connect(navRegion.rebake_nav_polygon)
 	cable_reset.connect(navRegion.rebake_nav_polygon)
 	

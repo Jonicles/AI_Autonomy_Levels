@@ -56,7 +56,7 @@ func connect_head():
 
 func disconnect_head():
 	cableLine.reset_cable()
-	cable_disconnect.emit()
+	cable_disconnect.emit()	
 	
 func make_grabable():
 	isGrabable = true

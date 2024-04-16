@@ -79,7 +79,13 @@ func _ready():
 	# Truck Spawner
 	var truckSpawner = $"../NavigationRegion2D/TruckSpawner" as TruckSpawner
 	truckSpawner.truck_spawned.connect(addConnectionPoint)
-	
+
+func activate():
+	controller.activate()
+
+func deactivate():
+	controller.deactivate()
+
 func reset():
 	utility = 0
 	drop()

@@ -12,11 +12,22 @@ var itemDirection = Vector2.DOWN
 var itemNode: Area2D
 var heldItem: Item
 
+var isActive = false
+
+func activate():
+	isActive = true
+
+func deactivate():
+	isActive = false
+
 func change_direction(newDirection: Vector2):
 	currentDirection = newDirection
 	itemDirection = currentDirection
 
 func _physics_process(delta):
+	if not isActive:
+		return
+		
 	body.move_and_collide(currentDirection * speed * delta )
 	
 	if not heldItem:
@@ -25,6 +36,9 @@ func _physics_process(delta):
 	itemNode.global_position = body.global_position + itemDirection * Vector2(itemPixelsOffset, itemPixelsOffset)
 
 func grab():
+	if not isActive:
+		return
+	
 	if heldItem:
 		return
 	
@@ -55,6 +69,9 @@ func grab():
 	heldItem.grab(self)
 	
 func let_go():
+	if not isActive:
+		return
+	
 	if not heldItem:
 		return
 	
@@ -63,6 +80,9 @@ func let_go():
 	heldItem = null
 
 func remove_item():
+	if not isActive:
+		return
+	
 	if not heldItem:
 		return
 	
@@ -70,6 +90,9 @@ func remove_item():
 	heldItem = null
 	
 func throw():
+	if not isActive:
+		return
+	
 	if not heldItem:
 		return
 	
