@@ -35,7 +35,7 @@ cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
 font = SubResource("FontFile_5lcp5")
 font_size = 50
 outline_size = 10
-outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="CountDownTimer" type="Node2D"]
 script = ExtResource("1_61byn")

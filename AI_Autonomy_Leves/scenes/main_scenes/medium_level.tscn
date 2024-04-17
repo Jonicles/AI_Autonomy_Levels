@@ -24,10 +24,10 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 [node name="Main" type="Node"]
 
 [node name="BatterySpawner" parent="." instance=ExtResource("1_eptmp")]
-position = Vector2(120, 360)
+position = Vector2(96, 360)
 
 [node name="BatteryDropZone" parent="." instance=ExtResource("2_opwvh")]
-position = Vector2(1128, 360)
+position = Vector2(1152, 360)
 
 [node name="Player" parent="." instance=ExtResource("3_0wmn1")]
 position = Vector2(240, 360)
@@ -107,7 +107,8 @@ position = Vector2(624, 312)
 
 [node name="CountDownTimer" parent="." instance=ExtResource("11_c0go0")]
 position = Vector2(624, 168)
-sceneToLoad = "res://scenes/main_scenes/high_level.tscn"
+countDownTime = 5
+sceneToLoad = "res://scenes/inbetween_scenes/instruction_high_level.tscn"
 
 [connection signal="count_down_finished" from="CountDownTimer" to="Player" method="activate"]
 [connection signal="count_down_finished" from="CountDownTimer" to="Medium_Autonomy_AI" method="activate"]

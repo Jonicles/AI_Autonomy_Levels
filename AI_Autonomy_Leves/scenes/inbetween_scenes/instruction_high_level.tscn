@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://5rbjeni263k4"]
+
+[ext_resource type="Script" path="res://scripts/button_scene_loader.gd" id="1_5fkaj"]
+
+[sub_resource type="FontFile" id="FontFile_ukjfl"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/glyphs/0/advance = Vector2(0, 0)
+cache/0/50/0/glyphs/0/offset = Vector2(0, 0)
+cache/0/50/0/glyphs/0/size = Vector2(0, 0)
+cache/0/50/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
+cache/0/50/0/glyphs/0/texture_idx = -1
+cache/0/50/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tgsae"]
+line_spacing = 0.0
+font = SubResource("FontFile_ukjfl")
+font_size = 50
+font_color = Color(0.952941, 0.952941, 0.952941, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontFile" id="FontFile_4ihe3"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_wnomc"]
+default_font = SubResource("FontFile_4ihe3")
+default_font_size = 40
+
+[node name="InstructionLowLevel" type="Node2D"]
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 64.0
+offset_right = 1277.0
+offset_bottom = 131.0
+text = "Version-C
+In this level the player cannot control the AI
+
+"
+label_settings = SubResource("LabelSettings_tgsae")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -27
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 1, 1, 0.270588)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 456.0
+offset_top = 408.0
+offset_right = 816.0
+offset_bottom = 496.0
+theme = SubResource("Theme_wnomc")
+text = "Play"
+script = ExtResource("1_5fkaj")
+scenePath = "res://scenes/main_scenes/high_level.tscn"

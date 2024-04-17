@@ -1,0 +1,176 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpspge6binchc"]
+
+[ext_resource type="Script" path="res://scripts/button_scene_loader.gd" id="1_50qtg"]
+
+[sub_resource type="FontFile" id="FontFile_ukjfl"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tgsae"]
+line_spacing = 0.0
+font = SubResource("FontFile_ukjfl")
+font_size = 50
+font_color = Color(0.952941, 0.952941, 0.952941, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontFile" id="FontFile_jq3ap"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lkppb"]
+font = SubResource("FontFile_jq3ap")
+font_size = 45
+
+[sub_resource type="FontFile" id="FontFile_4ihe3"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_fnaf4"]
+default_font = SubResource("FontFile_4ihe3")
+default_font_size = 40
+
+[node name="InstructionLowLevel" type="Node2D"]
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 64.0
+offset_right = 1277.0
+offset_bottom = 131.0
+text = "Version-A:
+In this level the AI can be told what to do by the player.
+"
+label_settings = SubResource("LabelSettings_tgsae")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -27
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 1, 1, 0.270588)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 56)
+
+[node name="Label6" type="Label" parent="Node2D"]
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 1216.0
+offset_bottom = 256.0
+text = "Press 1 to place batteries"
+label_settings = SubResource("LabelSettings_lkppb")
+
+[node name="Label5" type="Label" parent="Node2D"]
+offset_left = 64.0
+offset_top = 272.0
+offset_right = 1216.0
+offset_bottom = 336.0
+text = "Press 2 to recycle batteries"
+label_settings = SubResource("LabelSettings_lkppb")
+
+[node name="Label4" type="Label" parent="Node2D"]
+offset_left = 64.0
+offset_top = 352.0
+offset_right = 1216.0
+offset_bottom = 416.0
+text = "Press 3 to connect cables"
+label_settings = SubResource("LabelSettings_lkppb")
+
+[node name="Label3" type="Label" parent="Node2D"]
+offset_left = 64.0
+offset_top = 432.0
+offset_right = 1216.0
+offset_bottom = 542.0
+text = "Press 4 to switch the AI between 
+assist and solo mode"
+label_settings = SubResource("LabelSettings_lkppb")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 816.0
+offset_top = 504.0
+offset_right = 1140.0
+offset_bottom = 592.0
+theme = SubResource("Theme_fnaf4")
+text = "Play"
+script = ExtResource("1_50qtg")
+scenePath = "res://scenes/main_scenes/low_level.tscn"
