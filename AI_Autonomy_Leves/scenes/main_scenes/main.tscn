@@ -108,7 +108,7 @@ position = Vector2(624, 312)
 [node name="CountDownTimer" parent="." instance=ExtResource("11_fsorp")]
 position = Vector2(624, 168)
 timeLimit = 20
-sceneToLoad = "res://scenes/medium_level.tscn"
+sceneToLoad = "res://scenes/main_scenes/medium_level.tscn"
 
 [connection signal="count_down_finished" from="CountDownTimer" to="Player" method="activate"]
 [connection signal="count_down_finished" from="CountDownTimer" to="Low_Autonomy_AI" method="activate"]
