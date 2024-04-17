@@ -19,7 +19,7 @@ shape = SubResource("CircleShape2D_ieil3")
 offset_left = -24.0
 offset_top = -24.0
 scale = Vector2(2, 1.99183)
-color = Color(0, 1, 1, 1)
+color = Color(0.980392, 1, 0.556863, 1)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
