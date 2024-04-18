@@ -126,6 +126,7 @@ label_settings = SubResource("LabelSettings_tgsae")
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -27
 offset_right = 1272.0
 offset_bottom = 720.0
@@ -150,4 +151,4 @@ offset_bottom = 544.0
 theme = SubResource("Theme_fnaf4")
 text = "Play again"
 script = ExtResource("1_pc3ot")
-scenePath = "res://scenes/main_scenes/medium_level.tscn"
+scenePath = "res://scenes/inbetween_scenes/tutorial.tscn"

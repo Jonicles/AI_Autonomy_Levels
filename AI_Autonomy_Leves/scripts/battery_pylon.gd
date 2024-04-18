@@ -52,8 +52,11 @@ func remove_battery():
 		battery_removal.emit(self)
 
 func disable_cables():
-	cableHeadLeft.immediate_drop()
-	cableHeadRight.immediate_drop()
+	if not isLeftHeadConnected:
+		cableHeadLeft.immediate_drop()
+		
+	if not isRightHeadConnected:	
+		cableHeadRight.immediate_drop()
 	
 	cableHeadLeft.make_ungrabable()
 	cableHeadRight.make_ungrabable()
@@ -63,14 +66,14 @@ func _on_drop_zone_item_dropped(newBattery):
 		insert_battery(newBattery)
 		
 func _on_cable_left_cable_connect():
-	currentBattery.use_charge()
 	isLeftHeadConnected = true
 	cableHeadLeft.make_ungrabable()
+	currentBattery.use_charge()
 
 func _on_cable_right_cable_connect():
-	currentBattery.use_charge()
 	isRightHeadConnected = true	
 	cableHeadRight.make_ungrabable()
+	currentBattery.use_charge()
 
 func _on_cable_left_cable_disconnect():
 	cableHeadLeft.global_position = startPositionLeft

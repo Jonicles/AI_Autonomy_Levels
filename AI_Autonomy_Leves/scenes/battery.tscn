@@ -32,11 +32,11 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="AssistTimer" type="Timer" parent="."]
 wait_time = 6.0
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qpkmt")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="AssistTimer" to="." method="_on_assist_timer_timeout"]

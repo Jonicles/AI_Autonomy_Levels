@@ -9,3 +9,6 @@ func try_drop_off(itemType, item):
 	
 	item_dropped.emit(item)
 	return true
+	
+func add_points(scorer: CharacterController, assister: CharacterController):
+	pass

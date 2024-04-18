@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpg0trpanc48p"]
+[gd_scene load_steps=9 format=3 uid="uid://cpg0trpanc48p"]
 
+[ext_resource type="Script" path="res://scripts/score_labels.gd" id="1_1dlqg"]
 [ext_resource type="Script" path="res://scripts/button_scene_loader.gd" id="1_m7pvx"]
 
 [sub_resource type="FontFile" id="FontFile_ukjfl"]
@@ -127,13 +128,18 @@ label_settings = SubResource("LabelSettings_tgsae")
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -27
 offset_right = 1272.0
 offset_bottom = 720.0
 color = Color(1, 1, 1, 0.270588)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("combinedLabel", "playerLabel", "aiLabel")]
 position = Vector2(0, 168)
+script = ExtResource("1_1dlqg")
+combinedLabel = NodePath("Label6")
+playerLabel = NodePath("Label4")
+aiLabel = NodePath("Label5")
 
 [node name="Label3" type="Label" parent="Node2D"]
 offset_left = 144.0
@@ -141,32 +147,32 @@ offset_top = 192.0
 offset_right = 1176.0
 offset_bottom = 381.0
 text = "Click the link to the Google form in the description.
-Fill out the Version-C part of the survey.
+Fill out the rest of the survey.
 When you are done, click the button"
 label_settings = SubResource("LabelSettings_lkppb")
 
 [node name="Label4" type="Label" parent="Node2D"]
-offset_left = 384.0
+offset_left = 456.0
 offset_top = 24.0
-offset_right = 674.0
+offset_right = 746.0
 offset_bottom = 85.0
 text = "Player Score: 0"
 label_settings = SubResource("LabelSettings_lkppb")
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="Node2D"]
-offset_left = 384.0
+offset_left = 456.0
 offset_top = 72.0
-offset_right = 594.0
+offset_right = 666.0
 offset_bottom = 133.0
 text = "AI Score: 0"
 label_settings = SubResource("LabelSettings_lkppb")
 horizontal_alignment = 1
 
 [node name="Label6" type="Label" parent="Node2D"]
-offset_left = 384.0
+offset_left = 456.0
 offset_top = -24.0
-offset_right = 759.0
+offset_right = 831.0
 offset_bottom = 37.0
 text = "Combined Score: 0"
 label_settings = SubResource("LabelSettings_lkppb")
@@ -180,4 +186,4 @@ offset_bottom = 688.0
 theme = SubResource("Theme_fnaf4")
 text = "Continue"
 script = ExtResource("1_m7pvx")
-scenePath = "res://scenes/main_scenes/medium_level.tscn"
+scenePath = "res://scenes/inbetween_scenes/instruction_end.tscn"

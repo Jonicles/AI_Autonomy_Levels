@@ -15,12 +15,15 @@ run/main_scene="res://scenes/inbetween_scenes/tutorial.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://sprites/icon.svg"
 
+[autoload]
+
+GlobalScores="*res://scripts/global_scores.gd"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
-window/size/borderless=true
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"

@@ -22,8 +22,13 @@ offset_bottom = 36.0
 scale = Vector2(0.8, 0.8)
 color = Color(1, 0.415686, 0.133333, 1)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.5
+[node name="ResetTimer" type="Timer" parent="."]
+wait_time = 6.0
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="AssistTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
+[connection signal="timeout" from="AssistTimer" to="." method="_on_assist_timer_timeout"]

@@ -21,8 +21,6 @@ func evaluate_utility(ai: ArtificalIntelligence):
 	for key in ai.connectionPointGreen.keys():
 		greenConnectionpoints.append(key as DropZoneCable)
 		
-	
-		
 	redConnectionpoints = remove_unreachable_connections(ai, ai.grabableRedCables, redConnectionpoints)
 	blueConnectionpoints = remove_unreachable_connections(ai, ai.grabableBlueCables, blueConnectionpoints)
 	greenConnectionpoints = remove_unreachable_connections(ai, ai.grabableGreenCables, greenConnectionpoints)

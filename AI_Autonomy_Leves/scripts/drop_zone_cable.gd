@@ -3,6 +3,10 @@ class_name DropZoneCable extends DropZone
 var truck: Truck
 var charged: bool = false
 var connectionPriority: float = 0
+
+var scoreValue: int = 5
+var assistValue: int = 1
+
 signal point_connected
 
 func _ready():
@@ -23,3 +27,9 @@ func try_connection(cableColor, cableHead: CableHead):
 
 func update_priority():
 	connectionPriority += 1
+
+func add_points(scorer: CharacterController, assister: CharacterController):
+	scorer.add_score(scoreValue)
+	
+	if assister:
+		assister.add_score(assistValue)

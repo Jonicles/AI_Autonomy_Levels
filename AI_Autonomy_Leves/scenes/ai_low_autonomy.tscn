@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqax6b8vmkkre"]
+[gd_scene load_steps=7 format=3 uid="uid://bqax6b8vmkkre"]
 
 [ext_resource type="Script" path="res://scripts/ai/low_autonomy_ai.gd" id="1_24wf8"]
 [ext_resource type="Texture2D" uid="uid://facj60wx5dx5" path="res://sprites/AI_Player.png" id="2_t3w34"]
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="3_awob5"]
+[ext_resource type="Script" path="res://scripts/score_keeper.gd" id="4_tt8q6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw0x0"]
 size = Vector2(362.308, 357.386)
@@ -48,3 +49,8 @@ path_desired_distance = 50.0
 target_desired_distance = 50.0
 radius = 50.0
 debug_enabled = true
+
+[node name="ScoreKeeper" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_tt8q6")
+dictionaryKey = "AI"

@@ -3,6 +3,7 @@ class_name Item extends Area2D
 const THROWING_DISTANCE: int = 100
 
 var currentHolder: CharacterController
+var previousHolder: CharacterController
 
 var isGrabable: bool = true
 
@@ -16,6 +17,7 @@ signal grabbed_item
 signal dropped_item
 
 func drop():
+	previousHolder = currentHolder
 	currentHolder = null
 
 func grab(character: CharacterController):

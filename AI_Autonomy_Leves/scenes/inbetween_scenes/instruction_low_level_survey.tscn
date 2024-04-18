@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlgq3pq10rou5"]
+[gd_scene load_steps=9 format=3 uid="uid://dlgq3pq10rou5"]
 
+[ext_resource type="Script" path="res://scripts/score_labels.gd" id="1_48p7v"]
 [ext_resource type="Script" path="res://scripts/button_scene_loader.gd" id="1_sjfs0"]
 
 [sub_resource type="FontFile" id="FontFile_ukjfl"]
@@ -117,7 +118,7 @@ default_font_size = 40
 
 [node name="InstructionLowLevel" type="Node2D"]
 
-[node name="Label2" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 offset_top = 64.0
 offset_right = 1277.0
 offset_bottom = 131.0
@@ -133,10 +134,14 @@ offset_right = 1272.0
 offset_bottom = 720.0
 color = Color(1, 1, 1, 0.270588)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("combinedLabel", "playerLabel", "aiLabel")]
 position = Vector2(0, 168)
+script = ExtResource("1_48p7v")
+combinedLabel = NodePath("Combined Score")
+playerLabel = NodePath("Player Score")
+aiLabel = NodePath("AI Score")
 
-[node name="Label3" type="Label" parent="Node2D"]
+[node name="Instruction" type="Label" parent="Node2D"]
 offset_left = 72.0
 offset_top = 192.0
 offset_right = 1251.0
@@ -146,28 +151,28 @@ Fill out the Version-A part of the survey.
 When you are done, click the button to play the next level!"
 label_settings = SubResource("LabelSettings_lkppb")
 
-[node name="Label4" type="Label" parent="Node2D"]
-offset_left = 384.0
+[node name="Player Score" type="Label" parent="Node2D"]
+offset_left = 456.0
 offset_top = 24.0
-offset_right = 674.0
+offset_right = 746.0
 offset_bottom = 85.0
 text = "Player Score: 0"
 label_settings = SubResource("LabelSettings_lkppb")
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="Node2D"]
-offset_left = 384.0
+[node name="AI Score" type="Label" parent="Node2D"]
+offset_left = 456.0
 offset_top = 72.0
-offset_right = 594.0
+offset_right = 666.0
 offset_bottom = 133.0
 text = "AI Score: 0"
 label_settings = SubResource("LabelSettings_lkppb")
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="Node2D"]
-offset_left = 384.0
+[node name="Combined Score" type="Label" parent="Node2D"]
+offset_left = 456.0
 offset_top = -24.0
-offset_right = 759.0
+offset_right = 831.0
 offset_bottom = 37.0
 text = "Combined Score: 0"
 label_settings = SubResource("LabelSettings_lkppb")
@@ -181,4 +186,4 @@ offset_bottom = 688.0
 theme = SubResource("Theme_fnaf4")
 text = "Continue"
 script = ExtResource("1_sjfs0")
-scenePath = "res://scenes/main_scenes/medium_level.tscn"
+scenePath = "res://scenes/inbetween_scenes/instruction_medium_level.tscn"

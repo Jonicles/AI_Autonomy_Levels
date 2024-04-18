@@ -6,6 +6,7 @@ extends Node
 @export var itemPixelsOffset: float = 32
 
 @onready var grabRadius: Area2D = %GrabRadius
+@onready var scoreKeeper: ScoreKeeper = %ScoreKeeper
 
 var currentDirection = Vector2.ZERO
 var itemDirection = Vector2.DOWN
@@ -99,3 +100,6 @@ func throw():
 	heldItem.throw(itemDirection)
 	itemNode = null
 	heldItem = null
+
+func add_score(pointsToAdd: int):
+	scoreKeeper.add_score(pointsToAdd)
