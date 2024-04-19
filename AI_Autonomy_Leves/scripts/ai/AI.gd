@@ -24,6 +24,7 @@ var connectionPointGreen = {}
 var connectionPointBlue = {}
 
 func _ready():
+	navigation_agent.debug_enabled = false
 	navigation_agent.target_desired_distance = desiredDistance
 	# Green Pylon
 	var greenPylon = $"../NavigationRegion2D/BatteryPylonGreen" as BatteryPylon
