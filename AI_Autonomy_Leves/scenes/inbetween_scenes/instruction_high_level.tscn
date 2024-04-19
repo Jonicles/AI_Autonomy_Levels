@@ -1,124 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://5rbjeni263k4"]
+[gd_scene load_steps=5 format=3 uid="uid://5rbjeni263k4"]
 
 [ext_resource type="Script" path="res://scripts/button_scene_loader.gd" id="1_5fkaj"]
 
-[sub_resource type="FontFile" id="FontFile_ubdx0"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/50/0/glyphs/0/advance = Vector2(0, 0)
-cache/0/50/0/glyphs/0/offset = Vector2(0, 0)
-cache/0/50/0/glyphs/0/size = Vector2(0, 0)
-cache/0/50/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
-cache/0/50/0/glyphs/0/texture_idx = -1
-cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
-
 [sub_resource type="LabelSettings" id="LabelSettings_hcga4"]
 line_spacing = 0.0
-font = SubResource("FontFile_ubdx0")
 font_size = 50
 font_color = Color(0.952941, 0.952941, 0.952941, 1)
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontFile" id="FontFile_jxfo1"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/10/0/ascent = 0.0
-cache/0/10/0/descent = 0.0
-cache/0/10/0/underline_position = 0.0
-cache/0/10/0/underline_thickness = 0.0
-cache/0/10/0/scale = 1.0
-cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-
 [sub_resource type="Theme" id="Theme_rubna"]
-default_font = SubResource("FontFile_jxfo1")
 default_font_size = 40
-
-[sub_resource type="FontFile" id="FontFile_vmr4v"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/50/0/glyphs/0/advance = Vector2(0, 0)
-cache/0/50/0/glyphs/0/offset = Vector2(0, 0)
-cache/0/50/0/glyphs/0/size = Vector2(0, 0)
-cache/0/50/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
-cache/0/50/0/glyphs/0/texture_idx = -1
-cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0qxcn"]
 line_spacing = -10.0
-font = SubResource("FontFile_vmr4v")
 font_size = 50
 font_color = Color(0.952941, 0.952941, 0.952941, 1)
 outline_color = Color(0, 0, 0, 1)
@@ -156,7 +50,7 @@ scenePath = "res://scenes/main_scenes/high_level.tscn"
 [node name="Label4" type="Label" parent="."]
 offset_top = 72.0
 offset_right = 1277.0
-offset_bottom = 139.0
+offset_bottom = 141.0
 text = "Version-C
 "
 label_settings = SubResource("LabelSettings_0qxcn")

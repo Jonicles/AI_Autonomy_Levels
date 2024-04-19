@@ -1,149 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpspge6binchc"]
+[gd_scene load_steps=6 format=3 uid="uid://cpspge6binchc"]
 
 [ext_resource type="Script" path="res://scripts/button_scene_loader.gd" id="1_50qtg"]
 
-[sub_resource type="FontFile" id="FontFile_4ihe3"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/10/0/ascent = 0.0
-cache/0/10/0/descent = 0.0
-cache/0/10/0/underline_position = 0.0
-cache/0/10/0/underline_thickness = 0.0
-cache/0/10/0/scale = 1.0
-cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-
 [sub_resource type="Theme" id="Theme_fnaf4"]
-default_font = SubResource("FontFile_4ihe3")
 default_font_size = 40
 
-[sub_resource type="FontFile" id="FontFile_ddvx5"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-
 [sub_resource type="LabelSettings" id="LabelSettings_x20ys"]
-font = SubResource("FontFile_ddvx5")
 font_size = 40
-
-[sub_resource type="FontFile" id="FontFile_snihe"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/50/0/glyphs/0/advance = Vector2(0, 0)
-cache/0/50/0/glyphs/0/offset = Vector2(0, 0)
-cache/0/50/0/glyphs/0/size = Vector2(0, 0)
-cache/0/50/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
-cache/0/50/0/glyphs/0/texture_idx = -1
-cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_uwi4i"]
 line_spacing = -10.0
-font = SubResource("FontFile_snihe")
 font_size = 50
 font_color = Color(0.952941, 0.952941, 0.952941, 1)
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontFile" id="FontFile_jq3ap"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/35/0/ascent = 0.0
-cache/0/35/0/descent = 0.0
-cache/0/35/0/underline_position = 0.0
-cache/0/35/0/underline_thickness = 0.0
-cache/0/35/0/scale = 1.0
-cache/0/35/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/35/0 = Vector2(0, 0)
-
 [sub_resource type="LabelSettings" id="LabelSettings_lkppb"]
-font = SubResource("FontFile_jq3ap")
 font_size = 35
 
 [node name="InstructionLowLevel" type="Node2D"]

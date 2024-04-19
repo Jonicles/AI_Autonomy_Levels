@@ -1,119 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctm4xew6n8u2m"]
+[gd_scene load_steps=7 format=3 uid="uid://ctm4xew6n8u2m"]
 
 [ext_resource type="Script" path="res://scripts/score_labels.gd" id="1_4ima0"]
 [ext_resource type="Script" path="res://scripts/button_scene_loader.gd" id="1_frupd"]
 
-[sub_resource type="FontFile" id="FontFile_ukjfl"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/50/0/glyphs/0/advance = Vector2(0, 0)
-cache/0/50/0/glyphs/0/offset = Vector2(0, 0)
-cache/0/50/0/glyphs/0/size = Vector2(0, 0)
-cache/0/50/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
-cache/0/50/0/glyphs/0/texture_idx = -1
-cache/0/50/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
-
 [sub_resource type="LabelSettings" id="LabelSettings_tgsae"]
 line_spacing = 0.0
-font = SubResource("FontFile_ukjfl")
 font_size = 50
 font_color = Color(0.952941, 0.952941, 0.952941, 1)
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontFile" id="FontFile_x0lu5"]
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
+[sub_resource type="LabelSettings" id="LabelSettings_jd6kf"]
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_lkppb"]
-font = SubResource("FontFile_x0lu5")
 font_size = 45
 
-[sub_resource type="FontFile" id="FontFile_jxfo1"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/10/0/ascent = 0.0
-cache/0/10/0/descent = 0.0
-cache/0/10/0/underline_position = 0.0
-cache/0/10/0/underline_thickness = 0.0
-cache/0/10/0/scale = 1.0
-cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-
 [sub_resource type="Theme" id="Theme_fnaf4"]
-default_font = SubResource("FontFile_jxfo1")
 default_font_size = 40
 
 [node name="InstructionLowLevel" type="Node2D"]
@@ -142,14 +44,14 @@ playerLabel = NodePath("Label4")
 aiLabel = NodePath("Label5")
 
 [node name="Label3" type="Label" parent="Node2D"]
-offset_left = 72.0
 offset_top = 192.0
-offset_right = 1251.0
-offset_bottom = 381.0
-text = "Click the link to the Google form in the description.
+offset_right = 1271.0
+offset_bottom = 387.0
+text = "Open the Google Form again.
 Fill out the Version-B part of the survey.
 When you are done, click the button to play the next level!"
-label_settings = SubResource("LabelSettings_lkppb")
+label_settings = SubResource("LabelSettings_jd6kf")
+horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="Node2D"]
 offset_left = 455.0
