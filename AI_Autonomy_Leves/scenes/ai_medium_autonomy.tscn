@@ -1,19 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjkuukf64m30u"]
+[gd_scene load_steps=13 format=3 uid="uid://cjkuukf64m30u"]
 
 [ext_resource type="Script" path="res://scripts/ai/medium_autonomy_ai.gd" id="1_pej4g"]
 [ext_resource type="Texture2D" uid="uid://facj60wx5dx5" path="res://sprites/AI_Player.png" id="2_qxpfp"]
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="3_oi3ah"]
 [ext_resource type="Script" path="res://scripts/score_keeper.gd" id="4_u7idl"]
 [ext_resource type="Script" path="res://scripts/icon_switcher.gd" id="5_q6vyo"]
+[ext_resource type="Texture2D" uid="uid://drp17ch2lnawv" path="res://sprites/Icon-Solo.png" id="6_pargv"]
+[ext_resource type="Texture2D" uid="uid://bpxfxgrwxjpyy" path="res://sprites/Icon-Assist.png" id="7_6pdkh"]
+[ext_resource type="Texture2D" uid="uid://dbfxd16dy08og" path="res://sprites/Icon-Battery.png" id="8_ydnxj"]
+[ext_resource type="Texture2D" uid="uid://70f347hlxpnc" path="res://sprites/Icon-Recycle.png" id="9_pdll7"]
+[ext_resource type="Texture2D" uid="uid://bo1yyjxkdd7xg" path="res://sprites/Icon-Cable.png" id="10_amjuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw0x0"]
 size = Vector2(362.308, 357.386)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_31bu7"]
 radius = 37.2689
-
-[sub_resource type="LabelSettings" id="LabelSettings_xcxl8"]
-font_size = 200
 
 [node name="Medium_Autonomy_AI" type="CharacterBody2D"]
 z_index = -2
@@ -62,63 +64,37 @@ dictionaryKey = "AI"
 [node name="ActionIcons" type="Node2D" parent="."]
 script = ExtResource("5_q6vyo")
 
-[node name="Assist" type="Label" parent="ActionIcons"]
+[node name="Solo" type="Sprite2D" parent="ActionIcons"]
 visible = false
 z_index = 10
-offset_left = -317.02
-offset_top = -506.295
-offset_right = 94.9806
-offset_bottom = -97.2953
-text = "🤝"
-label_settings = SubResource("LabelSettings_xcxl8")
-horizontal_alignment = 1
-vertical_alignment = 1
+position = Vector2(-90.577, -297.821)
+scale = Vector2(0.197382, 0.197382)
+texture = ExtResource("6_pargv")
 
-[node name="Solo" type="Label" parent="ActionIcons"]
+[node name="Assist" type="Sprite2D" parent="ActionIcons"]
 visible = false
 z_index = 10
-offset_left = -317.02
-offset_top = -506.295
-offset_right = 94.9806
-offset_bottom = -97.2953
-text = "👇"
-label_settings = SubResource("LabelSettings_xcxl8")
-horizontal_alignment = 1
-vertical_alignment = 1
+position = Vector2(-90.577, -297.821)
+scale = Vector2(0.221999, 0.221999)
+texture = ExtResource("7_6pdkh")
 
-[node name="Battery" type="Label" parent="ActionIcons"]
+[node name="Battery" type="Sprite2D" parent="ActionIcons"]
 visible = false
 z_index = 10
-offset_left = -90.577
-offset_top = -506.295
-offset_right = 321.423
-offset_bottom = -97.2953
-text = "🔋"
-label_settings = SubResource("LabelSettings_xcxl8")
-horizontal_alignment = 1
-vertical_alignment = 1
+position = Vector2(90.577, -297.821)
+scale = Vector2(0.197382, 0.197382)
+texture = ExtResource("8_ydnxj")
 
-[node name="Cable" type="Label" parent="ActionIcons"]
+[node name="Recycle" type="Sprite2D" parent="ActionIcons"]
 visible = false
 z_index = 10
-offset_left = -90.577
-offset_top = -506.295
-offset_right = 321.423
-offset_bottom = -97.2953
-text = "🔌
-"
-label_settings = SubResource("LabelSettings_xcxl8")
-horizontal_alignment = 1
-vertical_alignment = 1
+position = Vector2(90.577, -297.821)
+scale = Vector2(0.197382, 0.197382)
+texture = ExtResource("9_pdll7")
 
-[node name="Recycle" type="Label" parent="ActionIcons"]
+[node name="Cable" type="Sprite2D" parent="ActionIcons"]
 visible = false
 z_index = 10
-offset_left = -90.577
-offset_top = -506.295
-offset_right = 321.423
-offset_bottom = -97.2953
-text = "♻"
-label_settings = SubResource("LabelSettings_xcxl8")
-horizontal_alignment = 1
-vertical_alignment = 1
+position = Vector2(90.577, -297.821)
+scale = Vector2(0.197382, 0.197382)
+texture = ExtResource("10_amjuh")

@@ -1,16 +1,16 @@
 class_name IconSwitcher extends Node2D
 
-@onready var assistIcon: Control = $Assist
-@onready var soloIcon: Control = $Solo
+@onready var assistIcon: Node2D = $Assist
+@onready var soloIcon: Node2D = $Solo
 
-@onready var batteryIcon: Control = $Battery
-@onready var recycleIcon: Control = $Recycle
-@onready var cableIcon: Control = $Cable
+@onready var batteryIcon: Node2D = $Battery
+@onready var recycleIcon: Node2D = $Recycle
+@onready var cableIcon: Node2D = $Cable
 
 var iconDictionary: Dictionary = {}
 
-var currentActionIcon: Control
-var currentModeIcon: Control
+var currentActionIcon: Node2D
+var currentModeIcon: Node2D
 
 func _ready():
 	iconDictionary["Assist"] = assistIcon
