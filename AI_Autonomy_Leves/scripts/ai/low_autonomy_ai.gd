@@ -12,6 +12,7 @@ var assistModeActive: bool = false
 func _input(event):
 	if event.is_action_pressed("Player_1"):
 		reset()
+		iconSwitcher.set_action_icon("Battery")
 		
 		if assistModeActive:
 			currentSnippet = batteryPlaceAssist
@@ -22,6 +23,7 @@ func _input(event):
 		
 	if event.is_action_pressed("Player_2"):
 		reset()
+		iconSwitcher.set_action_icon("Recycle")		
 		
 		if assistModeActive:
 			currentSnippet = batteryRecycleAssist
@@ -32,6 +34,7 @@ func _input(event):
 		
 	if event.is_action_pressed("Player_3"):
 		reset()
+		iconSwitcher.set_action_icon("Cable")
 		
 		if assistModeActive:
 			currentSnippet = cableConnectAssist
@@ -51,6 +54,7 @@ func _input(event):
 		if assistModeActive:
 			print("Switchinig to Solo mode")
 			assistModeActive = false
+			iconSwitcher.set_mode_icon("Solo")			
 			match currentSnippet:
 				batteryPlaceAssist:
 					newBehaviour = batteryPlaceSolo
@@ -61,6 +65,7 @@ func _input(event):
 		else:
 			print("Switchinig to Assist mode")			
 			assistModeActive = true
+			iconSwitcher.set_mode_icon("Assist")
 			match currentSnippet:
 				batteryPlaceSolo:
 					newBehaviour = batteryPlaceAssist

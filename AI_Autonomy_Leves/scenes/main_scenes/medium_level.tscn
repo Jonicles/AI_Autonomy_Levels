@@ -106,9 +106,8 @@ position = Vector2(624, 312)
 position = Vector2(624, 312)
 
 [node name="CountDownTimer" parent="." instance=ExtResource("11_c0go0")]
-position = Vector2(624, 168)
+position = Vector2(624, 48)
 countDownTime = 5
-timeLimit = 10
 sceneToLoad = "res://scenes/inbetween_scenes/instruction_medium_level_survey.tscn"
 
 [connection signal="count_down_finished" from="CountDownTimer" to="Player" method="activate"]

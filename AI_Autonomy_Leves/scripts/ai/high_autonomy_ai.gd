@@ -36,4 +36,27 @@ func get_best_behaviour():
 			highestUtility = currentUtility
 			
 	currentSnippet = bestSnippet
+	
+	match currentSnippet:
+		batteryPlaceSolo:
+			iconSwitcher.set_action_icon("Battery")
+			iconSwitcher.set_mode_icon("Solo")
+		batteryPlaceAssist:
+			iconSwitcher.set_action_icon("Battery")
+			iconSwitcher.set_mode_icon("Assist")
+		batteryRecycleSolo:
+			iconSwitcher.set_action_icon("Recycle")
+			iconSwitcher.set_mode_icon("Solo")			
+		batteryRecycleAssist:
+			iconSwitcher.set_action_icon("Recycle")
+			iconSwitcher.set_mode_icon("Assist")
+		cableConnectSolo:
+			iconSwitcher.set_action_icon("Cable")
+			iconSwitcher.set_mode_icon("Solo")
+		cableConnectAssist:
+			iconSwitcher.set_action_icon("Cable")
+			iconSwitcher.set_mode_icon("Assist")
+		_:
+			pass
+	
 	return highestUtility

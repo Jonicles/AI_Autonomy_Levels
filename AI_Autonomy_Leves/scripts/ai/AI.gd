@@ -3,6 +3,7 @@ class_name ArtificalIntelligence extends CharacterBody2D
 @export var desiredDistance: float
 
 @onready var controller: CharacterController = $Controller
+@onready var iconSwitcher: IconSwitcher = $ActionIcons
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var recyclePoint: Node2D = $"../BatteryDropZone"
 @onready var centerPoint: Node2D = $"../CenterPoint"

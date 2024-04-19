@@ -1,15 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqax6b8vmkkre"]
+[gd_scene load_steps=9 format=3 uid="uid://bqax6b8vmkkre"]
 
 [ext_resource type="Script" path="res://scripts/ai/low_autonomy_ai.gd" id="1_24wf8"]
 [ext_resource type="Texture2D" uid="uid://facj60wx5dx5" path="res://sprites/AI_Player.png" id="2_t3w34"]
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="3_awob5"]
 [ext_resource type="Script" path="res://scripts/score_keeper.gd" id="4_tt8q6"]
+[ext_resource type="Script" path="res://scripts/icon_switcher.gd" id="5_0fp0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw0x0"]
 size = Vector2(362.308, 357.386)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_31bu7"]
 radius = 37.2689
+
+[sub_resource type="LabelSettings" id="LabelSettings_e02vx"]
+font_size = 200
 
 [node name="Low_Autonomy_AI" type="CharacterBody2D"]
 z_index = -2
@@ -54,3 +58,67 @@ debug_enabled = true
 unique_name_in_owner = true
 script = ExtResource("4_tt8q6")
 dictionaryKey = "AI"
+
+[node name="ActionIcons" type="Node2D" parent="."]
+script = ExtResource("5_0fp0o")
+
+[node name="Assist" type="Label" parent="ActionIcons"]
+visible = false
+z_index = 10
+offset_left = -317.02
+offset_top = -506.295
+offset_right = 94.9806
+offset_bottom = -97.2953
+text = "🤝"
+label_settings = SubResource("LabelSettings_e02vx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Solo" type="Label" parent="ActionIcons"]
+visible = false
+z_index = 10
+offset_left = -317.02
+offset_top = -506.295
+offset_right = 94.9806
+offset_bottom = -97.2953
+text = "👇"
+label_settings = SubResource("LabelSettings_e02vx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Battery" type="Label" parent="ActionIcons"]
+visible = false
+z_index = 10
+offset_left = -90.577
+offset_top = -506.295
+offset_right = 321.423
+offset_bottom = -97.2953
+text = "🔋"
+label_settings = SubResource("LabelSettings_e02vx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cable" type="Label" parent="ActionIcons"]
+visible = false
+z_index = 10
+offset_left = -90.577
+offset_top = -506.295
+offset_right = 321.423
+offset_bottom = -97.2953
+text = "🔌
+"
+label_settings = SubResource("LabelSettings_e02vx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recycle" type="Label" parent="ActionIcons"]
+visible = false
+z_index = 10
+offset_left = -90.577
+offset_top = -506.295
+offset_right = 321.423
+offset_bottom = -97.2953
+text = "♻"
+label_settings = SubResource("LabelSettings_e02vx")
+horizontal_alignment = 1
+vertical_alignment = 1

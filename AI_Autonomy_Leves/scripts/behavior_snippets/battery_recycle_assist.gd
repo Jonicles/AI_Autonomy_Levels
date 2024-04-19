@@ -13,7 +13,11 @@ func evaluate_utility(ai: ArtificalIntelligence):
 	ai.navigation_agent.target_position = ai.player.global_position
 	if ai.navigation_agent.is_target_reachable():
 		return 0
-		
+	
+	ai.player.navigationAgent.target_position = ai.recyclePoint.global_position
+	if not ai.player.navigationAgent.is_target_reachable():
+		return 0
+	
 	ai.navigation_agent.target_position = ai.recyclePoint.global_position
 	if ai.navigation_agent.is_target_reachable():
 		return 0

@@ -42,6 +42,23 @@ func get_best_behaviour():
 			highestUtility = currentUtility
 			
 	currentSnippet = bestSnippet
+	
+	match currentSnippet:
+		batteryPlaceSolo:
+			iconSwitcher.set_action_icon("Battery")
+		batteryPlaceAssist:
+			iconSwitcher.set_action_icon("Battery")
+		batteryRecycleSolo:
+			iconSwitcher.set_action_icon("Recycle")
+		batteryRecycleAssist:
+			iconSwitcher.set_action_icon("Recycle")
+		cableConnectSolo:
+			iconSwitcher.set_action_icon("Cable")
+		cableConnectAssist:
+			iconSwitcher.set_action_icon("Cable")
+		_:
+			pass
+			
 	return highestUtility
 
 func _input(event):
@@ -52,6 +69,9 @@ func _input(event):
 		if assistModeActive:
 			assistModeActive = false
 			print("Solo Mode Activated")
+			iconSwitcher.set_mode_icon("Solo")
 		else:
 			assistModeActive = true
 			print("Assist Mode Activated")
+			iconSwitcher.set_mode_icon("Assist")
+			
