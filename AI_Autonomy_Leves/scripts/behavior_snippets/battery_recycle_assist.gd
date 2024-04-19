@@ -1,6 +1,6 @@
 class_name BatteryRecycleAssist extends BehaviorSnippet
 
-var points: int = 6
+var points: int = 1
 var currentBattery: Battery
 
 func evaluate_utility(ai: ArtificalIntelligence):

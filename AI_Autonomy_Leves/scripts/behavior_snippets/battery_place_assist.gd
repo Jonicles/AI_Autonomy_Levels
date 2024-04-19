@@ -1,6 +1,6 @@
 class_name BatteryPlaceAssist extends BehaviorSnippet
 
-var points: int = 5
+var points: int = 2
 var currentBattery: Battery
 
 func evaluate_utility(ai: ArtificalIntelligence):

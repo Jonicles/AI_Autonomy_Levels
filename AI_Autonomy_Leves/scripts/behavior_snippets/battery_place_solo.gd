@@ -1,6 +1,6 @@
 class_name BatteryPlaceSolo extends BehaviorSnippet
 
-var points: int = 2
+var points: int = 5
 var currentBattery: Battery
 var currentPylon: BatteryPylon
 

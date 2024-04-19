@@ -1,6 +1,6 @@
 class_name CableConnectSolo extends BehaviorSnippet
 
-var points: int = 1
+var points: int = 4
 var currentCableHead: CableHead
 var currentConnectionPoint: DropZoneCable
 

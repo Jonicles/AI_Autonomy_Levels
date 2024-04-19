@@ -5,7 +5,7 @@ var charged: bool = false
 var connectionPriority: float = 0
 
 var scoreValue: int = 5
-var assistValue: int = 1
+var assistValue: int = 3
 
 signal point_connected
 

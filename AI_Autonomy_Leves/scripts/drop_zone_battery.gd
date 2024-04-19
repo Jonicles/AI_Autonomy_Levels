@@ -1,7 +1,7 @@
 extends DropZone
 
 var scoreValue: int = 5
-var assistValue: int = 1
+var assistValue: int = 3
 
 func try_drop_off(itemType, item):
 	if itemType != acceptedItemType:

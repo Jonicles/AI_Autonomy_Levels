@@ -75,8 +75,8 @@ offset_top = 192.0
 offset_right = 1271.0
 offset_bottom = 387.0
 text = "Open the Google Form again.
-Fill out the Version-B part of the survey.
-When you are done, click the button to play the next level!"
+Fill out the rest of the survey
+When you are done, click the button!"
 label_settings = SubResource("LabelSettings_soqwj")
 horizontal_alignment = 1
 
